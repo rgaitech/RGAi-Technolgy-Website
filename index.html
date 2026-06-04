@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RGAi Technology Pvt. Ltd. – AI-powered digital transformation. Web Development, Mobile Apps, AI Solutions, Automation & Digital Growth." />
+  <meta name="keywords" content="RGAi Technology, AI Solutions, Web Development, Mobile App, Business Automation, Digital Marketing, SEO, UI/UX" />
+  <meta name="author" content="RGAi Technology Pvt. Ltd." />
+  <meta property="og:title" content="RGAi Technology – Transforming Businesses Through AI" />
+  <meta property="og:description" content="Premium AI & digital solutions for modern businesses." />
+  <meta property="og:type" content="website" />
+  <title>RGAi Technology – Transforming Businesses Through AI Innovation</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/effects.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="stylesheet" href="css/portfolio.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/testimonials.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/whatsapp.css" />
+  <link rel="stylesheet" href="css/chatbot.css" />
+  <link rel="stylesheet" href="css/aurora.css" />
+  <link rel="stylesheet" href="css/transitions.css" />
+  <link rel="stylesheet" href="css/microinteractions.css" />
+  <link rel="stylesheet" href="css/agents.css" />
+  <link rel="stylesheet" href="css/case-studies.css" />
+  <link rel="stylesheet" href="css/reviews.css" />
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0066FF" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">
+      <span class="loader-r">R</span><span class="loader-g">G</span><span class="loader-ai">Ai</span>
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <p class="loader-text">Initializing AI Systems...</p>
+    <div class="loader-dots">
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+    </div>
+  </div>
+</div>
+
+<!-- CURSOR -->
+<div id="cursorGlow" class="cursor-glow"></div>
+<div id="cursorDot"  class="cursor-dot"></div>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="RGAi Technology Home">
+      <span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span>
+      <span class="logo-sub">Technology</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+      <li><a href="index.html"        class="nav-link active">Home</a></li>
+      <li><a href="services.html"     class="nav-link">Services</a></li>
+      <li><a href="portfolio.html"    class="nav-link">Portfolio</a></li>
+      <li><a href="about.html"        class="nav-link">About</a></li>
+      <li><a href="labs.html"         class="nav-link ">Labs</a></li>
+      <li><a href="contact.html"      class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="theme-icon moon">🌙</span>
+        <span class="theme-icon sun">☀️</span>
+      </button>
+      <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section id="home" class="hero" aria-label="Hero section">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
+
+  <div class="hero-floats" aria-hidden="true">
+    <div class="float-el float-1">⬡</div>
+    <div class="float-el float-2">◈</div>
+    <div class="float-el float-3">⬟</div>
+    <div class="float-el float-4">◇</div>
+    <div class="float-el float-5">⬢</div>
+    <div class="float-el float-6">◉</div>
+  </div>
+
+  <div class="hero-container">
+    <div class="hero-badge" id="heroBadge">
+      <span class="badge-dot"></span>
+      AI-Powered Innovation Hub
+    </div>
+
+    <h1 class="hero-headline" id="heroHeadline">
+      <span class="line">Transforming</span>
+      <span class="line gradient-text">Businesses</span>
+      <span class="line">Through AI</span>
+    </h1>
+
+    <p class="hero-sub" id="heroSub">
+      <span class="typing-text" id="typingText"></span>
+    </p>
+
+    <div class="hero-btns" id="heroBtns">
+      <a href="contact.html" class="btn btn-primary btn-hero" id="heroCta1">
+        <span>Get Started</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="portfolio.html" class="btn btn-ghost btn-hero" id="heroCta2">
+        <span>View Portfolio</span>
+      </a>
+    </div>
+
+    <!-- Hero Social Buttons -->
+    <div class="hero-socials" id="heroSocials" style="display: flex; gap: 1rem; margin-top: 0.5rem; opacity: 0; transform: translateY(20px);">
+      <a href="https://github.com/rgaitech" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="GitHub Profile">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.137 20.162 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        <span>GitHub</span>
+      </a>
+      <a href="https://www.instagram.com/rgai.tech?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="Instagram Profile">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        <span>Instagram</span>
+      </a>
+    </div>
+
+    <div class="hero-glass-card" id="heroGlassCard" role="region" aria-label="Key statistics">
+      <div class="glass-stat">
+        <span class="glass-num">200+</span>
+        <span class="glass-label">Happy Clients</span>
+      </div>
+      <div class="glass-divider" aria-hidden="true"></div>
+      <div class="glass-stat">
+        <span class="glass-num">500+</span>
+        <span class="glass-label">Projects Done</span>
+      </div>
+      <div class="glass-divider" aria-hidden="true"></div>
+      <div class="glass-stat">
+        <span class="glass-num">98%</span>
+        <span class="glass-label">Satisfaction</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator" id="scrollIndicator" aria-hidden="true">
+    <div class="scroll-wheel"></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- ==================== SERVICES PREVIEW (3 cards) ==================== -->
+<section id="services-preview" class="services section-pad" aria-labelledby="servicesPreviewTitle">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">What We Do</span>
+      <h2 class="section-title" id="servicesPreviewTitle">Premium <span class="gradient-text">Services</span></h2>
+      <p class="section-desc">End-to-end digital solutions crafted with precision, powered by cutting-edge AI technology.</p>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0" data-tilt>
+        <div class="service-icon-wrap">
+          <div class="service-icon">🌐</div>
+          <div class="service-icon-glow"></div>
+        </div>
+        <h3 class="service-name">Website Development</h3>
+        <p class="service-desc">Ultra-modern, SEO-optimized websites with blazing performance and stunning user experiences.</p>
+        <ul class="service-tags"><li>React / Next.js</li><li>Custom CMS</li><li>E-Commerce</li></ul>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <div class="service-card featured" data-aos="fade-up" data-aos-delay="100" data-tilt>
+        <div class="service-featured-badge">Most Popular</div>
+        <div class="service-icon-wrap">
+          <div class="service-icon">🤖</div>
+          <div class="service-icon-glow"></div>
+        </div>
+        <h3 class="service-name">AI Solutions</h3>
+        <p class="service-desc">Custom AI models, machine learning pipelines, and intelligent data-driven decision systems.</p>
+        <ul class="service-tags"><li>Machine Learning</li><li>NLP</li><li>Computer Vision</li></ul>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200" data-tilt>
+        <div class="service-icon-wrap">
+          <div class="service-icon">📱</div>
+          <div class="service-icon-glow"></div>
+        </div>
+        <h3 class="service-name">Mobile App Development</h3>
+        <p class="service-desc">Cross-platform mobile apps with React Native & Flutter for iOS and Android.</p>
+        <ul class="service-tags"><li>React Native</li><li>Flutter</li><li>iOS & Android</li></ul>
+        <div class="service-arrow">→</div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top: 2.5rem;" data-aos="fade-up" data-aos-delay="300">
+      <a href="services.html" class="btn btn-ghost">Explore All Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== AI AGENTS SHOWCASE ==================== -->
+<section id="agents" class="agents-showcase section-pad" aria-labelledby="agentsTitle">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Autonomous Systems</span>
+      <h2 class="section-title" id="agentsTitle">Custom <span class="gradient-text">AI Agents</span> Showcase</h2>
+      <p class="section-desc">Deploy virtual workers running 24/7. Automate complex workflows and user engagements seamlessly.</p>
+    </div>
+    <div class="agents-grid">
+      <div class="agent-card card-spotlight" data-aos="fade-up" data-aos-delay="0">
+        <div class="agent-header">
+          <div class="agent-avatar">💬</div>
+          <span class="agent-status online">Active</span>
+        </div>
+        <h3>Conversational Support Agent</h3>
+        <p>Intelligent agent that handles customer inquiries, coordinates calendars, and books clients seamlessly.</p>
+        <ul class="agent-tasks">
+          <li>Integrates with WhatsApp & Web Chat</li>
+          <li>Supports 50+ languages</li>
+          <li>Resolves 70% support volume</li>
+        </ul>
+      </div>
+      <div class="agent-card card-spotlight" data-aos="fade-up" data-aos-delay="150">
+        <div class="agent-header">
+          <div class="agent-avatar">📊</div>
+          <span class="agent-status online">Active</span>
+        </div>
+        <h3>Data Analytics Agent</h3>
+        <p>Processes complex company spreadsheets, predicts pipeline sales volumes, and constructs visual reports.</p>
+        <ul class="agent-tasks">
+          <li>Integrates with SQL databases</li>
+          <li>Generates weekly executive PDFs</li>
+          <li>Identifies margin leak patterns</li>
+        </ul>
+      </div>
+      <div class="agent-card card-spotlight" data-aos="fade-up" data-aos-delay="300">
+        <div class="agent-header">
+          <div class="agent-avatar">⚙️</div>
+          <span class="agent-status idle">Idle</span>
+        </div>
+        <h3>RPA Operations Agent</h3>
+        <p>Automates invoicing, synchronises data collections, and formats operational records across systems.</p>
+        <ul class="agent-tasks">
+          <li>Integrates with ERP & CRM</li>
+          <li>Triggered by calendar webhook events</li>
+          <li>Saves up to 40 hours/week</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STATS ==================== -->
+<section id="stats" class="stats section-pad" aria-labelledby="statsTitle">
+  <div class="stats-bg-anim" id="statsBgAnim" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Our Impact</span>
+      <h2 class="section-title" id="statsTitle">Numbers That <span class="gradient-text">Speak</span></h2>
+    </div>
+    <div class="stats-grid">
+
+      <div class="stat-card" data-aos="zoom-in" data-aos-delay="0">
+        <div class="stat-circle-wrap">
+          <svg class="stat-svg" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="stat-track"    cx="60" cy="60" r="52"/>
+            <circle class="stat-progress" cx="60" cy="60" r="52" data-percent="95" stroke="#0066FF"/>
+          </svg>
+          <div class="stat-inner">
+            <span class="stat-number" data-target="200" data-suffix="+" aria-label="200 plus happy clients">0</span>
+          </div>
+        </div>
+        <h3 class="stat-label">Happy Clients</h3>
+        <p class="stat-sub">Trusted by businesses worldwide</p>
+      </div>
+
+      <div class="stat-card" data-aos="zoom-in" data-aos-delay="150">
+        <div class="stat-circle-wrap">
+          <svg class="stat-svg" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="stat-track"    cx="60" cy="60" r="52"/>
+            <circle class="stat-progress" cx="60" cy="60" r="52" data-percent="100" stroke="#7C3AED"/>
+          </svg>
+          <div class="stat-inner">
+            <span class="stat-number" data-target="500" data-suffix="+" aria-label="500 plus projects delivered">0</span>
+          </div>
+        </div>
+        <h3 class="stat-label">Projects Delivered</h3>
+        <p class="stat-sub">On time, on budget, on point</p>
+      </div>
+
+      <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+        <div class="stat-circle-wrap">
+          <svg class="stat-svg" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="stat-track"    cx="60" cy="60" r="52"/>
+            <circle class="stat-progress" cx="60" cy="60" r="52" data-percent="70" stroke="#10B981"/>
+          </svg>
+          <div class="stat-inner">
+            <span class="stat-number" data-target="7000" data-suffix="+" aria-label="7000 plus social followers">0</span>
+          </div>
+        </div>
+        <h3 class="stat-label">Social Followers</h3>
+        <p class="stat-sub">Growing community of innovators</p>
+      </div>
+
+      <div class="stat-card" data-aos="zoom-in" data-aos-delay="450">
+        <div class="stat-circle-wrap">
+          <svg class="stat-svg" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="stat-track"    cx="60" cy="60" r="52"/>
+            <circle class="stat-progress" cx="60" cy="60" r="52" data-percent="98" stroke="#F59E0B"/>
+          </svg>
+          <div class="stat-inner">
+            <span class="stat-number" data-target="98" data-suffix="%" aria-label="98 percent client satisfaction">0</span>
+          </div>
+        </div>
+        <h3 class="stat-label">Client Satisfaction</h3>
+        <p class="stat-sub">Excellence is our standard</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CASE STUDIES ==================== -->
+<section id="case-studies" class="case-studies section-pad" aria-labelledby="caseStudiesTitle">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Success Stories</span>
+      <h2 class="section-title" id="caseStudiesTitle">Proven <span class="gradient-text">Case Studies</span></h2>
+      <p class="section-desc">Read about how we engineered real metric differences for leading business operators.</p>
+    </div>
+    <div class="case-grid">
+      <div class="case-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="case-banner">
+          <div class="case-banner-icon">🏦</div>
+        </div>
+        <div class="case-content">
+          <span class="case-tag">FinTech Integration</span>
+          <h3>Enterprise Finance Real-time Dashboard</h3>
+          <p>Re-architected pipeline structures and design system frameworks, boosting customer interaction rates.</p>
+          <div class="case-metric-box">
+            <span class="case-metric-num">+300%</span>
+            <span class="case-metric-lbl">Sales Increase</span>
+          </div>
+          <a href="portfolio.html" class="case-link">Read Case Study <span>→</span></a>
+        </div>
+      </div>
+      <div class="case-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="case-banner" style="background: linear-gradient(135deg, #7C3AED 0%, #10B981 100%);">
+          <div class="case-banner-icon">🤖</div>
+        </div>
+        <div class="case-content">
+          <span class="case-tag">AI Automation</span>
+          <h3>Autonomous Customer Care Bot</h3>
+          <p>Deployed multi-agent conversational structures, decreasing manual ticketing volumes significantly.</p>
+          <div class="case-metric-box">
+            <span class="case-metric-num">60%</span>
+            <span class="case-metric-lbl">Support Cost Saved</span>
+          </div>
+          <a href="portfolio.html" class="case-link">Read Case Study <span>→</span></a>
+        </div>
+      </div>
+      <div class="case-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="case-banner" style="background: linear-gradient(135deg, #10B981 0%, #F59E0B 100%);">
+          <div class="case-banner-icon">⚡</div>
+        </div>
+        <div class="case-content">
+          <span class="case-tag">Workflow RPA</span>
+          <h3>Supply Chain Logistic Orchestration</h3>
+          <p>Built robust webhook automations and cron scheduling syncing across CRM inventory records.</p>
+          <div class="case-metric-box">
+            <span class="case-metric-num">40 hrs/wk</span>
+            <span class="case-metric-lbl">Manual Operations Saved</span>
+          </div>
+          <a href="portfolio.html" class="case-link">Read Case Study <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TESTIMONIALS ==================== -->
+<section id="testimonials" class="testimonials section-pad" aria-labelledby="testimonialsTitle">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Client Stories</span>
+      <h2 class="section-title" id="testimonialsTitle">What Clients <span class="gradient-text">Say</span></h2>
+      <p class="section-desc">Real feedback from businesses that trusted us to transform their digital presence.</p>
+    </div>
+
+    <div class="swiper testimonialSwiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide"><div class="testimonial-card">
+          <div class="t-top">
+            <div class="t-avatar"><div class="avatar-placeholder av-1">AR</div></div>
+            <div class="t-info"><h4>Arjun Reddy</h4><span>CEO, TechNova Solutions</span></div>
+            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </div>
+          <div class="t-quote" aria-hidden="true">"</div>
+          <p class="t-text">RGAi completely transformed our digital operations. Their AI chatbot reduced our support costs by 60% and the custom dashboard they built is absolutely world-class. Truly exceptional work!</p>
+        </div></div>
+
+        <div class="swiper-slide"><div class="testimonial-card">
+          <div class="t-top">
+            <div class="t-avatar"><div class="avatar-placeholder av-2">PS</div></div>
+            <div class="t-info"><h4>Priya Sharma</h4><span>Founder, GreenLeaf Retail</span></div>
+            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </div>
+          <div class="t-quote" aria-hidden="true">"</div>
+          <p class="t-text">The e-commerce platform RGAi built for us increased our sales by 3x within the first month. Their attention to UI/UX detail and the AI recommendation engine is phenomenal.</p>
+        </div></div>
+
+        <div class="swiper-slide"><div class="testimonial-card">
+          <div class="t-top">
+            <div class="t-avatar"><div class="avatar-placeholder av-3">MK</div></div>
+            <div class="t-info"><h4>Mohan Kumar</h4><span>CTO, FinEdge Capital</span></div>
+            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </div>
+          <div class="t-quote" aria-hidden="true">"</div>
+          <p class="t-text">Working with RGAi on our fintech dashboard was a game-changer. The real-time analytics, AI predictions, and beautiful UI design exceeded every expectation we had.</p>
+        </div></div>
+
+        <div class="swiper-slide"><div class="testimonial-card">
+          <div class="t-top">
+            <div class="t-avatar"><div class="avatar-placeholder av-4">SG</div></div>
+            <div class="t-info"><h4>Sneha Gupta</h4><span>Director, MediCare Health</span></div>
+            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </div>
+          <div class="t-quote" aria-hidden="true">"</div>
+          <p class="t-text">Our health tracker app built by RGAi has 50,000+ downloads and a 4.9 star rating. The team's expertise in mobile development and AI integration is unmatched in the industry.</p>
+        </div></div>
+
+        <div class="swiper-slide"><div class="testimonial-card">
+          <div class="t-top">
+            <div class="t-avatar"><div class="avatar-placeholder av-5">RV</div></div>
+            <div class="t-info"><h4>Rahul Verma</h4><span>MD, AutoFlow Logistics</span></div>
+            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </div>
+          <div class="t-quote" aria-hidden="true">"</div>
+          <p class="t-text">The business automation solution from RGAi saved us 40 hours per week in manual work. Their RPA workflows and AI agents are running our operations smoother than ever before.</p>
+        </div></div>
+
+        <div class="swiper-slide"><div class="testimonial-card">
+          <div class="t-top">
+            <div class="t-avatar"><div class="avatar-placeholder av-6">NP</div></div>
+            <div class="t-info"><h4>Neha Patel</h4><span>CMO, BrightBrand Agency</span></div>
+            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </div>
+          <div class="t-quote" aria-hidden="true">"</div>
+          <p class="t-text">RGAi's SEO and digital marketing strategy took us from page 5 to page 1 on Google within 3 months. Their data-driven approach and transparent reporting is best in class.</p>
+        </div></div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== REVIEWS & AWARDS ==================== -->
+<section id="reviews-preview" class="reviews-preview-sec section-pad" aria-labelledby="reviewsPreviewTitle2">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Trust Signals</span>
+      <h2 class="section-title" id="reviewsPreviewTitle2">Industry <span class="gradient-text">Trust & Recognition</span></h2>
+      <p class="section-desc">Certified execution excellence across premier review hubs.</p>
+    </div>
+    <div class="reviews-badge-row" data-aos="fade-up" data-aos-delay="100">
+      <div class="review-badge-card">
+        <span class="rb-source">Clutch</span>
+        <span class="rb-rating">★★★★★</span>
+        <span class="rb-label">5.0 Star Agency</span>
+      </div>
+      <div class="review-badge-card">
+        <span class="rb-source">Google</span>
+        <span class="rb-rating">★★★★★</span>
+        <span class="rb-label">4.9 Star Rating</span>
+      </div>
+      <div class="review-badge-card">
+        <span class="rb-source">GoodFirms</span>
+        <span class="rb-rating">★★★★★</span>
+        <span class="rb-label">Top AI Developer</span>
+      </div>
+    </div>
+    <div class="reviews-cta-box" data-aos="fade-up" data-aos-delay="200">
+      <h4 class="reviews-cta-title">See our live customer database. <strong>No filters, completely transparent.</strong></h4>
+      <a href="feedback.html" class="btn btn-primary btn-magnetic">
+        <span>Read Live Reviews feed</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA BANNER ==================== -->
+<section class="cta-banner" aria-labelledby="ctaTitle">
+  <div class="cta-banner-inner" data-aos="zoom-in">
+    <h2 id="ctaTitle">Ready to Transform<br>Your Business?</h2>
+    <p>Let's build something extraordinary together. Your digital future starts today.</p>
+    <div class="cta-banner-btns">
+      <a href="contact.html" class="btn-white">Start a Project →</a>
+      <a href="portfolio.html" class="btn-white-ghost">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" fill="var(--clr-bg)"/>
+    </svg>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span>
+          <span class="logo-sub">Technology</span>
+        </div>
+        <p class="footer-tagline">Transforming Businesses Through AI Innovation. Your trusted partner for next-generation digital solutions.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="footer-social" aria-label="Twitter/X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+          <a href="#" class="footer-social" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg></a>
+          <a href="#" class="footer-social" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="labs.html">Labs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">Mobile App Dev</a></li>
+          <li><a href="services.html">AI Solutions</a></li>
+          <li><a href="services.html">AI Agents</a></li>
+          <li><a href="services.html">Digital Marketing</a></li>
+          <li><a href="services.html">Business Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Stay Updated</h4>
+        <p class="footer-newsletter-desc">Get the latest AI insights and updates delivered to your inbox.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Newsletter email" />
+          <button type="submit" class="newsletter-btn" aria-label="Subscribe">→</button>
+        </form>
+        <p class="newsletter-note" id="newsletterMsg"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 RGAi Technology Pvt. Ltd. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<!-- ==================== CHATBOT WIDGET ==================== -->
+<button class="chatbot-toggle" aria-label="Open chat assistant">
+  <span class="chatbot-badge">1</span>
+  <svg class="chatbot-toggle-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#fff;">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+  <svg class="chatbot-toggle-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#fff;">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+</button>
+
+<div class="chatbot-window">
+  <div class="chatbot-header">
+    <div class="chatbot-avatar">🤖</div>
+    <div class="chatbot-header-info">
+      <div class="chatbot-header-name">ARIA Assistant</div>
+      <div class="chatbot-header-status">Online</div>
+    </div>
+    <button class="chatbot-min-btn" aria-label="Minimize chat">—</button>
+  </div>
+  <div class="chatbot-messages">
+    <!-- Message content parsed by chatbot.js -->
+  </div>
+  <div class="chatbot-input-wrap">
+    <input type="text" class="chatbot-input" placeholder="Type a message..." aria-label="Message chatbot" />
+    <button class="chatbot-send" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/services.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/testimonials.js"></script>
+<script src="js/aurora.js"></script>
+<script src="js/spotlight.js"></script>
+<script src="js/transitions.js"></script>
+<script src="js/microinteractions.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/chatbot.js"></script>
+
+<!-- PWA Service Worker Registration -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').then((reg) => {
+        console.log('PWA Service Worker registered scopes: ', reg.scope);
+      }).catch((err) => {
+        console.warn('PWA Service Worker registration failed: ', err);
+      });
+    });
+  }
+</script>
+</body>
+</html>

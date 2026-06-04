@@ -1,0 +1,75 @@
+/* ============================================================
+   REVIEWS.CSS — Home Page Customer Review Previews & Badges
+   ============================================================ */
+
+.reviews-preview-sec {
+  background: var(--clr-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-badge-row {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  flex-wrap: wrap;
+  margin-top: 3.5rem;
+  align-items: center;
+}
+
+.review-badge-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.75;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.review-badge-card:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.rb-source {
+  font-family: var(--font-head);
+  font-size: var(--fs-md);
+  font-weight: 800;
+  color: var(--clr-text);
+  letter-spacing: -0.02em;
+}
+
+.rb-rating {
+  color: #FBBF24;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+}
+
+.rb-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--clr-text-3);
+}
+
+/* Call to Action elements inside review sections */
+.reviews-cta-box {
+  margin-top: 4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.reviews-cta-title {
+  font-family: var(--font-head);
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--clr-text);
+}
+.reviews-cta-title strong {
+  color: var(--clr-accent);
+}

@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RGAi Labs – Futuristic AI and software playground. Access RGPT, Agent Builder, 3D Globe, SEO Audit and 20+ interactive tools." />
+  <meta name="keywords" content="RGAi Labs, AI Playground, RGPT, Agent Builder, WebGL Globe, Neural Net, SEO auditor, Tech tools" />
+  <meta name="author" content="RGAi Technology Pvt. Ltd." />
+  <meta property="og:title" content="RGAi Labs – Futuristic AI & Developer Ecosystem" />
+  <meta property="og:description" content="Access 20+ cutting-edge interactive tools, builders, and analytics dashboards." />
+  <meta property="og:type" content="website" />
+  <title>RGAi Labs – Interactive AI & Tech Ecosystem</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/effects.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/aurora.css" />
+  <link rel="stylesheet" href="css/transitions.css" />
+  <link rel="stylesheet" href="css/microinteractions.css" />
+  <link rel="stylesheet" href="css/labs.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0066FF" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">
+      <span class="loader-r">R</span><span class="loader-g">G</span><span class="loader-ai">Ai</span>
+      <span class="loader-labs">Labs</span>
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <p class="loader-text">Loading Ecosystem Nodes...</p>
+  </div>
+</div>
+
+<!-- CURSOR -->
+<div id="cursorGlow" class="cursor-glow"></div>
+<div id="cursorDot"  class="cursor-dot"></div>
+
+<!-- BACKGROUND CANVAS -->
+<canvas id="auroraCanvas"></canvas>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="RGAi Technology Home">
+      <span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span>
+      <span class="logo-sub">Technology</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+      <li><a href="index.html"        class="nav-link">Home</a></li>
+      <li><a href="services.html"     class="nav-link">Services</a></li>
+      <li><a href="portfolio.html"    class="nav-link">Portfolio</a></li>
+      <li><a href="about.html"        class="nav-link">About</a></li>
+      <li><a href="labs.html"         class="nav-link active">Labs</a></li>
+      <li><a href="contact.html"      class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="theme-icon moon">🌙</span>
+        <span class="theme-icon sun">☀️</span>
+      </button>
+      <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== MAIN DASHBOARD LAYOUT ==================== -->
+<div class="labs-layout" style="padding-top: var(--nav-h);">
+  
+  <!-- Sidebar Navigation -->
+  <aside class="labs-sidebar" id="labsSidebar">
+    <div class="sidebar-header">
+      <div class="sh-title">RGAi Labs</div>
+      <div class="sh-status"><span class="status-dot"></span> v1.4.0 Live</div>
+    </div>
+    
+    <div class="sidebar-scroll">
+      
+      <!-- Group 1: AI Suite -->
+      <div class="sidebar-group">
+        <div class="sg-label">AI Playground Suite</div>
+        <ul class="sg-list">
+          <li><a href="#rgpt" class="sidebar-item active" data-tab="rgpt"><span class="si-icon">💬</span> RGPT Chat</a></li>
+          <li><a href="#playground" class="sidebar-item" data-tab="playground"><span class="si-icon">🎛️</span> AI Playground</a></li>
+          <li><a href="#agent-builder" class="sidebar-item" data-tab="agent-builder"><span class="si-icon">🤖</span> Agent Builder</a></li>
+          <li><a href="#knowledge-base" class="sidebar-item" data-tab="knowledge-base"><span class="si-icon">📚</span> Knowledge Base</a></li>
+          <li><a href="#ai-academy" class="sidebar-item" data-tab="ai-academy"><span class="si-icon">🎓</span> AI Academy</a></li>
+        </ul>
+      </div>
+
+      <!-- Group 2: Operations -->
+      <div class="sidebar-group">
+        <div class="sg-label">Corporate & Operations</div>
+        <ul class="sg-list">
+          <li><a href="#client-portal" class="sidebar-item" data-tab="client-portal"><span class="si-icon">💼</span> Client Portal</a></li>
+          <li><a href="#project-tracker" class="sidebar-item" data-tab="project-tracker"><span class="si-icon">📋</span> Project Tracker</a></li>
+          <li><a href="#crm" class="sidebar-item" data-tab="crm"><span class="si-icon">👥</span> CRM Pipeline</a></li>
+          <li><a href="#enterprise" class="sidebar-item" data-tab="enterprise"><span class="si-icon">🏢</span> Enterprise Portal</a></li>
+        </ul>
+      </div>
+
+      <!-- Group 3: Audits & Analytics -->
+      <div class="sidebar-group">
+        <div class="sg-label">Audits & Analytics</div>
+        <ul class="sg-list">
+          <li><a href="#web-audit" class="sidebar-item" data-tab="web-audit"><span class="si-icon">⚡</span> Website Auditor</a></li>
+          <li><a href="#seo-audit" class="sidebar-item" data-tab="seo-audit"><span class="si-icon">🔍</span> SEO Audit Tool</a></li>
+          <li><a href="#analytics-dashboard" class="sidebar-item" data-tab="analytics-dashboard"><span class="si-icon">📈</span> Live Analytics</a></li>
+        </ul>
+      </div>
+
+      <!-- Group 4: Ecosystem & Trust -->
+      <div class="sidebar-group">
+        <div class="sg-label">Ecosystem & Trust</div>
+        <ul class="sg-list">
+          <li><a href="#community" class="sidebar-item" data-tab="community"><span class="si-icon">💬</span> Community Hub</a></li>
+          <li><a href="#referral" class="sidebar-item" data-tab="referral"><span class="si-icon">🎁</span> Referral Program</a></li>
+          <li><a href="#trust-center" class="sidebar-item" data-tab="trust-center"><span class="si-icon">🛡️</span> Trust Center</a></li>
+        </ul>
+      </div>
+
+      <!-- Group 5: Research & Innovation -->
+      <div class="sidebar-group">
+        <div class="sg-label">Research & Innovations</div>
+        <ul class="sg-list">
+          <li><a href="#globe" class="sidebar-item" data-tab="globe"><span class="si-icon">🌐</span> Interactive Globe</a></li>
+          <li><a href="#neural" class="sidebar-item" data-tab="neural"><span class="si-icon">🧠</span> Neural Network</a></li>
+          <li><a href="#innovation-lab" class="sidebar-item" data-tab="innovation-lab"><span class="si-icon">🧪</span> Innovation Lab</a></li>
+          <li><a href="#investor" class="sidebar-item" data-tab="investor"><span class="si-icon">📊</span> Investor Relations</a></li>
+          <li><a href="#labs-info" class="sidebar-item" data-tab="labs-info"><span class="si-icon">ℹ️</span> About RGAi Labs</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- Sidebar Toggle Button (Mobile) -->
+  <button class="sidebar-mobile-toggle" id="sidebarMobileToggle" aria-label="Toggle labs menu">☰</button>
+
+  <!-- Main Workspace Area -->
+  <main class="labs-workspace" id="labsWorkspace">
+    
+    <!-- 1. PANEL: RGPT CHAT -->
+    <section class="lab-panel active" id="panel-rgpt">
+      <div class="panel-header">
+        <h2>RGPT Chat Assistant</h2>
+        <p>Talk to our custom model local instance trained on RGAi guidelines.</p>
+      </div>
+      <div class="rgpt-chat-container glass-card">
+        <div class="rgpt-chat-messages" id="rgptChatMessages">
+          <div class="rgpt-msg bot">
+            <div class="rgpt-avatar">RG</div>
+            <div class="rgpt-msg-content">
+              <strong>RGPT v2.0:</strong> Hello! I am RGPT, your RGAi local workspace expert. Ask me about code optimizations, prompt strategies, or RGAi business systems!
+            </div>
+          </div>
+        </div>
+        <div class="rgpt-input-wrap">
+          <input type="text" id="rgptInput" placeholder="Enter your prompt here..." />
+          <button id="rgptSend">Send Prompt</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PANEL: AI PLAYGROUND -->
+    <section class="lab-panel" id="panel-playground">
+      <div class="panel-header">
+        <h2>AI Model Playground</h2>
+        <p>Configure model configurations, tweak temperature settings, and track streaming outputs.</p>
+      </div>
+      <div class="playground-layout">
+        <div class="playground-config glass-card">
+          <h3>Parameters</h3>
+          <div class="form-group-labs">
+            <label>Target Model</label>
+            <select id="pgModel">
+              <option value="rgai-aria">RGAi ARIA v2 (default)</option>
+              <option value="rgpt-turbo">RGPT 2.0 Turbo</option>
+              <option value="neural-deep">Neural-Deep 70B</option>
+            </select>
+          </div>
+          <div class="form-group-labs">
+            <label>Temperature (<span id="tempVal">0.7</span>)</label>
+            <input type="range" id="pgTemp" min="0.0" max="1.5" step="0.1" value="0.7" />
+          </div>
+          <div class="form-group-labs">
+            <label>Max Tokens (<span id="tokensVal">512</span>)</label>
+            <input type="range" id="pgTokens" min="64" max="2048" step="64" value="512" />
+          </div>
+          <button class="btn btn-primary w-full" id="pgRun">Run Inference</button>
+        </div>
+        <div class="playground-output glass-card">
+          <div class="po-header">
+            <span>Inference Console</span>
+            <span class="po-meta" id="pgMeta">Latency: 0ms | Tokens: 0</span>
+          </div>
+          <pre class="po-body" id="pgBody">Ready. Modify parameters and press "Run Inference" to stream response.</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PANEL: AGENT BUILDER -->
+    <section class="lab-panel" id="panel-agent-builder">
+      <div class="panel-header">
+        <h2>Agentic Worker Builder</h2>
+        <p>Assemble custom AI agents with assigned roles, system memories, and tool permissions.</p>
+      </div>
+      <div class="agent-builder-grid">
+        <div class="ab-setup glass-card">
+          <h3>Configure Agent</h3>
+          <div class="form-group-labs">
+            <label>Agent Name</label>
+            <input type="text" id="agentName" value="DataAnalyzer" />
+          </div>
+          <div class="form-group-labs">
+            <label>System Role & Backstory</label>
+            <textarea id="agentRole" rows="3">You are an expert financial analyst. Your goal is to review transaction lists and identify margin leakage patterns.</textarea>
+          </div>
+          <div class="form-group-labs">
+            <label>Permitted Tools</label>
+            <div class="checkbox-group-labs">
+              <label><input type="checkbox" id="toolWeb" checked /> Web Search Tool</label>
+              <label><input type="checkbox" id="toolFile" checked /> File System Reader</label>
+              <label><input type="checkbox" id="toolExec" /> Code Execution Sandbox</label>
+            </div>
+          </div>
+          <button class="btn btn-primary w-full" id="btnBuildAgent">Build & Compile Agent</button>
+        </div>
+        <div class="ab-execution glass-card">
+          <h3>Simulation Console</h3>
+          <div class="console-box" id="agentConsole">
+            <div class="console-line system">[SYSTEM] Ready to compile new agent.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PANEL: KNOWLEDGE BASE -->
+    <section class="lab-panel" id="panel-knowledge-base">
+      <div class="panel-header">
+        <h2>Knowledge Base & Documentation</h2>
+        <p>Access our localized guides, developer documentation sheets, and API manuals.</p>
+      </div>
+      <div class="kb-grid">
+        <div class="kb-sidebar glass-card">
+          <h3>Documents</h3>
+          <ul class="kb-doc-list" id="kbDocList">
+            <li class="active" data-doc="api-intro">API Introduction</li>
+            <li data-doc="sdk-setup">Node SDK Quickstart</li>
+            <li data-doc="auth-guide">Authentication & Security</li>
+            <li data-doc="agent-tools">Defining Custom Agent Tools</li>
+          </ul>
+        </div>
+        <div class="kb-content glass-card" id="kbContentArea">
+          <h3>API Introduction</h3>
+          <p>Welcome to the RGAi Technology Developer API. Our endpoint architectures enable seamless integration of language model inferences, autonomous agents workflows, and database updates into your enterprise setups.</p>
+          <pre><code>curl -X POST https://api.rgai.tech/v1/chat \
+  -H "Authorization: Bearer RGAI_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "aria-v2",
+    "prompt": "Hello!"
+  }'</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PANEL: AI ACADEMY -->
+    <section class="lab-panel" id="panel-ai-academy">
+      <div class="panel-header">
+        <h2>AI Academy Course Portal</h2>
+        <p>Active course roadmap. Access curriculum chapters, preview lessons, and test knowledge.</p>
+      </div>
+      <div class="academy-portal-layout">
+        <div class="chapters-roadmap glass-card">
+          <h3>Course: Autonomous LLM Agents</h3>
+          <div class="chapter-node active" data-chap="chap-1">
+            <h4>Chapter 1: Agent Foundations</h4>
+            <p>Understand loops, memory structures, and task planning systems.</p>
+          </div>
+          <div class="chapter-node" data-chap="chap-2">
+            <h4>Chapter 2: Tool Calling Systems</h4>
+            <p>Learn how LLMs format and invoke external code and databases.</p>
+          </div>
+          <div class="chapter-node" data-chap="chap-3">
+            <h4>Chapter 3: Multi-Agent Orchestration</h4>
+            <p>Design teams of virtual workers collaborating on a shared project.</p>
+          </div>
+        </div>
+        <div class="chapter-viewer glass-card" id="chapterViewerArea">
+          <h3>Chapter 1: Agent Foundations</h3>
+          <p>In this module, you will explore the primary execution loop of an autonomous agent: plan, act, observe, and iterate. Learn why typical chat interactions are static, and how loops unlock autonomous reasoning.</p>
+          <div class="quiz-box">
+            <h4>Check Your Knowledge</h4>
+            <p>Which design pattern describes an agent reasoning steps before executing actions?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt" data-correct="true">ReAct (Reasoning + Acting)</button>
+              <button class="quiz-opt" data-correct="false">Simple Zero-Shot Prompting</button>
+              <button class="quiz-opt" data-correct="false">Stochastic Gradient Descent</button>
+            </div>
+            <div class="quiz-feedback" id="quizFeedback"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PANEL: CLIENT PORTAL -->
+    <section class="lab-panel" id="panel-client-portal">
+      <div class="panel-header">
+        <h2>Secure Client Workspace Portal</h2>
+        <p>Access your active projects, contracts, file shares, and account managers.</p>
+      </div>
+      <div class="client-portal-wrapper">
+        <!-- Auth overlay -->
+        <div class="client-auth-box glass-card mx-auto" id="portalAuthCard" style="max-width: 400px;">
+          <h3>Enter Workspace Code</h3>
+          <p>Please enter your 4-digit client access code to load secure boards.</p>
+          <div class="form-group-labs mt-4">
+            <input type="password" id="portalCode" maxlength="4" class="form-input" style="text-align:center; font-size:1.8rem; letter-spacing:0.5rem;" placeholder="••••" />
+          </div>
+          <button class="btn btn-primary w-full mt-2" id="btnPortalAuth">Verify Workspace Code</button>
+          <p class="text-center mt-2" style="font-size:0.75rem; opacity:0.5;">Hint: code is 2026</p>
+        </div>
+
+        <!-- Portal Dashboard (hidden initially) -->
+        <div class="portal-dashboard hidden" id="portalDashboardArea">
+          <div class="portal-grid">
+            <div class="pg-sidebar glass-card">
+              <h3>Acme Corporates</h3>
+              <ul class="pg-menu">
+                <li class="active" data-pane="overview">Project Status</li>
+                <li data-pane="files">Shared Files (3)</li>
+                <li data-pane="billing">Invoices & Contracts</li>
+              </ul>
+            </div>
+            <div class="pg-content glass-card" id="portalPaneContent">
+              <h3>Project Status Overview</h3>
+              <div class="project-headline-status">
+                <strong>Project:</strong> Enterprise AI Agent Implementation<br>
+                <strong>Status:</strong> <span class="badge-status-green">In QA Testing</span><br>
+                <strong>Est. Delivery:</strong> June 18, 2026
+              </div>
+              <div class="progress-bar-wrap"><div class="progress-bar" style="width: 85%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. PANEL: PROJECT TRACKER -->
+    <section class="lab-panel" id="panel-project-tracker">
+      <div class="panel-header">
+        <h2>Agile Project Board</h2>
+        <p>Interactive board showing project phases. Drag cards or click action prompts to update pipeline states.</p>
+      </div>
+      <div class="kanban-board">
+        
+        <div class="kanban-col" data-col="backlog">
+          <div class="kc-header">Backlog (<span class="kc-count">2</span>)</div>
+          <div class="kc-cards" id="col-backlog">
+            <div class="kanban-card" data-id="1">
+              <h4>Setup SEO Audit Engine</h4>
+              <p>Configure script scanning meta keywords and indexing checks.</p>
+              <button class="btn-card-move" data-dir="next">→</button>
+            </div>
+            <div class="kanban-card" data-id="2">
+              <h4>Add GDPR Banner</h4>
+              <p>Construct cookies dialog compliance matching Trust regulations.</p>
+              <button class="btn-card-move" data-dir="next">→</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="kanban-col" data-col="progress">
+          <div class="kc-header">In Progress (<span class="kc-count">1</span>)</div>
+          <div class="kc-cards" id="col-progress">
+            <div class="kanban-card" data-id="3">
+              <h4>Refactor Chatbot UI</h4>
+              <p>Update dynamic iframe layers to clean parent container overlaps.</p>
+              <div class="card-btns">
+                <button class="btn-card-move" data-dir="prev">←</button>
+                <button class="btn-card-move" data-dir="next">→</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kanban-col" data-col="qa">
+          <div class="kc-header">QA Testing (<span class="kc-count">1</span>)</div>
+          <div class="kc-cards" id="col-qa">
+            <div class="kanban-card" data-id="4">
+              <h4>Cost Estimator Logic</h4>
+              <p>Test multipliers and WhatsApp string exports on responsive layout breaks.</p>
+              <div class="card-btns">
+                <button class="btn-card-move" data-dir="prev">←</button>
+                <button class="btn-card-move" data-dir="next">→</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="kanban-col" data-col="done">
+          <div class="kc-header">Completed (<span class="kc-count">1</span>)</div>
+          <div class="kc-cards" id="col-done">
+            <div class="kanban-card" data-id="5">
+              <h4>Three.js Canvas Background</h4>
+              <p>Render group wireframe materials rotating with mouse offset parallax.</p>
+              <button class="btn-card-move" data-dir="prev">←</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. PANEL: CRM -->
+    <section class="lab-panel" id="panel-crm">
+      <div class="panel-header">
+        <h2>Sales CRM Pipeline</h2>
+        <p>Track business leads, contract valuations, deal pipelines, and client contacts.</p>
+      </div>
+      <div class="crm-wrapper glass-card">
+        <div class="crm-actions">
+          <button class="btn btn-primary" id="btnCRMAdd">Add New Lead</button>
+        </div>
+        <div class="crm-table-scroll">
+          <table class="crm-table">
+            <thead>
+              <tr>
+                <th>Lead Client</th>
+                <th>Company</th>
+                <th>Contract Value</th>
+                <th>Pipeline Stage</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="crmTableBody">
+              <tr>
+                <td>Amit Patel</td>
+                <td>Patel Logistical Corp</td>
+                <td>₹1,80,000</td>
+                <td>
+                  <select class="crm-stage-select">
+                    <option value="contacted">Initial Contact</option>
+                    <option value="proposal" selected>Proposal Sent</option>
+                    <option value="negotiating">Negotiations</option>
+                    <option value="won">Closed Won</option>
+                  </select>
+                </td>
+                <td><button class="btn-table-delete">Delete</button></td>
+              </tr>
+              <tr>
+                <td>Sarah Jenkins</td>
+                <td>Global Retail Inc</td>
+                <td>₹4,50,000</td>
+                <td>
+                  <select class="crm-stage-select">
+                    <option value="contacted">Initial Contact</option>
+                    <option value="proposal">Proposal Sent</option>
+                    <option value="negotiating" selected>Negotiations</option>
+                    <option value="won">Closed Won</option>
+                  </select>
+                </td>
+                <td><button class="btn-table-delete">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. PANEL: ENTERPRISE DASHBOARD -->
+    <section class="lab-panel" id="panel-enterprise">
+      <div class="panel-header">
+        <h2>Enterprise Developer Dashboard</h2>
+        <p>Monitor API tokens, rate limits, serverless operations, and monthly billing metrics.</p>
+      </div>
+      <div class="enterprise-layout">
+        <div class="ent-section glass-card">
+          <h3>Active API Access Credentials</h3>
+          <p style="font-size:0.8rem; opacity:0.7; margin-bottom:1rem;">Use these tokens to verify auth request envelopes in your backend pipelines.</p>
+          <div class="api-key-row">
+            <code id="apiKeyStr">rgai_live_8f3d1e...a8b3</code>
+            <button class="btn btn-secondary btn-sm" id="btnCopyAPIKey">Copy Key</button>
+            <button class="btn btn-danger btn-sm" id="btnRegenAPIKey">Regenerate</button>
+          </div>
+          <hr class="summary-divider" style="margin: 1.5rem 0;" />
+          <h3>System Rate Limits</h3>
+          <div class="limit-status">
+            <span>Core Requests (RPM)</span>
+            <strong>1,000 requests / minute</strong>
+          </div>
+          <div class="progress-bar-wrap"><div class="progress-bar" style="width: 12%;"></div></div>
+        </div>
+        <div class="ent-section glass-card">
+          <h3>Billing & Usage (Current Month)</h3>
+          <div class="billing-summary">
+            <div class="bs-row"><span>Incurred Charges</span><strong id="entCharges">₹8,420.50</strong></div>
+            <div class="bs-row"><span>Billing Limit Cap</span><strong>₹50,000.00</strong></div>
+          </div>
+          <hr class="summary-divider" style="margin: 1.5rem 0;" />
+          <h3>Subscribed Package</h3>
+          <p>Enterprise Tier - Auto-renewing on June 28, 2026.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. PANEL: WEBSITE AUDIT -->
+    <section class="lab-panel" id="panel-web-audit">
+      <div class="panel-header">
+        <h2>Automated Website Performance Auditor</h2>
+        <p>Audit site performance, load times, script execution, accessibility, and markup structure.</p>
+      </div>
+      <div class="audit-tool glass-card">
+        <div class="audit-input-row">
+          <input type="url" id="webAuditUrl" value="https://rgai.tech" placeholder="Enter website URL..." />
+          <button class="btn btn-primary" id="btnRunWebAudit">Analyze URL</button>
+        </div>
+        <div class="audit-results-area hidden" id="webAuditResults">
+          <div class="audit-scores-row">
+            <div class="score-circle-container">
+              <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" class="track"/><circle cx="50" cy="50" r="45" class="fill" id="scorePerf" stroke-dasharray="283" stroke-dasharray="283" stroke="#10B981"/></svg>
+              <span>Performance</span>
+            </div>
+            <div class="score-circle-container">
+              <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" class="track"/><circle cx="50" cy="50" r="45" class="fill" id="scoreAccess" stroke-dasharray="283" stroke="#0066FF"/></svg>
+              <span>Accessibility</span>
+            </div>
+            <div class="score-circle-container">
+              <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" class="track"/><circle cx="50" cy="50" r="45" class="fill" id="scoreBest" stroke-dasharray="283" stroke="#F59E0B"/></svg>
+              <span>Best Practices</span>
+            </div>
+          </div>
+          <div class="audit-details-list">
+            <h4>Identified Issues & Recommendations</h4>
+            <ul class="audit-log-lines">
+              <li class="warning">⚠️ Large image payloads loaded in hero sections. Compress banner nodes.</li>
+              <li class="pass">✓ HTML semantic landmarks configured correctly.</li>
+              <li class="warning">⚠️ Font loading definitions block render sequences. Add font-display rules.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. PANEL: SEO AUDIT -->
+    <section class="lab-panel" id="panel-seo-audit">
+      <div class="panel-header">
+        <h2>SEO Structure Auditor</h2>
+        <p>Scans meta headers, search index configurations, social cards metadata, and keyword weights.</p>
+      </div>
+      <div class="audit-tool glass-card">
+        <div class="audit-input-row">
+          <input type="url" id="seoAuditUrl" value="https://rgai.tech" placeholder="Enter website URL..." />
+          <button class="btn btn-primary" id="btnRunSeoAudit">Scan SEO Elements</button>
+        </div>
+        <div class="audit-results-area hidden" id="seoAuditResults">
+          <div class="seo-overview-row">
+            <div class="seo-score-box">
+              <h3 id="seoScoreText">92/100</h3>
+              <p>Global SEO Rating</p>
+            </div>
+            <div class="seo-quick-stats">
+              <div><span>Meta Title Length:</span> <strong class="text-green">62 chars (Good)</strong></div>
+              <div><span>Meta Description:</span> <strong class="text-green">Configured (145 chars)</strong></div>
+              <div><span>Robots Rules:</span> <strong class="text-green">Valid robots.txt</strong></div>
+            </div>
+          </div>
+          <div class="audit-details-list">
+            <h4>SEO Crawling Diagnostics</h4>
+            <ul class="audit-log-lines">
+              <li class="pass">✓ OpenGraph meta definitions found in header blocks.</li>
+              <li class="warning">⚠️ H1 tag count exceeds normal structures on homepage. Maintain single H1 anchors.</li>
+              <li class="pass">✓ Schema.json structured microdata found and parsed.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. PANEL: LIVE ANALYTICS -->
+    <section class="lab-panel" id="panel-analytics-dashboard">
+      <div class="panel-header">
+        <h2>Live System Metrics Dashboard</h2>
+        <p>Operational data streams charting client request latency, CPU loads, and cache hits.</p>
+      </div>
+      <div class="live-metrics-grid">
+        <div class="metrics-chart-card glass-card">
+          <h4>API Latency Distribution (ms)</h4>
+          <div class="chart-canvas-wrap">
+            <canvas id="liveLatencyChart"></canvas>
+          </div>
+        </div>
+        <div class="metrics-metrics-card glass-card">
+          <h4>Operational Performance Nodes</h4>
+          <div class="live-nodes-list">
+            <div class="ln-node"><span>API Server Node (Asia-South)</span> <span class="badge-status-green">9.2ms (Stable)</span></div>
+            <div class="ln-node"><span>Database Clusters (US-East)</span> <span class="badge-status-green">24.5ms (Stable)</span></div>
+            <div class="ln-node"><span>AI Compute Workers</span> <span class="badge-status-green">140ms (Inference)</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. PANEL: COMMUNITY HUB -->
+    <section class="lab-panel" id="panel-community">
+      <div class="panel-header">
+        <h2>Community Forums & Message Hub</h2>
+        <p>Interact with other builders on the RGAi platform, share strategies, and seek assistance.</p>
+      </div>
+      <div class="community-layout">
+        <div class="comm-categories glass-card">
+          <h3>Categories</h3>
+          <ul class="comm-cat-list">
+            <li class="active">General Discussions</li>
+            <li>AI Agent Development</li>
+            <li>Showcase & Feedback</li>
+            <li>Bug Reports & Support</li>
+          </ul>
+        </div>
+        <div class="comm-feed glass-card">
+          <h3>Active Threads</h3>
+          <div class="comm-thread">
+            <div class="ct-header">
+              <span class="ct-author">🤖 Rohan Mehta</span>
+              <span class="ct-date">3 hours ago</span>
+            </div>
+            <h4>Optimizing Three.js Parallax renders on low-spec mobiles?</h4>
+            <p>Hey guys, has anyone managed to tune Three.js particle frames when rendering on older mobile browsers? The rendering lags slightly during quick vertical swipes.</p>
+            <div class="ct-actions">
+              <button class="ct-btn-upvote">▲ Upvote (14)</button>
+              <button class="ct-btn-reply">💬 Reply (6)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. PANEL: REFERRAL PROGRAM -->
+    <section class="lab-panel" id="panel-referral">
+      <div class="panel-header">
+        <h2>Client Referral & Partner Program</h2>
+        <p>Refer new corporate clients to RGAi and earn 10% lifetime commissions on completed projects.</p>
+      </div>
+      <div class="referral-layout">
+        <div class="ref-section glass-card">
+          <h3>Your Referral Node</h3>
+          <p style="font-size:0.8rem; opacity:0.7; margin-bottom:1rem;">Share this unique referral URL with other business operators. Commissions are tracked automatically.</p>
+          <div class="ref-link-row">
+            <code id="refLinkStr">https://rgai.tech/ref?id=rg_partner_9a3c</code>
+            <button class="btn btn-secondary btn-sm" id="btnCopyRefLink">Copy Link</button>
+          </div>
+        </div>
+        <div class="ref-section glass-card">
+          <h3>Commission Earnings Overview</h3>
+          <div class="ref-stats-grid">
+            <div class="ref-stat-box"><h4>Referred Visits</h4><strong id="refVisits">124</strong></div>
+            <div class="ref-stat-box"><h4>Signups</h4><strong id="refSignups">8</strong></div>
+            <div class="ref-stat-box"><h4>Earned Payout</h4><strong id="refEarnings">₹34,500.00</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. PANEL: TRUST CENTER -->
+    <section class="lab-panel" id="panel-trust-center">
+      <div class="panel-header">
+        <h2>System Security & Compliance Trust Center</h2>
+        <p>Security architectures, compliance certifications, uptime status reports, and audit logs.</p>
+      </div>
+      <div class="trust-center-grid">
+        <div class="trust-card glass-card">
+          <h3>Active Certificates</h3>
+          <ul class="tc-cert-list">
+            <li><span>✓ ISO 27001 Information Security</span> <button class="btn btn-secondary btn-xs">Download PDF</button></li>
+            <li><span>✓ SOC 2 Type II Certification</span> <button class="btn btn-secondary btn-xs">Request Access</button></li>
+            <li><span>✓ GDPR Data Privacy Compliant</span> <button class="btn btn-secondary btn-xs">View Policy</button></li>
+          </ul>
+        </div>
+        <div class="trust-card glass-card">
+          <h3>Operational Server Status</h3>
+          <div class="tc-status-row">
+            <span>Website Frontend</span>
+            <strong class="text-green">99.99% Uptime (Online)</strong>
+          </div>
+          <div class="tc-status-row">
+            <span>Inference API Handlers</span>
+            <strong class="text-green">99.95% Uptime (Online)</strong>
+          </div>
+          <div class="tc-status-row">
+            <span>Firestore Databases</span>
+            <strong class="text-green">100.00% Uptime (Online)</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. PANEL: INTERACTIVE GLOBE -->
+    <section class="lab-panel" id="panel-globe">
+      <div class="panel-header">
+        <h2>Global Node Network Hub</h2>
+        <p>Three.js WebGL rendering of regional operational servers, database clusters, and active user locations.</p>
+      </div>
+      <div class="globe-viewport-card glass-card">
+        <!-- Three.js Canvas mount -->
+        <div id="labsGlobeContainer" class="globe-mount"></div>
+        <div class="globe-overlay-stats">
+          <div class="gos-stat"><span>Active Global Hubs</span> <strong>14 Nodes</strong></div>
+          <div class="gos-stat"><span>Inbound Queries</span> <strong>1,480 / sec</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17. PANEL: NEURAL NETWORK -->
+    <section class="lab-panel" id="panel-neural">
+      <div class="panel-header">
+        <h2>Neural Layer Forward Propagation</h2>
+        <p>Visual 2D HTML5 Canvas simulation of activation nodes, synaptic weights, and data propagation flows.</p>
+      </div>
+      <div class="neural-viewport-card glass-card">
+        <canvas id="neuralCanvas" class="neural-canvas"></canvas>
+        <div class="neural-controls">
+          <button class="btn btn-secondary" id="btnNeuralPulse">Inject Data Pulse</button>
+          <button class="btn btn-secondary" id="btnNeuralAddNode">Add Hidden Node</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 18. PANEL: INNOVATION LAB -->
+    <section class="lab-panel" id="panel-innovation-lab">
+      <div class="panel-header">
+        <h2>RGAi Innovation Labs</h2>
+        <p>Review active research pipelines, experimental algorithms, and academic paper abstracts.</p>
+      </div>
+      <div class="innovation-layout">
+        <div class="innov-card glass-card">
+          <span class="ic-tag">Research Stage</span>
+          <h3>Decentralized Agent Negotiation Consensus</h3>
+          <p>Abstract: A robust multi-agent architecture that resolves task allocation conflicts dynamically using light weight consensus mechanisms, bypassing central orchestrators.</p>
+          <a href="#" class="ic-link">Read Whitepaper Abstract →</a>
+        </div>
+        <div class="innov-card glass-card">
+          <span class="ic-tag">Beta Stage</span>
+          <h3>Stochastic Graph Memory Inferences</h3>
+          <p>Abstract: Employs hybrid graph data indexes with semantic node vectors, accelerating conversational search retrieval speeds by up to 40%.</p>
+          <a href="#" class="ic-link">View experimental code →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 19. PANEL: INVESTOR RELATIONS -->
+    <section class="lab-panel" id="panel-investor">
+      <div class="panel-header">
+        <h2>Investor Relations & Financial Reports</h2>
+        <p>Review financial valuations, corporate reports, annual revenue indicators, and investment portals.</p>
+      </div>
+      <div class="investor-layout">
+        <div class="invest-summary glass-card">
+          <h3>Market & Financial Performance</h3>
+          <div class="billing-summary">
+            <div class="bs-row"><span>Valuation (Simulated)</span><strong>₹45,00,00,000</strong></div>
+            <div class="bs-row"><span>Year-on-Year Growth</span><strong class="text-green">+185%</strong></div>
+            <div class="bs-row"><span>Active Seed Funding Status</span><strong class="text-orange">Series A Open</strong></div>
+          </div>
+        </div>
+        <div class="invest-reports glass-card">
+          <h3>Corporate Documents</h3>
+          <ul class="kb-doc-list">
+            <li>📊 Q1 Fiscal Performance PDF (Simulated)</li>
+            <li>💼 Series A Investor Pitch Deck</li>
+            <li>📈 Annual RGAi Operations Review 2025</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 20. PANEL: LABS INFO -->
+    <section class="lab-panel" id="panel-labs-info">
+      <div class="panel-header">
+        <h2>About RGAi Labs</h2>
+        <p>Ecosystem overview, workspace capabilities, and sandbox restrictions.</p>
+      </div>
+      <div class="labs-info-card glass-card">
+        <h3>Sandbox Playground Policy</h3>
+        <p>RGAi Labs acts as an interactive workspace staging environment. All charts, deal pipelines, client portals, website audit results, and computational latency indicators are functional client-side simulators built with precision to outline commercial product offerings.</p>
+        <p>This ecosystem highlights our technological execution capabilities across artificial intelligence workflows, data analysis, 3D WebGL visuals, security trust structures, and corporate growth programs.</p>
+        <hr class="summary-divider" style="margin: 1.5rem 0;" />
+        <p>For custom production integrations, API access keys authorization, or deploying dedicated custom AI agents models on private serverless databases, contact our advisory team.</p>
+        <a href="contact.html" class="btn btn-primary mt-2">Contact Advisories Team</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
+      <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z" fill="currentColor"></path>
+    </svg>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span>
+        </div>
+        <p class="footer-tagline">Transforming businesses through next-generation AI and premium digital engineering solutions.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Web Development</a></li>
+          <li><a href="services.html">Mobile App Dev</a></li>
+          <li><a href="services.html">AI Solutions</a></li>
+          <li><a href="services.html">AI Agents</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Stay Connected</h4>
+        <p class="footer-newsletter-desc">Join our newsletter to receive the latest updates.</p>
+        <form class="newsletter-form" id="newsletterFormLabs">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Newsletter email" />
+          <button type="submit" class="newsletter-btn" aria-label="Subscribe">→</button>
+        </form>
+        <p class="newsletter-note" id="newsletterMsgLabs"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 RGAi Technology Pvt. Ltd. All rights reserved.</p>
+    </div>
+  </div>
+ </footer>
+
+<!-- Three.js (for Globe) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<!-- Chart.js (for analytics) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- GSAP & AOS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<!-- SCRIPTS -->
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/aurora.js"></script>
+<script src="js/spotlight.js"></script>
+<script src="js/transitions.js"></script>
+<script src="js/microinteractions.js"></script>
+<script src="js/labs.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

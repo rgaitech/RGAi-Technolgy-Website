@@ -1,0 +1,593 @@
+/* ============================================================
+   CSS/EFFECTS.CSS — Global Visual Effects & 101 Animations Suite
+   ============================================================ */
+
+/* ---- Performance Tweaks (GPU Acceleration) ---- */
+.fx-gpu,
+.fx-fade-in, .fx-fade-in-up, .fx-fade-in-down, .fx-fade-in-left, .fx-fade-in-right,
+.fx-slide-in-up, .fx-slide-in-down, .fx-slide-in-left, .fx-slide-in-right,
+.fx-zoom-in, .fx-zoom-in-up, .fx-zoom-in-down, .fx-zoom-out,
+.fx-flip-in-x, .fx-flip-in-y, .fx-skew-in-left, .fx-skew-in-right,
+.fx-scale-up, .fx-blur-in, .fx-bounce-in,
+.fx-loop-float-y, .fx-loop-float-x, .fx-loop-float-rotate,
+.fx-loop-pulse, .fx-loop-pulse-glow, .fx-loop-spin-slow, .fx-loop-shimmer-continuous,
+.fx-loop-aurora-drift, .fx-loop-noise-grain, .fx-loop-cyber-glitch,
+.fx-scroll-reveal-item, .fx-scroll-blur-fade {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+/* ==========================================
+   CATEGORY 1: ENTRANCE ANIMATIONS (1 to 20)
+   ========================================== */
+
+/* 1. Fade In */
+.fx-fade-in { animation: fxFadeIn 0.6s ease forwards; }
+@keyframes fxFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* 2. Fade In Up */
+.fx-fade-in-up { animation: fxFadeInUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+@keyframes fxFadeInUp { from { opacity: 0; transform: translate3d(0, 30px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+
+/* 3. Fade In Down */
+.fx-fade-in-down { animation: fxFadeInDown 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+@keyframes fxFadeInDown { from { opacity: 0; transform: translate3d(0, -30px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+
+/* 4. Fade In Left */
+.fx-fade-in-left { animation: fxFadeInLeft 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+@keyframes fxFadeInLeft { from { opacity: 0; transform: translate3d(-30px, 0, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+
+/* 5. Fade In Right */
+.fx-fade-in-right { animation: fxFadeInRight 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+@keyframes fxFadeInRight { from { opacity: 0; transform: translate3d(30px, 0, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+
+/* 6. Slide In Up */
+.fx-slide-in-up { animation: fxSlideInUp 0.8s cubic-bezier(0.77, 0, 0.18, 1) forwards; }
+@keyframes fxSlideInUp { from { transform: translate3d(0, 100%, 0); } to { transform: translate3d(0, 0, 0); } }
+
+/* 7. Slide In Down */
+.fx-slide-in-down { animation: fxSlideInDown 0.8s cubic-bezier(0.77, 0, 0.18, 1) forwards; }
+@keyframes fxSlideInDown { from { transform: translate3d(0, -100%, 0); } to { transform: translate3d(0, 0, 0); } }
+
+/* 8. Slide In Left */
+.fx-slide-in-left { animation: fxSlideInLeft 0.8s cubic-bezier(0.77, 0, 0.18, 1) forwards; }
+@keyframes fxSlideInLeft { from { transform: translate3d(-100%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
+
+/* 9. Slide In Right */
+.fx-slide-in-right { animation: fxSlideInRight 0.8s cubic-bezier(0.77, 0, 0.18, 1) forwards; }
+@keyframes fxSlideInRight { from { transform: translate3d(100%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
+
+/* 10. Zoom In */
+.fx-zoom-in { animation: fxZoomIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+@keyframes fxZoomIn { from { opacity: 0; transform: scale3d(0.8, 0.8, 0.8); } to { opacity: 1; transform: scale3d(1, 1, 1); } }
+
+/* 11. Zoom In Up */
+.fx-zoom-in-up { animation: fxZoomInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+@keyframes fxZoomInUp { from { opacity: 0; transform: translate3d(0, 50px, 0) scale3d(0.8, 0.8, 0.8); } to { opacity: 1; transform: translate3d(0, 0, 0) scale3d(1, 1, 1); } }
+
+/* 12. Zoom In Down */
+.fx-zoom-in-down { animation: fxZoomInDown 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+@keyframes fxZoomInDown { from { opacity: 0; transform: translate3d(0, -50px, 0) scale3d(0.8, 0.8, 0.8); } to { opacity: 1; transform: translate3d(0, 0, 0) scale3d(1, 1, 1); } }
+
+/* 13. Zoom Out Center */
+.fx-zoom-out { animation: fxZoomOut 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+@keyframes fxZoomOut { from { opacity: 0; transform: scale3d(1.2, 1.2, 1.2); } to { opacity: 1; transform: scale3d(1, 1, 1); } }
+
+/* 14. Flip In X */
+.fx-flip-in-x { animation: fxFlipInX 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+@keyframes fxFlipInX { from { opacity: 0; transform: rotateX(90deg); } to { opacity: 1; transform: rotateX(0deg); } }
+
+/* 15. Flip In Y */
+.fx-flip-in-y { animation: fxFlipInY 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+@keyframes fxFlipInY { from { opacity: 0; transform: rotateY(90deg); } to { opacity: 1; transform: rotateY(0deg); } }
+
+/* 16. Skew In Left */
+.fx-skew-in-left { animation: fxSkewInLeft 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+@keyframes fxSkewInLeft { from { opacity: 0; transform: translate3d(-50px, 0, 0) skewX(10deg); } to { opacity: 1; transform: translate3d(0, 0, 0) skewX(0deg); } }
+
+/* 17. Skew In Right */
+.fx-skew-in-right { animation: fxSkewInRight 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+@keyframes fxSkewInRight { from { opacity: 0; transform: translate3d(50px, 0, 0) skewX(-10deg); } to { opacity: 1; transform: translate3d(0, 0, 0) skewX(0deg); } }
+
+/* 18. Scale Up Center */
+.fx-scale-up { animation: fxScaleUp 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+@keyframes fxScaleUp { from { transform: scale3d(0, 0, 0); } to { transform: scale3d(1, 1, 1); } }
+
+/* 19. Blur In */
+.fx-blur-in { animation: fxBlurIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+@keyframes fxBlurIn { from { filter: blur(15px); opacity: 0; } to { filter: blur(0); opacity: 1; } }
+
+/* 20. Bounce In */
+.fx-bounce-in { animation: fxBounceIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+@keyframes fxBounceIn {
+  0% { opacity: 0; transform: scale3d(0.3, 0.3, 0.3); }
+  50% { opacity: 1; transform: scale3d(1.05, 1.05, 1.05); }
+  70% { transform: scale3d(0.9, 0.9, 0.9); }
+  100% { transform: scale3d(1, 1, 1); }
+}
+
+/* ==========================================
+   CATEGORY 2: HOVER INTERACTIONS (21 to 45)
+   ========================================== */
+
+/* 21. Hover Lift */
+.fx-hover-lift { transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease; }
+.fx-hover-lift:hover { transform: translate3d(0, -8px, 0); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+
+/* 22. Hover Scale */
+.fx-hover-scale { transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-hover-scale:hover { transform: scale3d(1.04, 1.04, 1.04); }
+
+/* 23. Hover Scale Down */
+.fx-hover-scale-down { transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-hover-scale-down:hover { transform: scale3d(0.96, 0.96, 0.96); }
+
+/* 24. Hover Glow Accent Blue */
+.fx-hover-glow { transition: filter 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+.fx-hover-glow:hover { box-shadow: 0 0 20px rgba(0, 102, 255, 0.35); border-color: rgba(0, 102, 255, 0.5); }
+
+/* 25. Hover Glow Purple */
+.fx-hover-glow-purple { transition: box-shadow 0.3s ease, border-color 0.3s ease; }
+.fx-hover-glow-purple:hover { box-shadow: 0 0 20px rgba(124, 58, 237, 0.35); border-color: rgba(124, 58, 237, 0.5); }
+
+/* 26. Hover Glow Green */
+.fx-hover-glow-green { transition: box-shadow 0.3s ease, border-color 0.3s ease; }
+.fx-hover-glow-green:hover { box-shadow: 0 0 20px rgba(16, 185, 129, 0.35); border-color: rgba(16, 185, 129, 0.5); }
+
+/* 27. Hover Rotate Clockwise */
+.fx-hover-rotate-clockwise { transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-hover-rotate-clockwise:hover { transform: rotate3d(0, 0, 1, 3deg); }
+
+/* 28. Hover Rotate Counter */
+.fx-hover-rotate-counter { transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-hover-rotate-counter:hover { transform: rotate3d(0, 0, 1, -3deg); }
+
+/* 29. Hover Skew X */
+.fx-hover-skew-x { transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-hover-skew-x:hover { transform: skewX(5deg); }
+
+/* 30. Hover Skew Y */
+.fx-hover-skew-y { transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-hover-skew-y:hover { transform: skewY(5deg); }
+
+/* 31. Hover Shimmer Sweep */
+.fx-hover-shimmer { position: relative; overflow: hidden; }
+.fx-hover-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.55s ease-out;
+  pointer-events: none;
+}
+.fx-hover-shimmer:hover::before { left: 150%; }
+
+/* 32. Hover Neon Border Stroke */
+.fx-hover-neon-border { transition: border-color 0.4s ease, box-shadow 0.4s ease; }
+.fx-hover-neon-border:hover { border-color: #0066FF; box-shadow: inset 0 0 10px rgba(0,102,255,0.2), 0 0 15px rgba(0,102,255,0.15); }
+
+/* 33. Hover Underline Draw Center */
+.fx-hover-underline-draw { position: relative; }
+.fx-hover-underline-draw::after {
+  content: ''; position: absolute; bottom: -2px; left: 50%; width: 0; height: 2px;
+  background: #0066FF; transition: width 0.3s ease, left 0.3s ease;
+}
+.fx-hover-underline-draw:hover::after { width: 100%; left: 0; }
+
+/* 34. Hover Underline Draw Left */
+.fx-hover-underline-left { position: relative; }
+.fx-hover-underline-left::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
+  background: #7C3AED; transition: width 0.3s ease;
+}
+.fx-hover-underline-left:hover::after { width: 100%; }
+
+/* 35. Hover Underline Draw Right */
+.fx-hover-underline-right { position: relative; }
+.fx-hover-underline-right::after {
+  content: ''; position: absolute; bottom: -2px; right: 0; width: 0; height: 2px;
+  background: #10B981; transition: width 0.3s ease;
+}
+.fx-hover-underline-right:hover::after { width: 100%; }
+
+/* 36. Hover Background Slide Up */
+.fx-hover-bg-slide-up { position: relative; overflow: hidden; z-index: 1; }
+.fx-hover-bg-slide-up::before {
+  content: ''; position: absolute; bottom: -100%; left: 0; width: 100%; height: 100%;
+  background: rgba(0,102,255,0.06); transition: bottom 0.3s ease; z-index: -1;
+}
+.fx-hover-bg-slide-up:hover::before { bottom: 0; }
+
+/* 37. Hover Background Slide Down */
+.fx-hover-bg-slide-down { position: relative; overflow: hidden; z-index: 1; }
+.fx-hover-bg-slide-down::before {
+  content: ''; position: absolute; top: -100%; left: 0; width: 100%; height: 100%;
+  background: rgba(124,58,237,0.06); transition: top 0.3s ease; z-index: -1;
+}
+.fx-hover-bg-slide-down:hover::before { top: 0; }
+
+/* 38. Hover Background Slide Left */
+.fx-hover-bg-slide-left { position: relative; overflow: hidden; z-index: 1; }
+.fx-hover-bg-slide-left::before {
+  content: ''; position: absolute; top: 0; right: -100%; width: 100%; height: 100%;
+  background: rgba(16,185,129,0.06); transition: right 0.3s ease; z-index: -1;
+}
+.fx-hover-bg-slide-left:hover::before { right: 0; }
+
+/* 39. Hover Background Slide Right */
+.fx-hover-bg-slide-right { position: relative; overflow: hidden; z-index: 1; }
+.fx-hover-bg-slide-right::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: rgba(245,158,11,0.06); transition: left 0.3s ease; z-index: -1;
+}
+.fx-hover-bg-slide-right:hover::before { left: 0; }
+
+/* 40. Hover Text Spacing Grow */
+.fx-hover-text-spaced { transition: letter-spacing 0.35s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-hover-text-spaced:hover { letter-spacing: 0.12em; }
+
+/* 41. Hover Bounce Loop */
+.fx-hover-bounce:hover { animation: fxHoverBounce 0.6s infinite alternate; }
+@keyframes fxHoverBounce { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, -6px, 0); } }
+
+/* 42. Hover Wobble shake */
+.fx-hover-wobble:hover { animation: fxHoverWobble 0.5s ease-in-out; }
+@keyframes fxHoverWobble {
+  0%, 100% { transform: rotate(0deg); }
+  20%, 60% { transform: rotate(-3deg); }
+  40%, 80% { transform: rotate(3deg); }
+}
+
+/* 43. Hover Double Heartbeat Pulse */
+.fx-hover-heartbeat:hover { animation: fxHoverHeartbeat 0.6s ease-in-out; }
+@keyframes fxHoverHeartbeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.1); }
+  28% { transform: scale(1.05); }
+  42% { transform: scale(1.15); }
+  70% { transform: scale(1); }
+}
+
+/* 44. Hover Breathing Glow Pulse */
+.fx-hover-pulse-glow:hover { animation: fxHoverPulseGlow 1.2s infinite alternate; }
+@keyframes fxHoverPulseGlow {
+  from { box-shadow: 0 0 10px rgba(0,102,255,0.1); }
+  to { box-shadow: 0 0 25px rgba(0,102,255,0.4); }
+}
+
+/* 45. Hover Blur Invert */
+.fx-hover-blur-invert { transition: filter 0.4s ease; }
+.fx-hover-blur-invert:hover { filter: invert(0.08) blur(0.5px); }
+
+/* ==========================================
+   CATEGORY 3: CONTINUOUS LOOPS (46 to 70)
+   ========================================== */
+
+/* 46. Loop Float Y (Smooth floating vertical) */
+.fx-loop-float-y { animation: fxLoopFloatY 4s ease-in-out infinite alternate; }
+@keyframes fxLoopFloatY { from { transform: translate3d(0, -5px, 0); } to { transform: translate3d(0, 5px, 0); } }
+
+/* 47. Loop Float X (Smooth floating horizontal) */
+.fx-loop-float-x { animation: fxLoopFloatX 4s ease-in-out infinite alternate; }
+@keyframes fxLoopFloatX { from { transform: translate3d(-5px, 0, 0); } to { transform: translate3d(5px, 0, 0); } }
+
+/* 48. Loop Float Rotate */
+.fx-loop-float-rotate { animation: fxLoopFloatRotate 5s ease-in-out infinite alternate; }
+@keyframes fxLoopFloatRotate { from { transform: translate3d(0, -4px, 0) rotate(-1deg); } to { transform: translate3d(0, 4px, 0) rotate(1deg); } }
+
+/* 49. Loop Opacity Pulse */
+.fx-loop-pulse { animation: fxLoopPulse 2s ease-in-out infinite; }
+@keyframes fxLoopPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+/* 50. Loop Box Shadow Glow Pulse */
+.fx-loop-pulse-glow { animation: fxLoopPulseGlow 2.5s ease-in-out infinite alternate; }
+@keyframes fxLoopPulseGlow {
+  from { box-shadow: 0 0 8px rgba(0,102,255,0.1); }
+  to { box-shadow: 0 0 20px rgba(0,102,255,0.3); }
+}
+
+/* 51. Loop Pulse Glow Purple */
+.fx-loop-pulse-glow-purple { animation: fxLoopPulseGlowPurple 2.5s ease-in-out infinite alternate; }
+@keyframes fxLoopPulseGlowPurple {
+  from { box-shadow: 0 0 8px rgba(124,58,237,0.1); }
+  to { box-shadow: 0 0 20px rgba(124,58,237,0.3); }
+}
+
+/* 52. Loop Pulse Glow Green */
+.fx-loop-pulse-glow-green { animation: fxLoopPulseGlowGreen 2.5s ease-in-out infinite alternate; }
+@keyframes fxLoopPulseGlowGreen {
+  from { box-shadow: 0 0 8px rgba(16,185,129,0.1); }
+  to { box-shadow: 0 0 20px rgba(16,185,129,0.3); }
+}
+
+/* 53. Loop Spin Slow */
+.fx-loop-spin-slow { animation: fxLoopSpinSlow 16s linear infinite; }
+@keyframes fxLoopSpinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* 54. Loop Spin Slow Reverse */
+.fx-loop-spin-slow-reverse { animation: fxLoopSpinSlowReverse 16s linear infinite; }
+@keyframes fxLoopSpinSlowReverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+
+/* 55. Loop Continuous Shimmer wave */
+.fx-loop-shimmer-continuous { position: relative; overflow: hidden; }
+.fx-loop-shimmer-continuous::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  transform: translate3d(-100%, 0, 0);
+  animation: fxLoopShimmer 3s infinite linear;
+}
+@keyframes fxLoopShimmer { to { transform: translate3d(150%, 0, 0); } }
+
+/* 56. Loop Aurora Drift background coordinates */
+.fx-loop-aurora-drift {
+  background-size: 200% 200%;
+  animation: fxAuroraDrift 10s ease infinite alternate;
+}
+@keyframes fxAuroraDrift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 57. Loop Noise Grain Simulated */
+.fx-loop-noise-grain {
+  position: relative;
+}
+.fx-loop-noise-grain::before {
+  content: ''; position: absolute; inset: -50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 8px 8px; opacity: 0.05; pointer-events: none;
+  animation: fxNoiseGrain 0.4s steps(4) infinite;
+}
+@keyframes fxNoiseGrain {
+  0% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(4px, 4px, 0); }
+  100% { transform: translate3d(-4px, -4px, 0); }
+}
+
+/* 58. Loop Cyber Glitch Text Offset */
+.fx-loop-cyber-glitch {
+  position: relative;
+  animation: fxGlitch 4s infinite alternate;
+}
+@keyframes fxGlitch {
+  0%, 90% { transform: none; filter: none; }
+  92% { transform: skewX(-6deg); filter: hue-rotate(90deg); }
+  94% { transform: skewX(6deg) translate3d(3px, -2px, 0); filter: hue-rotate(-90deg); }
+  96% { transform: none; }
+}
+
+/* 59. Loop Caret Blink opacity */
+.fx-loop-blink { animation: fxBlink 1s step-end infinite; }
+@keyframes fxBlink { 50% { opacity: 0; } }
+
+/* 60. Loop Beacon Pulse Wave Blue */
+.fx-loop-beacon { position: relative; }
+.fx-loop-beacon::after {
+  content: ''; position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+  border-radius: inherit; border: 2px solid #0066FF;
+  animation: fxBeacon 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  pointer-events: none;
+}
+@keyframes fxBeacon {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* 61. Loop Beacon Purple */
+.fx-loop-beacon-purple { position: relative; }
+.fx-loop-beacon-purple::after {
+  content: ''; position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+  border-radius: inherit; border: 2px solid #7C3AED;
+  animation: fxBeacon 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  pointer-events: none;
+}
+
+/* 62. Loop Beacon Green */
+.fx-loop-beacon-green { position: relative; }
+.fx-loop-beacon-green::after {
+  content: ''; position: absolute; width: 100%; height: 100%; top: 0; left: 0;
+  border-radius: inherit; border: 2px solid #10B981;
+  animation: fxBeacon 1.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  pointer-events: none;
+}
+
+/* 63. Loop Marching Ant Borders */
+.fx-loop-march {
+  background-image: linear-gradient(90deg, #fff 50%, transparent 50%), linear-gradient(90deg, #fff 50%, transparent 50%), linear-gradient(0deg, #fff 50%, transparent 50%), linear-gradient(0deg, #fff 50%, transparent 50%);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 15px 1px, 15px 1px, 1px 15px, 1px 15px;
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+  animation: fxMarch 0.35s linear infinite;
+}
+@keyframes fxMarch { to { background-position: 15px 0, -15px 100%, 0 -15px, 100% 15px; } }
+
+/* 64. Loop Wave Shifts Scale */
+.fx-loop-wave { animation: fxLoopWave 1.4s ease-in-out infinite alternate; }
+@keyframes fxLoopWave { from { transform: scaleY(0.95); } to { transform: scaleY(1.05); } }
+
+/* 65. Loop Wave Offset scale */
+.fx-loop-wave-2 { animation: fxLoopWave 1.4s ease-in-out infinite alternate; animation-delay: 0.4s; }
+
+/* 66. Loop Flicker (Neon lighting error simulation) */
+.fx-loop-flicker { animation: fxFlicker 3s linear infinite; }
+@keyframes fxFlicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% { opacity: 0.99; }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% { opacity: 0.3; }
+}
+
+/* 67. Loop Color Drift (Hue Shift) */
+.fx-loop-color-drift { animation: fxColorDrift 8s linear infinite; }
+@keyframes fxColorDrift { from { filter: hue-rotate(0deg); } to { filter: hue-rotate(360deg); } }
+
+/* 68. Loop Scale Drift */
+.fx-loop-scale-drift { animation: fxScaleDrift 3.5s ease-in-out infinite alternate; }
+@keyframes fxScaleDrift { from { transform: scale3d(0.98, 0.98, 0.98); } to { transform: scale3d(1.02, 1.02, 1.02); } }
+
+/* 69. Loop Blur Drift */
+.fx-loop-blur-drift { animation: fxBlurDrift 4s ease-in-out infinite alternate; }
+@keyframes fxBlurDrift { from { filter: blur(0px); } to { filter: blur(2px); } }
+
+/* 70. Loop Shadow Drift */
+.fx-loop-shadow-drift { animation: fxShadowDrift 5s ease-in-out infinite alternate; }
+@keyframes fxShadowDrift {
+  from { filter: drop-shadow(0 4px 6px rgba(0,102,255,0.1)); }
+  to { filter: drop-shadow(0 12px 20px rgba(0,102,255,0.25)); }
+}
+
+/* ==========================================
+   CATEGORY 4: SCROLL REVEALS (71 to 85)
+   ========================================== */
+
+/* 71. Scroll Reveal General Item */
+.fx-scroll-reveal-item { opacity: 0; transform: translate3d(0, 35px, 0); transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-scroll-reveal-item.in-view { opacity: 1; transform: translate3d(0, 0, 0); }
+
+/* 72. Scroll Reveal Text wraps letters */
+.fx-scroll-reveal-text .letter { display: inline-block; opacity: 0.15; transition: opacity 0.3s ease; }
+.fx-scroll-reveal-text.in-view .letter { opacity: 1; }
+
+/* 73. Scroll Reveal Slide In Left */
+.fx-scroll-reveal-left { opacity: 0; transform: translate3d(-60px, 0, 0); transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-scroll-reveal-left.in-view { opacity: 1; transform: translate3d(0, 0, 0); }
+
+/* 74. Scroll Reveal Slide In Right */
+.fx-scroll-reveal-right { opacity: 0; transform: translate3d(60px, 0, 0); transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-scroll-reveal-right.in-view { opacity: 1; transform: translate3d(0, 0, 0); }
+
+/* 75. Scroll Reveal Scale Center */
+.fx-scroll-reveal-scale { opacity: 0; transform: scale3d(0.85, 0.85, 0.85); transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-scroll-reveal-scale.in-view { opacity: 1; transform: scale3d(1, 1, 1); }
+
+/* 76. Scroll Parallax Background elements */
+.fx-scroll-parallax-bg { will-change: transform; transition: transform 0.1s linear; }
+
+/* 77. Scroll Progress Bar Indicator */
+.fx-scroll-indicator { position: fixed; top: 0; left: 0; height: 3px; background: #0066FF; width: 0%; z-index: 100000; }
+
+/* 78. Scroll Highlight background gradual */
+.fx-scroll-highlight { transition: background-color 1s ease; }
+.fx-scroll-highlight.in-view { background-color: rgba(0, 102, 255, 0.03); }
+
+/* 79. Scroll Blur & Fade In */
+.fx-scroll-blur-fade { opacity: 0; filter: blur(12px); transition: opacity 0.8s ease, filter 0.8s ease; }
+.fx-scroll-blur-fade.in-view { opacity: 1; filter: blur(0); }
+
+/* 80. Scroll Rotate In */
+.fx-scroll-rotate-in { opacity: 0; transform: rotate(-8deg) scale(0.9); transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-scroll-rotate-in.in-view { opacity: 1; transform: rotate(0deg) scale(1); }
+
+/* 81. Scroll Scale Up */
+.fx-scroll-scale-up { opacity: 0; transform: scale(0.5); transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.fx-scroll-scale-up.in-view { opacity: 1; transform: scale(1); }
+
+/* 82. Scroll Clip Down Reveal */
+.fx-scroll-clip-down { clip-path: inset(0 0 100% 0); transition: clip-path 1s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-scroll-clip-down.in-view { clip-path: inset(0 0 0 0); }
+
+/* 83. Scroll Clip Up Reveal */
+.fx-scroll-clip-up { clip-path: inset(100% 0 0 0); transition: clip-path 1s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-scroll-clip-up.in-view { clip-path: inset(0 0 0 0); }
+
+/* 84. Scroll Clip Right Reveal */
+.fx-scroll-clip-right { clip-path: inset(0 100% 0 0); transition: clip-path 1.2s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-scroll-clip-right.in-view { clip-path: inset(0 0 0 0); }
+
+/* 85. Scroll Clip Left Reveal */
+.fx-scroll-clip-left { clip-path: inset(0 0 0 100%); transition: clip-path 1.2s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-scroll-clip-left.in-view { clip-path: inset(0 0 0 0); }
+
+/* ==========================================
+   CATEGORY 5: STATE & MODAL TRANSITIONS (86 to 101)
+   ========================================== */
+
+/* 86. State Active Fade (Tabs/Routing) */
+.fx-state-active-fade { opacity: 0; transition: opacity 0.35s ease; }
+.fx-state-active-fade.active { opacity: 1; }
+
+/* 87. State Slide Right */
+.fx-state-active-slide-right { opacity: 0; transform: translate3d(-15px, 0, 0); transition: all 0.35s ease; }
+.fx-state-active-slide-right.active { opacity: 1; transform: translate3d(0, 0, 0); }
+
+/* 88. State Slide Left */
+.fx-state-active-slide-left { opacity: 0; transform: translate3d(15px, 0, 0); transition: all 0.35s ease; }
+.fx-state-active-slide-left.active { opacity: 1; transform: translate3d(0, 0, 0); }
+
+/* 89. State Modal Scale window entrance */
+.fx-state-modal-scale { transform: scale3d(0.9, 0.9, 0.9); opacity: 0; transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s ease; }
+.fx-state-modal-scale.open { transform: scale3d(1, 1, 1); opacity: 1; }
+
+/* 90. State Modal Backdrop blur overlay */
+.fx-state-modal-blur { backdrop-filter: blur(0px); transition: backdrop-filter 0.3s ease; }
+.fx-state-modal-blur.open { backdrop-filter: blur(10px); }
+
+/* 91. State Accordion heights expanding */
+.fx-state-accordion-expand { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-state-accordion-expand.open { max-height: 500px; }
+
+/* 92. State Toast spring fly-in from bottom right */
+.fx-state-toast-in { transform: translate3d(120%, 0, 0); animation: fxToastIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+@keyframes fxToastIn { to { transform: translate3d(0, 0, 0); } }
+
+/* 93. State Toast slide out */
+.fx-state-toast-out { animation: fxToastOut 0.4s ease forwards; }
+@keyframes fxToastOut { to { transform: translate3d(120%, 0, 0); opacity: 0; } }
+
+/* 94. State Click Ripple pulse */
+.fx-state-click-ripple {
+  position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.25);
+  transform: scale(0); animation: fxRipple 0.65s linear; pointer-events: none;
+}
+@keyframes fxRipple { to { transform: scale(4); opacity: 0; } }
+
+/* 95. State Loader Spinner rotation */
+.fx-state-loader-spin { animation: fxSpin 1s linear infinite; }
+@keyframes fxSpin { to { transform: rotate(360deg); } }
+
+/* 96. State Loader Progress bar completion */
+.fx-state-loader-bar-fill { transition: width 0.4s ease-out; }
+
+/* 97. State Dropdown Fade Entry */
+.fx-state-dropdown-fade { opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0.25s; }
+.fx-state-dropdown-fade.open { opacity: 1; visibility: visible; }
+
+/* 98. State Dropdown Slide Entry */
+.fx-state-dropdown-slide { transform: translateY(-10px); transition: transform 0.25s ease; }
+.fx-state-dropdown-slide.open { transform: translateY(0); }
+
+/* 99. State Slide Panel open drawer */
+.fx-state-slide-panel-open { transform: translate3d(-100%, 0, 0); transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
+.fx-state-slide-panel-open.open { transform: translate3d(0, 0, 0); }
+
+/* 100. State Scale In */
+.fx-state-scale-in { transform: scale(0); transition: transform 0.3s ease; }
+.fx-state-scale-in.active { transform: scale(1); }
+
+/* 101. State Blur In */
+.fx-state-blur-in { filter: blur(10px); transition: filter 0.3s ease; }
+.fx-state-blur-in.active { filter: blur(0px); }
+
+
+/* ---- Accessibility Support (Reduced Motion) ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+  .fx-loop-float-y, .fx-loop-float-x, .fx-loop-float-rotate,
+  .fx-loop-spin-slow, .fx-loop-shimmer-continuous,
+  .fx-loop-cyber-glitch, .fx-loop-march, .fx-loop-noise-grain {
+    animation: none !important;
+  }
+}

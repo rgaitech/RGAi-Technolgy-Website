@@ -1,0 +1,194 @@
+/* ============================================================
+   MICROINTERACTIONS.CSS — Deluxe Hover, Glow, and Interactive Styles
+   ============================================================ */
+
+/* ---- Card Spotlight Illumination ---- */
+.service-card,
+.testimonial-card,
+.stat-card,
+.portfolio-card,
+.contact-info-item,
+.estimator-card,
+.careers-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Spotlight Background Glow */
+.service-card::after,
+.testimonial-card::after,
+.stat-card::after,
+.portfolio-card::after,
+.contact-info-item::after,
+.estimator-card::after,
+.careers-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    300px circle at var(--spotlight-x, -999px) var(--spotlight-y, -999px),
+    rgba(0, 102, 255, 0.12),
+    transparent 80%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: 2; /* Sits above content backings but below actual text elements */
+}
+
+.service-card:hover::after,
+.testimonial-card:hover::after,
+.stat-card:hover::after,
+.portfolio-card:hover::after,
+.contact-info-item:hover::after,
+.estimator-card:hover::after,
+.careers-card:hover::after {
+  opacity: 1;
+}
+
+/* Spotlight Border Glow */
+.spotlight-border {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px; /* Emulates border width */
+  background: radial-gradient(
+    250px circle at var(--spotlight-x, -999px) var(--spotlight-y, -999px),
+    rgba(124, 58, 237, 0.45),
+    rgba(0, 102, 255, 0.35) 40%,
+    transparent 80%
+  );
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: 3;
+}
+
+.service-card:hover .spotlight-border,
+.testimonial-card:hover .spotlight-border,
+.stat-card:hover .spotlight-border,
+.portfolio-card:hover .spotlight-border,
+.contact-info-item:hover .spotlight-border,
+.estimator-card:hover .spotlight-border,
+.careers-card:hover .spotlight-border {
+  opacity: 1;
+}
+
+/* ---- Magnetic Buttons ---- */
+.btn-magnetic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.btn-magnetic-inner {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* ---- Interactive Floating Labels ---- */
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.form-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--clr-border, rgba(255, 255, 255, 0.1));
+  border-radius: var(--r-lg, 12px);
+  color: var(--clr-text, #fff);
+  outline: none;
+  font-size: var(--fs-sm, 0.875rem);
+  transition: all 0.3s ease;
+}
+.form-label {
+  position: absolute;
+  left: 1.25rem;
+  top: 1rem;
+  color: var(--clr-text-3, rgba(255, 255, 255, 0.5));
+  font-size: var(--fs-sm, 0.875rem);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-origin: left top;
+}
+
+/* Floating behavior */
+.form-input:focus ~ .form-label,
+.form-input:not(:placeholder-shown) ~ .form-label {
+  transform: translateY(-1.5rem) scale(0.8);
+  color: var(--clr-accent, #0066FF);
+}
+
+.form-input:focus {
+  border-color: var(--clr-accent, #0066FF);
+  background: rgba(0, 102, 255, 0.02);
+}
+
+/* ---- Luxury Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--clr-bg, #0A0A0C);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.2);
+  border-radius: 9999px;
+  border: 2px solid var(--clr-bg, #0A0A0C);
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 102, 255, 0.5);
+}
+
+/* ---- Smooth Interactive Underline ---- */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--grad-primary, linear-gradient(90deg, #0066FF, #7C3AED));
+  border-radius: 9999px;
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ---- Spotlight Hover Text Glow ---- */
+.spotlight-text {
+  background: radial-gradient(
+    circle 120px at var(--text-spotlight-x, 50%) var(--text-spotlight-y, 50%),
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.45) 80%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+[data-theme="light"] .spotlight-text {
+  background: radial-gradient(
+    circle 120px at var(--text-spotlight-x, 50%) var(--text-spotlight-y, 50%),
+    #111111 0%,
+    rgba(17, 17, 17, 0.65) 80%,
+    rgba(17, 17, 17, 0.45) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

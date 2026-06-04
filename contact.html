@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact RGAi Technology Pvt. Ltd. – Start your AI, web development, mobile app or digital transformation project today. Based in Mumbai, India." />
+  <meta name="keywords" content="Contact RGAi, Hire AI developers, Web development Mumbai, Mobile app quotes India, AI consultants" />
+  <meta name="author" content="RGAi Technology Pvt. Ltd." />
+  <meta property="og:title" content="Contact Us — RGAi Technology" />
+  <meta property="og:description" content="Connect with RGAi Technology. Let's create something extraordinary together." />
+  <meta property="og:type" content="website" />
+  <title>Contact Us — RGAi Technology Pvt. Ltd.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/effects.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/whatsapp.css" />
+  <link rel="stylesheet" href="css/chatbot.css" />
+  <link rel="stylesheet" href="css/aurora.css" />
+  <link rel="stylesheet" href="css/transitions.css" />
+  <link rel="stylesheet" href="css/microinteractions.css" />
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0066FF" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">
+      <span class="loader-r">R</span><span class="loader-g">G</span><span class="loader-ai">Ai</span>
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <p class="loader-text">Initializing Systems...</p>
+    <div class="loader-dots">
+      <div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div>
+    </div>
+  </div>
+</div>
+
+<div id="cursorGlow" class="cursor-glow"></div>
+<div id="cursorDot"  class="cursor-dot"></div>
+
+<!-- BACKGROUND CANVAS -->
+<canvas id="auroraCanvas"></canvas>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="RGAi Technology Home">
+      <span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span>
+      <span class="logo-sub">Technology</span>
+    </a>
+    <ul class="nav-links" id="navLinks" role="navigation">
+      <li><a href="index.html"     class="nav-link">Home</a></li>
+      <li><a href="services.html"  class="nav-link">Services</a></li>
+      <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+      <li><a href="about.html"     class="nav-link">About</a></li>
+      <li><a href="labs.html"      class="nav-link">Labs</a></li>
+      <li><a href="estimator.html" class="nav-link">Estimator</a></li>
+      <li><a href="contact.html"   class="nav-link active">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="theme-icon moon">🌙</span>
+        <span class="theme-icon sun">☀️</span>
+      </button>
+      <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTACT SECTION OVERHAUL -->
+<section class="contact-section" aria-labelledby="contactTitle">
+  <div class="contact-decorations" aria-hidden="true">
+    <div class="contact-blob contact-blob-1"></div>
+    <div class="contact-blob contact-blob-2"></div>
+  </div>
+
+  <div class="container" style="margin-top: calc(var(--nav-h) + 1.5rem);">
+    <div class="contact-luxury-grid">
+      
+      <!-- LEFT SIDE PANEL -->
+      <div class="contact-info-panel" data-aos="fade-right" data-aos-duration="800">
+        <div class="contact-headline-group">
+          <span class="section-tag" style="align-self: flex-start;">Let's Connect</span>
+          <h1 class="contact-main-headline" id="contactTitle">
+            Let's build something <span class="gradient-text">exceptional</span> together.
+          </h1>
+          <p class="contact-sub-desc">
+            RGAi Technology designs, engineers, and launches custom high-performance digital products, specialized software architectures, and autonomous AI agents designed to scale.
+          </p>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges-row">
+          <div class="trust-badge">
+            <span class="tb-logo clutch">Clutch</span>
+            <span class="tb-stars">★★★★★</span>
+            <span>4.9</span>
+          </div>
+          <div class="trust-badge">
+            <span class="tb-logo google">Google</span>
+            <span class="tb-stars">★★★★★</span>
+            <span>4.9</span>
+          </div>
+          <div class="trust-badge">
+            <span class="tb-logo trustpilot">Trustpilot</span>
+            <span class="tb-stars">★★★★★</span>
+            <span>4.9</span>
+          </div>
+        </div>
+
+        <!-- Contact Quick Links -->
+        <div class="contact-methods-stack">
+          
+          <a href="mailto:rgai.tech@gmail.com" class="contact-card-link" aria-label="Email rgai.tech@gmail.com">
+            <div class="c-card-icon-wrap">📧</div>
+            <div class="c-card-content">
+              <span class="c-card-label">Email Address <span class="c-card-badge">2hr response</span></span>
+              <span class="c-card-val">rgai.tech@gmail.com</span>
+            </div>
+          </a>
+
+          <a href="tel:+919579098477" class="contact-card-link" aria-label="Call +91 95790 98477">
+            <div class="c-card-icon-wrap">📞</div>
+            <div class="c-card-content">
+              <span class="c-card-label">Call Direct</span>
+              <span class="c-card-val">+91 95790 98477</span>
+            </div>
+          </a>
+
+          <a href="https://wa.me/919579098477?text=Hi%20RGAi%2C%20I'd%20like%20to%20inquire%20about%20a%20project." target="_blank" rel="noopener noreferrer" class="contact-card-link" aria-label="Chat on WhatsApp">
+            <div class="c-card-icon-wrap" style="background: rgba(37,211,102,0.1); color: #25D366;">💬</div>
+            <div class="c-card-content">
+              <span class="c-card-label">WhatsApp Chat <span class="c-card-badge green"><span class="pulsing-live-dot"></span> Live online</span></span>
+              <span class="c-card-val">Chat with AI Expert</span>
+            </div>
+          </a>
+
+          <div class="contact-card-link" aria-label="Business Office Hours">
+            <div class="c-card-icon-wrap">⏰</div>
+            <div class="c-card-content">
+              <span class="c-card-label">Office Operations</span>
+              <span class="c-card-val">Mon – Sat, 9am – 7pm IST</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calendly Trigger Button -->
+        <button class="btn btn-calendly-trigger" id="calendlyTrigger" aria-haspopup="dialog" aria-controls="calendlyModal">
+          📅 Schedule Free 30min Discovery Call
+        </button>
+
+        <!-- Symmetrical Quick Stats -->
+        <div class="contact-stats-grid">
+          <div class="contact-stat-box">
+            <div class="c-stat-number">12+</div>
+            <div class="c-stat-label">AI Engineers</div>
+          </div>
+          <div class="contact-stat-box">
+            <div class="c-stat-number">500+</div>
+            <div class="c-stat-label">Projects Done</div>
+          </div>
+          <div class="contact-stat-box">
+            <div class="c-stat-number">98%</div>
+            <div class="c-stat-label">Client Retention</div>
+          </div>
+        </div>
+
+        <!-- Social Channels -->
+        <div class="social-links-wrap">
+          <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-btn" aria-label="Twitter/X">𝕏</a>
+          <a href="#" class="social-btn" aria-label="Instagram">📷</a>
+          <a href="#" class="social-btn" aria-label="GitHub">⌥</a>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE FORM PANEL -->
+      <div class="contact-form-panel" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
+        <div class="contact-form-glass-card">
+          <div class="contact-form-header">
+            <h3>Project Specifications</h3>
+            <p>Tell us about your venture, timeline, and goals below.</p>
+          </div>
+
+          <form id="contactForm" class="lux-form" novalidate aria-label="Project Brief Form">
+            
+            <!-- Honeypot anti-spam field -->
+            <div class="hp-field">
+              <label for="website">Leave this blank</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <!-- Row 1: Name & Email -->
+            <div class="lux-form-row">
+              <div class="lux-input-group">
+                <input type="text" id="name" name="name" class="lux-input" required placeholder=" " autocomplete="name" />
+                <label for="name" class="lux-label">Full Name *</label>
+                <span class="lux-error-message" id="nameError" role="alert">Please enter your name</span>
+              </div>
+              <div class="lux-input-group">
+                <input type="email" id="email" name="email" class="lux-input" required placeholder=" " autocomplete="email" />
+                <label for="email" class="lux-label">Email Address *</label>
+                <span class="lux-error-message" id="emailError" role="alert">Please enter a valid email</span>
+              </div>
+            </div>
+
+            <!-- Row 2: Phone & Company -->
+            <div class="lux-form-row">
+              <div class="lux-input-group">
+                <input type="tel" id="phone" name="phone" class="lux-input" placeholder=" " autocomplete="tel" />
+                <label for="phone" class="lux-label">Phone Number (Optional)</label>
+                <span class="lux-error-message" id="phoneError" role="alert">Please enter a valid phone number</span>
+              </div>
+              <div class="lux-input-group">
+                <input type="text" id="company" name="company" class="lux-input" placeholder=" " autocomplete="organization" />
+                <label for="company" class="lux-label">Company Name (Optional)</label>
+              </div>
+            </div>
+
+            <!-- Row 3: Service & Budget -->
+            <div class="lux-form-row">
+              <div class="lux-input-group">
+                <select id="service" name="service" class="lux-input lux-select" required>
+                  <option value="" disabled selected></option>
+                  <option value="AI Solutions & Machine Learning">AI Solutions & Machine Learning</option>
+                  <option value="Autonomous AI Agents">Autonomous AI Agents</option>
+                  <option value="Website / Next.js Development">Website / Next.js Development</option>
+                  <option value="Mobile App Development">Mobile App Development</option>
+                  <option value="Workflow Automation Systems">Workflow Automation Systems</option>
+                  <option value="SEO & Digital Transformation">SEO & Digital Transformation</option>
+                  <option value="Other Consultations">Other Consultations</option>
+                </select>
+                <label for="service" class="lux-label">Service Required *</label>
+                <span class="lux-error-message" id="serviceError" role="alert">Please select a service</span>
+              </div>
+              <div class="lux-input-group">
+                <select id="budget" name="budget" class="lux-input lux-select" required>
+                  <option value="" disabled selected></option>
+                  <option value="Under ₹25,000">Under ₹25,000</option>
+                  <option value="₹25,000 – ₹1,00,000">₹25,000 – ₹1,00,000</option>
+                  <option value="₹1,00,000 – ₹5,00,000">₹1,00,000 – ₹5,00,000</option>
+                  <option value="₹5,00,000 – ₹20,00,000">₹5,00,000 – ₹20,00,000</option>
+                  <option value="₹20,00,000+">₹20,00,000+</option>
+                </select>
+                <label for="budget" class="lux-label">Budget Estimation *</label>
+                <span class="lux-error-message" id="budgetError" role="alert">Please select a budget range</span>
+              </div>
+            </div>
+
+            <!-- Textarea: Message -->
+            <div class="lux-input-group">
+              <textarea id="message" name="message" class="lux-input lux-textarea" required placeholder=" "></textarea>
+              <label for="message" class="lux-label">Tell Us About Your Project *</label>
+              <div class="textarea-counter-wrap">
+                <span class="lux-error-message" id="messageError" role="alert" style="margin-top:0;">Description (min. 10 chars)</span>
+                <span class="textarea-counter-txt" id="charCount">0 / 1000</span>
+              </div>
+            </div>
+
+            <!-- Row 4: Captcha Math Check -->
+            <div class="lux-captcha-row">
+              <div class="captcha-question" id="captchaQuestion">What is...</div>
+              <div class="lux-input-group" style="flex:1;">
+                <input type="text" id="captchaInput" class="lux-input captcha-input-el" required placeholder=" " autocomplete="off" />
+                <label for="captchaInput" class="lux-label">Answer *</label>
+              </div>
+            </div>
+            <span class="lux-error-message" id="captchaError" role="alert" style="margin-top:-0.5rem;">Please solve captcha check</span>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submitBtn" class="btn btn-primary btn-lux-submit">
+              <span class="btn-text">Send Project Brief</span>
+              <span class="btn-spinner"></span>
+            </button>
+
+            <p style="text-align:center; font-size:var(--fs-xs); color:var(--clr-text-3); margin-top:0.25rem;">
+              🔒 Encrypted 256-bit secure transaction. Leads are saved confidentially.
+            </p>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE GOOGLE MAPS CARD -->
+<section class="map-section" aria-labelledby="mapHeader">
+  <div class="container" data-aos="fade-up" data-aos-duration="800">
+    <div class="section-header" style="margin-bottom: 2.5rem;">
+      <span class="section-tag">Find Our Office</span>
+      <h2 class="section-title" id="mapHeader">Visit Our <span class="gradient-text">Headquarters</span></h2>
+      <p class="section-desc">We are based in Andheri West, Mumbai — India's commercial technology hub.</p>
+    </div>
+    
+    <div class="lux-map-container">
+      <iframe class="lux-map-iframe" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.776632435071!2d72.8273617757912!3d19.117436050720448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9e0c5c5c5c5%3A0xc5c5c5c5c5c5c5c5!2sAndheri%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              aria-label="Google Maps showing office location"></iframe>
+      
+      <!-- Overlay Card -->
+      <div class="map-address-overlay">
+        <div class="map-overlay-icon">📍</div>
+        <div class="map-overlay-txt">
+          <h4>RGAi Technology Pvt. Ltd.</h4>
+          <p>Andheri West, Link Road, Mumbai, Maharashtra 400053, India</p>
+          <a href="https://maps.google.com/?q=Andheri+West,+Mumbai" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding: 0.5rem 1.1rem; font-size: 0.72rem; border-radius: var(--r-sm);">
+            Get Directions →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ ACCORDION SECTION -->
+<section class="contact-faqs" aria-labelledby="faqHeader">
+  <div class="container" data-aos="fade-up" data-aos-duration="800">
+    <div class="section-header">
+      <span class="section-tag">FAQ Accordion</span>
+      <h2 class="section-title" id="faqHeader">Frequently Asked <span class="gradient-text">Questions</span></h2>
+      <p class="section-desc">Quick answers to common inquiries before you initiate a project brief.</p>
+    </div>
+
+    <div class="faq-accordion-wrap">
+      
+      <div class="faq-item">
+        <div class="faq-header">
+          <span class="faq-question">What is your typical project estimation model?</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-body">
+          <div class="faq-content">
+            We provide custom deliverables-based estimation. After you submit a project brief, we will schedule a 30-minute discovery call to scope your features and supply a granular estimation plan with transparent milestones.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header">
+          <span class="faq-question">Do you sign Non-Disclosure Agreements (NDAs)?</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-body">
+          <div class="faq-content">
+            Yes, always. We prioritize intellectual property protection. We sign standard corporate NDAs before discussing any proprietary specifications, pipeline logs, or company operations.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header">
+          <span class="faq-question">What is the average timeline for an AI or App project?</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-body">
+          <div class="faq-content">
+            Timeline varies depending on technical complexity. Basic website designs can deploy in 2–4 weeks. Complex enterprise tools, machine learning model fine-tuning, or mobile app modules typically require 2–4 months from discovery to launch.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header">
+          <span class="faq-question">What is your core tech stack?</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-body">
+          <div class="faq-content">
+            Our web solutions are built using modern React, Next.js, and Node.js infrastructures. For mobile apps, we deploy cross-platform React Native and Flutter. Our AI automation engines run on Python, TensorFlow, PyTorch, and unified vector databases.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-header">
+          <span class="faq-question">Do you offer post-launch maintenance and support?</span>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-body">
+          <div class="faq-content">
+            Absolutely. Every project launch includes a complimentary 30-day warrantee support cycle. We also provide ongoing SLA retainer plans for hosting optimization, model retraining, API scaling, and routine software revisions.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CALENDLY POPUP MODAL -->
+<div id="calendlyModal" class="calendly-modal" role="dialog" aria-modal="true" aria-labelledby="calModalTitle">
+  <div class="c-modal-overlay" id="calendlyOverlay"></div>
+  <div class="c-modal-card">
+    <div class="c-modal-header">
+      <h3 id="calModalTitle">Schedule Discovery Call</h3>
+      <button class="c-modal-close-btn" id="calendlyCloseBtn" aria-label="Close scheduler">✕</button>
+    </div>
+    <div class="c-modal-body">
+      <!-- Calendly inline widget embed (simulated responsive iframe to keep lookups fluid) -->
+      <iframe src="https://calendly.com/rgai-tech/discovery-call?embed_domain=localhost&embed_type=Inline" 
+              width="100%" 
+              height="100%" 
+              frameborder="0"
+              title="Calendly Scheduler Calendar"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" fill="var(--clr-bg-2)"/>
+    </svg>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span><span class="logo-sub">Technology</span></div>
+        <p class="footer-tagline">Transforming Businesses Through AI Innovation. Your trusted partner for next-generation digital solutions.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="footer-social" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+          <a href="#" class="footer-social" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          <a href="#" class="footer-social" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="labs.html">Labs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">Mobile App Dev</a></li>
+          <li><a href="services.html">AI Solutions</a></li>
+          <li><a href="services.html">AI Agents</a></li>
+          <li><a href="services.html">Digital Marketing</a></li>
+          <li><a href="services.html">Business Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Stay Updated</h4>
+        <p class="footer-newsletter-desc">Get the latest AI insights delivered to your inbox.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Newsletter email" />
+          <button type="submit" class="newsletter-btn" aria-label="Subscribe">→</button>
+        </form>
+        <p class="newsletter-note" id="newsletterMsg"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 RGAi Technology Pvt. Ltd. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<!-- ==================== CHATBOT WIDGET ==================== -->
+<button class="chatbot-toggle" aria-label="Open chat assistant">
+  <span class="chatbot-badge">1</span>
+  <svg class="chatbot-toggle-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#fff;">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+  <svg class="chatbot-toggle-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#fff;">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+</button>
+
+<div class="chatbot-window">
+  <div class="chatbot-header">
+    <div class="chatbot-avatar">🤖</div>
+    <div class="chatbot-header-info">
+      <div class="chatbot-header-name">ARIA Assistant</div>
+      <div class="chatbot-header-status">Online</div>
+    </div>
+    <button class="chatbot-min-btn" aria-label="Minimize chat">—</button>
+  </div>
+  <div class="chatbot-messages">
+    <!-- Message content parsed by chatbot.js -->
+  </div>
+  <div class="chatbot-input-wrap">
+    <input type="text" class="chatbot-input" placeholder="Type a message..." aria-label="Message chatbot" />
+    <button class="chatbot-send" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/aurora.js"></script>
+<script src="js/spotlight.js"></script>
+<script src="js/transitions.js"></script>
+<script src="js/microinteractions.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/chatbot.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof AOS !== 'undefined') {
+      AOS.init({ duration: 800, once: true });
+    }
+  });
+</script>
+</body>
+</html>

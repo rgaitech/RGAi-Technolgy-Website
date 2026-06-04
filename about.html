@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About RGAi Technology – Our story, mission, values, and the team behind India's leading AI & digital innovation company." />
+  <meta name="keywords" content="About RGAi Technology, AI Company India, Digital Innovation, Tech Team" />
+  <meta name="author" content="RGAi Technology Pvt. Ltd." />
+  <meta property="og:title" content="About Us – RGAi Technology" />
+  <meta property="og:description" content="The team transforming businesses through AI innovation." />
+  <meta property="og:type" content="website" />
+  <title>About Us – RGAi Technology Pvt. Ltd.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/effects.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/testimonials.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/whatsapp.css" />
+  <link rel="stylesheet" href="css/chatbot.css" />
+  <link rel="stylesheet" href="css/aurora.css" />
+  <link rel="stylesheet" href="css/transitions.css" />
+  <link rel="stylesheet" href="css/microinteractions.css" />
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0066FF" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+  <style>
+    /* ── About Page Extra ── */
+
+    /* Team Section */
+    .team { background: var(--clr-bg-2); }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 2.5vw, 1.5rem);
+    }
+    .team-card {
+      background: var(--grad-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-xl);
+      padding: clamp(1.5rem, 3vw, 2rem);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--dur-base) var(--ease-spring);
+    }
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+      border-color: rgba(0,102,255,0.15);
+    }
+    .team-avatar {
+      width: clamp(70px, 10vw, 90px);
+      height: clamp(70px, 10vw, 90px);
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      color: #fff;
+      border: 3px solid var(--clr-glass-border);
+      box-shadow: 0 8px 24px var(--clr-shadow);
+    }
+    .team-name {
+      font-size: clamp(var(--fs-sm), 1.5vw, var(--fs-base));
+      font-weight: 700;
+      color: var(--clr-text);
+      margin-bottom: 0.3rem;
+    }
+    .team-role {
+      font-size: var(--fs-xs);
+      color: var(--clr-accent);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+    }
+    .team-bio {
+      font-size: var(--fs-xs);
+      color: var(--clr-text-3);
+      line-height: 1.6;
+    }
+    .team-socials { display: flex; gap: 0.5rem; justify-content: center; margin-top: 1rem; }
+    .team-social {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--clr-bg-3);
+      border: 1px solid var(--clr-border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--clr-text-3); font-size: 0.7rem; font-weight: 700;
+      text-decoration: none;
+      transition: all var(--dur-fast) var(--ease);
+    }
+    .team-social:hover { background: var(--clr-accent); color: #fff; border-color: var(--clr-accent); }
+
+    /* Values Section */
+    .values { background: var(--clr-bg); }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1rem, 2.5vw, 1.5rem);
+    }
+    .value-card {
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      background: var(--grad-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-xl);
+      transition: all var(--dur-base) var(--ease-spring);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    .value-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--grad-primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--dur-base) var(--ease);
+    }
+    .value-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .value-card:hover::after { transform: scaleX(1); }
+    .value-icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
+    .value-card h3 { font-size: clamp(var(--fs-base), 1.8vw, var(--fs-lg)); font-weight: 700; margin-bottom: 0.75rem; }
+    .value-card p  { font-size: var(--fs-sm); color: var(--clr-text-3); line-height: 1.7; }
+
+    /* Timeline */
+    .timeline { background: var(--clr-bg-2); }
+    .timeline-list {
+      position: relative;
+      max-width: 800px;
+      margin-inline: auto;
+      padding-left: clamp(2rem, 5vw, 4rem);
+    }
+    .timeline-list::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: clamp(0.75rem, 2vw, 1.5rem);
+      width: 2px;
+      background: var(--grad-primary);
+      opacity: 0.25;
+    }
+    .timeline-item {
+      position: relative;
+      padding: 0 0 2.5rem 2rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -9px; top: 6px;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--grad-primary);
+      box-shadow: 0 0 0 4px var(--clr-bg-2), 0 0 0 6px rgba(0,102,255,0.15);
+      z-index: 1;
+    }
+    .timeline-year {
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 0.4rem;
+    }
+    .timeline-item h3 { font-size: clamp(var(--fs-base), 1.8vw, var(--fs-lg)); font-weight: 700; margin-bottom: 0.5rem; }
+    .timeline-item p  { font-size: var(--fs-sm); color: var(--clr-text-3); line-height: 1.7; }
+
+    /* Responsive */
+    @media (max-width: 1023px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 767px)  { .values-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px)  {
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">
+      <span class="loader-r">R</span><span class="loader-g">G</span><span class="loader-ai">Ai</span>
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <p class="loader-text">Loading Our Story...</p>
+    <div class="loader-dots">
+      <div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div>
+    </div>
+  </div>
+</div>
+
+<div id="cursorGlow" class="cursor-glow"></div>
+<div id="cursorDot"  class="cursor-dot"></div>
+
+<!-- BACKGROUND CANVAS -->
+<canvas id="auroraCanvas"></canvas>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="RGAi Technology Home">
+      <span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span>
+      <span class="logo-sub">Technology</span>
+    </a>
+    <ul class="nav-links" id="navLinks" role="navigation">
+      <li><a href="index.html"     class="nav-link">Home</a></li>
+      <li><a href="services.html"  class="nav-link">Services</a></li>
+      <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+      <li><a href="about.html"     class="nav-link active">About</a></li>
+      <li><a href="estimator.html" class="nav-link">Estimator</a></li>
+      <li><a href="contact.html"   class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="theme-icon moon">🌙</span>
+        <span class="theme-icon sun">☀️</span>
+      </button>
+      <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-labelledby="aboutPageTitle">
+  <div class="page-hero-deco page-hero-deco-1" aria-hidden="true"></div>
+  <div class="page-hero-deco page-hero-deco-2" aria-hidden="true"></div>
+  <div class="container">
+    <span class="page-hero-tag">Our Story</span>
+    <h1 class="page-hero-title" id="aboutPageTitle">
+      Building Tomorrow's<br><span class="gradient-text">Digital World</span>
+    </h1>
+    <p class="page-hero-desc">We are a passionate team of engineers, designers, and AI specialists united by a single mission — to transform businesses through cutting-edge technology.</p>
+  </div>
+</section>
+
+<!-- ==================== COMPANY STORY ==================== -->
+<section class="about-story section-pad" aria-labelledby="storyTitle">
+  <div class="container">
+    <div class="about-story-grid">
+      <div class="about-story-text" data-aos="fade-right">
+        <span class="section-tag">Who We Are</span>
+        <h2 id="storyTitle" style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:1.5rem;line-height:1.15;">
+          Pioneers of <span class="gradient-text">AI-Driven</span> Digital Transformation
+        </h2>
+        <p>Founded with a bold vision, RGAi Technology Pvt. Ltd. has rapidly grown into one of India's most trusted digital innovation companies. We combine deep technical expertise with creative excellence to deliver solutions that don't just meet expectations — they redefine them.</p>
+        <p style="margin-top:1rem;">Our team of 50+ engineers, AI researchers, designers, and marketing strategists has delivered over 500 projects across 25+ industries, helping businesses of every size harness the power of artificial intelligence and modern technology.</p>
+        <div style="display:flex;gap:1.5rem;margin-top:2rem;flex-wrap:wrap;">
+          <div style="text-align:center;padding:1rem 1.5rem;background:var(--grad-card);border:1px solid var(--clr-border);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);">
+            <div style="font-family:var(--font-head);font-size:1.8rem;font-weight:900;color:var(--clr-accent);">50+</div>
+            <div style="font-size:var(--fs-xs);color:var(--clr-text-3);font-weight:600;">Team Members</div>
+          </div>
+          <div style="text-align:center;padding:1rem 1.5rem;background:var(--grad-card);border:1px solid var(--clr-border);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);">
+            <div style="font-family:var(--font-head);font-size:1.8rem;font-weight:900;color:var(--clr-accent);">25+</div>
+            <div style="font-size:var(--fs-xs);color:var(--clr-text-3);font-weight:600;">Industries Served</div>
+          </div>
+          <div style="text-align:center;padding:1rem 1.5rem;background:var(--grad-card);border:1px solid var(--clr-border);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);">
+            <div style="font-family:var(--font-head);font-size:1.8rem;font-weight:900;color:var(--clr-accent);">5+</div>
+            <div style="font-size:var(--fs-xs);color:var(--clr-text-3);font-weight:600;">Years of Excellence</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-story-visual" data-aos="fade-left" data-aos-delay="100" aria-hidden="true">🚀</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STATS ==================== -->
+<section id="stats" class="stats section-pad" aria-labelledby="aboutStatsTitle">
+  <div class="stats-bg-anim" id="statsBgAnim" aria-hidden="true"></div>
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Our Impact</span>
+      <h2 class="section-title" id="aboutStatsTitle">Numbers That <span class="gradient-text">Define Us</span></h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card" data-aos="zoom-in" data-aos-delay="0">
+        <div class="stat-circle-wrap">
+          <svg class="stat-svg" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="stat-track" cx="60" cy="60" r="52"/>
+            <circle class="stat-progress" cx="60" cy="60" r="52" data-percent="95" stroke="#0066FF"/>
+          </svg>
+          <div class="stat-inner"><span class="stat-number" data-target="200" data-suffix="+" aria-label="200+ clients">0</span></div>
+        </div>
+        <h3 class="stat-label">Happy Clients</h3>
+        <p class="stat-sub">Trusted worldwide</p>
+      </div>
+      <div class="stat-card" data-aos="zoom-in" data-aos-delay="150">
+        <div class="stat-circle-wrap">
+          <svg class="stat-svg" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="stat-track" cx="60" cy="60" r="52"/>
+            <circle class="stat-progress" cx="60" cy="60" r="52" data-percent="100" stroke="#7C3AED"/>
+          </svg>
+          <div class="stat-inner"><span class="stat-number" data-target="500" data-suffix="+" aria-label="500+ projects">0</span></div>
+        </div>
+        <h3 class="stat-label">Projects Delivered</h3>
+        <p class="stat-sub">On time, on budget</p>
+      </div>
+      <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+        <div class="stat-circle-wrap">
+          <svg class="stat-svg" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="stat-track" cx="60" cy="60" r="52"/>
+            <circle class="stat-progress" cx="60" cy="60" r="52" data-percent="70" stroke="#10B981"/>
+          </svg>
+          <div class="stat-inner"><span class="stat-number" data-target="7000" data-suffix="+" aria-label="7000+ followers">0</span></div>
+        </div>
+        <h3 class="stat-label">Social Followers</h3>
+        <p class="stat-sub">Growing community</p>
+      </div>
+      <div class="stat-card" data-aos="zoom-in" data-aos-delay="450">
+        <div class="stat-circle-wrap">
+          <svg class="stat-svg" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="stat-track" cx="60" cy="60" r="52"/>
+            <circle class="stat-progress" cx="60" cy="60" r="52" data-percent="98" stroke="#F59E0B"/>
+          </svg>
+          <div class="stat-inner"><span class="stat-number" data-target="98" data-suffix="%" aria-label="98% satisfaction">0</span></div>
+        </div>
+        <h3 class="stat-label">Client Satisfaction</h3>
+        <p class="stat-sub">Excellence always</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CORE VALUES ==================== -->
+<section class="values section-pad" aria-labelledby="valuesTitle">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">What We Stand For</span>
+      <h2 class="section-title" id="valuesTitle">Our Core <span class="gradient-text">Values</span></h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card" data-aos="fade-up" data-aos-delay="0">
+        <span class="value-icon">🎯</span>
+        <h3>Innovation First</h3>
+        <p>We constantly push boundaries, embracing emerging technologies to deliver solutions that are years ahead of the curve.</p>
+      </div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="80">
+        <span class="value-icon">🤝</span>
+        <h3>Client Partnership</h3>
+        <p>We don't just work for clients — we work with them. Your success is our success, and we invest deeply in every relationship.</p>
+      </div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="160">
+        <span class="value-icon">⭐</span>
+        <h3>Excellence Always</h3>
+        <p>Every pixel, every line of code, every strategy is crafted with the highest standards of quality and attention to detail.</p>
+      </div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="240">
+        <span class="value-icon">🔒</span>
+        <h3>Trust & Transparency</h3>
+        <p>Open communication, honest timelines, and transparent pricing — we build relationships on a foundation of absolute trust.</p>
+      </div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="320">
+        <span class="value-icon">⚡</span>
+        <h3>Speed & Agility</h3>
+        <p>We move fast without breaking things. Agile methodologies ensure rapid delivery while maintaining world-class quality.</p>
+      </div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="400">
+        <span class="value-icon">🌱</span>
+        <h3>Continuous Growth</h3>
+        <p>Learning never stops at RGAi. Our team constantly upskills to stay at the absolute forefront of technology and design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOUNDER SPOTLIGHT ==================== -->
+<section class="founder-spotlight section-pad" aria-labelledby="founderTitle">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Our Leadership</span>
+      <h2 class="section-title" id="founderTitle">About the <span class="gradient-text">Founder</span></h2>
+    </div>
+
+    <div class="founder-grid">
+      <!-- Visual Card -->
+      <div class="founder-visual-card" data-aos="fade-right" data-aos-delay="100">
+        <div class="founder-big-avatar">GK</div>
+        <h4 style="font-family:var(--font-head); font-size:1.25rem; font-weight:800; color:var(--clr-text); margin-bottom:0.25rem;">Gauresh D. Khairnar</h4>
+        <p style="font-size:0.75rem; color:var(--clr-text-3); font-weight:600; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0;">Founder & CEO, RGAi</p>
+        
+        <div class="founder-quote">
+          <p>"Technology is most powerful when it creates real value for people and businesses."</p>
+          <span class="founder-quote-author">— Gauresh Deepak Khairnar</span>
+        </div>
+      </div>
+
+      <!-- Info Card -->
+      <div class="founder-info-card" data-aos="fade-left" data-aos-delay="200">
+        <div class="founder-name-wrap">
+          <h3>Gauresh Deepak Khairnar</h3>
+          <p>Founder & CEO, RGAi Technology</p>
+        </div>
+
+        <div class="founder-bio-text">
+          <p>Gauresh Deepak Khairnar is the Founder and CEO of RGAi Technology, a technology-driven company focused on Artificial Intelligence, Software Development, Website Design, Mobile Application Development, Business Automation, and Digital Transformation.</p>
+          <p>Driven by a vision to help businesses grow through innovative technology solutions, Gauresh established RGAi Technology to deliver modern, scalable, and results-oriented digital services. His focus is on creating impactful products that combine design, technology, and automation to solve real-world business challenges.</p>
+          <p>Under his leadership, RGAi Technology continues to work with startups, entrepreneurs, local businesses, and growing enterprises, helping them strengthen their digital presence and improve operational efficiency through AI-powered solutions.</p>
+        </div>
+
+        <!-- Mission & Vision -->
+        <div class="founder-mission-vision">
+          <div class="mv-box">
+            <h4>🎯 Our Mission</h4>
+            <p>To empower businesses and individuals with innovative technology solutions that drive growth, efficiency, and long-term success.</p>
+          </div>
+          <div class="mv-box">
+            <h4>👁️ Our Vision</h4>
+            <p>To build RGAi Technology into a globally recognized technology company known for innovation, quality, and excellence in artificial intelligence and digital transformation.</p>
+          </div>
+        </div>
+
+        <!-- Expertise -->
+        <div class="founder-expertise-section">
+          <h4>Core Expertise</h4>
+          <div class="founder-tags-grid">
+            <span class="founder-tag">Artificial Intelligence Solutions</span>
+            <span class="founder-tag">AI Agents & Automation</span>
+            <span class="founder-tag">Website Development</span>
+            <span class="founder-tag">Mobile Application Development</span>
+            <span class="founder-tag">UI/UX Design</span>
+            <span class="founder-tag">SEO & Digital Marketing</span>
+            <span class="founder-tag">Business Automation</span>
+            <span class="founder-tag">Custom Software Development</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TEAM ==================== -->
+<section class="team section-pad" aria-labelledby="teamTitle">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">The People</span>
+      <h2 class="section-title" id="teamTitle">Meet Our <span class="gradient-text">Team</span></h2>
+      <p class="section-desc">A diverse group of passionate experts dedicated to building extraordinary digital experiences.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#667eea,#764ba2)">GK</div>
+        <h3 class="team-name">Gauresh D. Khairnar</h3>
+        <p class="team-role">Founder & CEO</p>
+        <p class="team-bio">Founder & CEO of RGAi. Focuses on design, technology, and automation to solve real-world business challenges.</p>
+        <div class="team-socials">
+          <a href="#" class="team-social" aria-label="LinkedIn">in</a>
+          <a href="#" class="team-social" aria-label="Twitter">𝕏</a>
+        </div>
+      </div>
+      <div class="team-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">PS</div>
+        <h3 class="team-name">Priya Singh</h3>
+        <p class="team-role">Chief Technology Officer</p>
+        <p class="team-bio">Full-stack architect specialising in AI systems. MIT graduate with 8+ years building scalable platforms.</p>
+        <div class="team-socials">
+          <a href="#" class="team-social" aria-label="LinkedIn">in</a>
+          <a href="#" class="team-social" aria-label="GitHub">⌥</a>
+        </div>
+      </div>
+      <div class="team-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">AM</div>
+        <h3 class="team-name">Aryan Mehta</h3>
+        <p class="team-role">Head of AI Research</p>
+        <p class="team-bio">PhD in Machine Learning. Leads our AI research team and has published 12+ papers on NLP and computer vision.</p>
+        <div class="team-socials">
+          <a href="#" class="team-social" aria-label="LinkedIn">in</a>
+          <a href="#" class="team-social" aria-label="GitHub">⌥</a>
+        </div>
+      </div>
+      <div class="team-card" data-aos="fade-up" data-aos-delay="240">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">NK</div>
+        <h3 class="team-name">Neha Kapoor</h3>
+        <p class="team-role">Lead UI/UX Designer</p>
+        <p class="team-bio">Award-winning designer with a passion for human-centred design. 7+ years creating iconic digital experiences.</p>
+        <div class="team-socials">
+          <a href="#" class="team-social" aria-label="LinkedIn">in</a>
+          <a href="#" class="team-social" aria-label="Dribbble">🏀</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== JOURNEY TIMELINE ==================== -->
+<section class="timeline section-pad" aria-labelledby="timelineTitle">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Our Journey</span>
+      <h2 class="section-title" id="timelineTitle">Milestones That <span class="gradient-text">Shaped Us</span></h2>
+    </div>
+    <div class="timeline-list" data-aos="fade-up" data-aos-delay="100">
+      <div class="timeline-item">
+        <p class="timeline-year">2019</p>
+        <h3>Founded in Mumbai</h3>
+        <p>RGAi Technology was established with 3 co-founders and a bold vision to democratise AI for Indian businesses.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">2020</p>
+        <h3>First 50 Clients</h3>
+        <p>Rapid growth despite the pandemic — expanded to a 15-person team and completed our first 50 client projects.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">2021</p>
+        <h3>AI Division Launched</h3>
+        <p>Launched our dedicated AI research and development division, delivering our first custom GPT model for enterprise clients.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">2022</p>
+        <h3>Series A Funding</h3>
+        <p>Secured ₹5 Cr in seed funding. Expanded to 35 team members and opened offices in Bangalore and Pune.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">2023</p>
+        <h3>500+ Projects Milestone</h3>
+        <p>Crossed the 500-project milestone with a 98% client satisfaction rate. Recognised as a Top 10 AI Startup in India.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">2025</p>
+        <h3>Global Expansion</h3>
+        <p>Serving clients across 12 countries with a team of 50+ experts. Building the future of AI-powered digital experiences.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section-pad" aria-labelledby="aboutTestimonialsTitle">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Client Stories</span>
+      <h2 class="section-title" id="aboutTestimonialsTitle">What Clients <span class="gradient-text">Say</span></h2>
+    </div>
+    <div class="swiper testimonialSwiper" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><div class="testimonial-card">
+          <div class="t-top">
+            <div class="t-avatar"><div class="avatar-placeholder av-1">AR</div></div>
+            <div class="t-info"><h4>Arjun Reddy</h4><span>CEO, TechNova Solutions</span></div>
+            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </div>
+          <div class="t-quote" aria-hidden="true">"</div>
+          <p class="t-text">RGAi completely transformed our digital operations. Their AI chatbot reduced our support costs by 60% and the custom dashboard they built is absolutely world-class.</p>
+        </div></div>
+        <div class="swiper-slide"><div class="testimonial-card">
+          <div class="t-top">
+            <div class="t-avatar"><div class="avatar-placeholder av-3">MK</div></div>
+            <div class="t-info"><h4>Mohan Kumar</h4><span>CTO, FinEdge Capital</span></div>
+            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </div>
+          <div class="t-quote" aria-hidden="true">"</div>
+          <p class="t-text">Working with RGAi on our fintech dashboard was a game-changer. The real-time analytics, AI predictions, and beautiful UI design exceeded every expectation we had.</p>
+        </div></div>
+        <div class="swiper-slide"><div class="testimonial-card">
+          <div class="t-top">
+            <div class="t-avatar"><div class="avatar-placeholder av-5">RV</div></div>
+            <div class="t-info"><h4>Rahul Verma</h4><span>MD, AutoFlow Logistics</span></div>
+            <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          </div>
+          <div class="t-quote" aria-hidden="true">"</div>
+          <p class="t-text">The business automation solution from RGAi saved us 40 hours per week in manual work. Their RPA workflows and AI agents are running our operations smoother than ever.</p>
+        </div></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--grad-primary);padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,2.5rem);text-align:center;position:relative;overflow:hidden;" aria-labelledby="aboutCTATitle">
+  <div style="position:relative;z-index:1;max-width:640px;margin-inline:auto;" data-aos="zoom-in">
+    <h2 id="aboutCTATitle" style="font-size:clamp(1.8rem,4vw,3rem);font-weight:800;color:#fff;letter-spacing:-0.03em;margin-bottom:1rem;">Join 200+ Businesses<br>Trusting RGAi</h2>
+    <p style="color:rgba(255,255,255,0.80);margin-bottom:2rem;font-size:1.125rem;">Let's build your next breakthrough digital product together.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn-white">Start Your Project →</a>
+      <a href="portfolio.html" class="btn-white-ghost">View Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" fill="var(--clr-bg-2)"/>
+    </svg>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span><span class="logo-sub">Technology</span></div>
+        <p class="footer-tagline">Transforming Businesses Through AI Innovation. Your trusted partner for next-generation digital solutions.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="footer-social" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+          <a href="#" class="footer-social" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About Us</a></li>
+          <li><a href="labs.html">Labs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Website Development</a></li><li><a href="services.html">Mobile App Dev</a></li>
+          <li><a href="services.html">AI Solutions</a></li><li><a href="services.html">AI Agents</a></li>
+          <li><a href="services.html">Digital Marketing</a></li><li><a href="services.html">Business Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Stay Updated</h4>
+        <p class="footer-newsletter-desc">Get the latest AI insights delivered to your inbox.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Newsletter email" />
+          <button type="submit" class="newsletter-btn" aria-label="Subscribe">→</button>
+        </form>
+        <p class="newsletter-note" id="newsletterMsg"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 RGAi Technology Pvt. Ltd. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<!-- ==================== CHATBOT WIDGET ==================== -->
+<button class="chatbot-toggle" aria-label="Open chat assistant">
+  <span class="chatbot-badge">1</span>
+  <svg class="chatbot-toggle-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#fff;">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+  <svg class="chatbot-toggle-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#fff;">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+</button>
+
+<div class="chatbot-window">
+  <div class="chatbot-header">
+    <div class="chatbot-avatar">🤖</div>
+    <div class="chatbot-header-info">
+      <div class="chatbot-header-name">ARIA Assistant</div>
+      <div class="chatbot-header-status">Online</div>
+    </div>
+    <button class="chatbot-min-btn" aria-label="Minimize chat">—</button>
+  </div>
+  <div class="chatbot-messages">
+    <!-- Message content parsed by chatbot.js -->
+  </div>
+  <div class="chatbot-input-wrap">
+    <input type="text" class="chatbot-input" placeholder="Type a message..." aria-label="Message chatbot" />
+    <button class="chatbot-send" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/testimonials.js"></script>
+<script src="js/aurora.js"></script>
+<script src="js/spotlight.js"></script>
+<script src="js/transitions.js"></script>
+<script src="js/microinteractions.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

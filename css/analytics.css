@@ -1,0 +1,219 @@
+/* ============================================================
+   ANALYTICS.CSS — Operational Dashboard Layout & Component Styles
+   ============================================================ */
+
+/* ---- Range Selector Bar ---- */
+.analytics-range-selector {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.range-btn {
+  padding: 0.45rem 1.25rem;
+  border-radius: var(--r-full, 999px);
+  font-family: var(--font-head);
+  font-size: var(--fs-xs, 0.75rem);
+  font-weight: 600;
+  background: var(--clr-surface, rgba(22, 22, 30, 0.4));
+  border: 1.5px solid var(--clr-border, rgba(255, 255, 255, 0.08));
+  color: var(--clr-text-3, rgba(255, 255, 255, 0.5));
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.range-btn:hover {
+  border-color: rgba(0, 102, 255, 0.3);
+  color: var(--clr-text, #fff);
+}
+
+.range-btn.active {
+  background: var(--clr-accent, #0066FF);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3);
+}
+
+/* ---- Overview Metrics Grid ---- */
+.analytics-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.stats-card {
+  background: var(--clr-surface, rgba(22, 22, 30, 0.45));
+  border: 1px solid var(--clr-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--r-xl, 24px);
+  padding: 1.5rem 2rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sc-label {
+  font-size: var(--fs-xs, 0.75rem);
+  font-weight: 500;
+  color: var(--clr-text-3, rgba(255, 255, 255, 0.5));
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sc-num {
+  font-family: var(--font-head);
+  font-size: var(--fs-xl, 2rem);
+  font-weight: 800;
+  color: var(--clr-text, #fff);
+  line-height: 1.15;
+}
+
+.sc-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+.sc-badge.positive {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10B981;
+}
+
+.sc-badge.negative {
+  background: rgba(239, 68, 68, 0.12);
+  color: #EF4444;
+}
+
+.sc-badge.neutral {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--clr-text-3, rgba(255, 255, 255, 0.5));
+}
+
+/* ---- Charts Grid ---- */
+.analytics-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.chart-container {
+  background: var(--clr-surface, rgba(22, 22, 30, 0.5));
+  border: 1px solid var(--clr-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--r-xl, 24px);
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chart-container.full-width {
+  grid-column: 1 / -1;
+}
+
+.chart-header h4 {
+  font-family: var(--font-head);
+  font-size: var(--fs-sm, 1.05rem);
+  font-weight: 700;
+  color: var(--clr-text, #fff);
+}
+
+.chart-header p {
+  font-size: var(--fs-xs, 0.78rem);
+  color: var(--clr-text-3, rgba(255, 255, 255, 0.5));
+  margin-top: 0.15rem;
+}
+
+.chart-canvas-wrap {
+  position: relative;
+  width: 100%;
+  height: 280px; /* Locked height to prevent Chart.js scaling out of bounds */
+}
+
+/* Doughnut adjustments */
+.chart-split-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.doughnut-wrap {
+  height: 260px;
+}
+
+/* Custom chart legends list */
+.chart-legend-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+
+.legend-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.legend-color-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--clr-text, #fff);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-val {
+  font-size: var(--fs-sm, 0.875rem);
+  color: var(--clr-text-2, #ccc);
+  padding-left: 1rem;
+}
+
+.legend-percentage {
+  font-size: var(--fs-xs, 0.75rem);
+  color: var(--clr-text-3, rgba(255, 255, 255, 0.5));
+}
+
+/* Light Theme tweaks */
+[data-theme="light"] .range-btn {
+  background: var(--clr-surface, #ffffff);
+}
+[data-theme="light"] .stats-card,
+[data-theme="light"] .chart-container {
+  background: var(--clr-surface, #ffffff);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 991px) {
+  .analytics-charts-grid {
+    grid-template-columns: 1fr;
+  }
+  .chart-split-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .doughnut-wrap {
+    height: 240px;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}

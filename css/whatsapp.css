@@ -1,0 +1,145 @@
+/* ============================================================
+   WHATSAPP.CSS — Floating WhatsApp Widget
+   ============================================================ */
+.wa-widget {
+  position: fixed;
+  bottom: 5.5rem;
+  right: 2rem;
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+  pointer-events: none;
+}
+
+/* Main Button */
+.wa-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  box-shadow: 0 8px 32px rgba(37,211,102,0.40), 0 2px 8px rgba(0,0,0,0.20);
+  border: none;
+  transition: transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275),
+              box-shadow 0.3s ease;
+  position: relative;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.wa-btn:hover {
+  transform: scale(1.12) translateY(-3px);
+  box-shadow: 0 16px 48px rgba(37,211,102,0.55), 0 4px 16px rgba(0,0,0,0.25);
+}
+.wa-btn svg { width: 30px; height: 30px; }
+
+/* Pulse rings */
+.wa-pulse {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: rgba(37,211,102,0.35);
+  animation: waPulse 2s ease-out infinite;
+}
+.wa-pulse-2 {
+  inset: -12px;
+  background: rgba(37,211,102,0.18);
+  animation: waPulse 2s ease-out infinite 0.5s;
+}
+@keyframes waPulse {
+  0%   { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Online dot */
+.wa-online {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #4ADE80;
+  border: 2.5px solid #fff;
+  animation: onlineBlink 2.5s ease-in-out infinite alternate;
+}
+@keyframes onlineBlink {
+  from { box-shadow: 0 0 0 0 rgba(74,222,128,0.5); }
+  to   { box-shadow: 0 0 0 5px rgba(74,222,128,0); }
+}
+
+/* Tooltip / Chat Bubble */
+.wa-tooltip {
+  pointer-events: all;
+  background: var(--clr-glass, rgba(22,22,30,0.88));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 1.2rem 1.2rem 0.2rem 1.2rem;
+  padding: 0.85rem 1.2rem;
+  max-width: 240px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.30);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  transform: translateX(10px);
+  opacity: 0;
+  animation: waTipIn 0.5s ease 1.5s forwards;
+}
+.wa-tooltip:hover { transform: translateX(0) scale(1.02); }
+@keyframes waTipIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+.wa-tip-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #25D366;
+  margin-bottom: 0.2rem;
+  font-family: 'Outfit', sans-serif;
+}
+.wa-tip-msg {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+}
+.wa-tip-time {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.40);
+  margin-top: 0.3rem;
+  text-align: right;
+}
+
+/* Close tooltip */
+.wa-close {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.70);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+.wa-close:hover { background: rgba(239,68,68,0.8); color: #fff; }
+
+/* Hidden state */
+.wa-tooltip.wa-hidden { display: none; }
+
+@media (max-width: 768px) {
+  .wa-widget { bottom: 5.25rem; right: 1.5rem; }
+  .wa-btn { width: 52px; height: 52px; }
+  .wa-tooltip { max-width: 200px; }
+}

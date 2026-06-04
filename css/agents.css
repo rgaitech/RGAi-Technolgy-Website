@@ -1,0 +1,130 @@
+/* ============================================================
+   AGENTS.CSS — Autonomous AI Agents Showcase Section Styles
+   ============================================================ */
+
+.agents-showcase {
+  background: var(--clr-bg);
+  position: relative;
+}
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.agent-card {
+  background: var(--grad-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-xl);
+  padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: all var(--dur-slow) var(--ease-spring);
+  position: relative;
+}
+
+.agent-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  border-color: rgba(0, 102, 255, 0.2);
+}
+
+.agent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.agent-avatar {
+  font-size: 2rem;
+  width: 54px;
+  height: 54px;
+  background: var(--clr-accent-light);
+  border-radius: var(--r-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Status Indicator */
+.agent-status {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid transparent;
+}
+
+.agent-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.agent-status.online {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10B981;
+  border-color: rgba(16, 185, 129, 0.2);
+}
+.agent-status.online::before {
+  background: #10B981;
+  animation: onlineBlink 2s infinite alternate;
+}
+
+.agent-status.idle {
+  background: rgba(245, 158, 11, 0.12);
+  color: #F59E0B;
+  border-color: rgba(245, 158, 11, 0.2);
+}
+.agent-status.idle::before {
+  background: #F59E0B;
+}
+
+.agent-card h3 {
+  font-family: var(--font-head);
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--clr-text);
+  margin-top: 0.5rem;
+}
+
+.agent-card p {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-2);
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+/* Tasks / Functions lists */
+.agent-tasks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid var(--clr-border);
+  padding-top: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.agent-tasks li {
+  font-size: 0.78rem;
+  color: var(--clr-text-2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.agent-tasks li::before {
+  content: '▪';
+  color: var(--clr-accent);
+  font-size: 1rem;
+}

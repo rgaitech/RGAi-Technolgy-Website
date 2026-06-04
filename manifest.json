@@ -1,0 +1,24 @@
+{
+  "name": "RGAi Technology Pvt. Ltd.",
+  "short_name": "RGAi Tech",
+  "description": "Transforming Businesses Through AI Innovation. Expert Web Development, AI Solutions, Mobile Apps, Automation & Digital Growth.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0A0A0C",
+  "theme_color": "#0066FF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}

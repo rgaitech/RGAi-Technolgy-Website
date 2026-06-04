@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RGAi Technology Portfolio – Explore our curated collection of AI, web development, mobile app, and UI/UX design projects." />
+  <meta name="keywords" content="RGAi Portfolio, Web Development Projects, AI Projects, Mobile App Projects, UI/UX Design" />
+  <meta name="author" content="RGAi Technology Pvt. Ltd." />
+  <meta property="og:title" content="Portfolio – RGAi Technology" />
+  <meta property="og:description" content="Explore our premium project showcase." />
+  <meta property="og:type" content="website" />
+  <title>Portfolio – RGAi Technology Pvt. Ltd.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/effects.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/portfolio.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/whatsapp.css" />
+  <link rel="stylesheet" href="css/chatbot.css" />
+  <link rel="stylesheet" href="css/aurora.css" />
+  <link rel="stylesheet" href="css/transitions.css" />
+  <link rel="stylesheet" href="css/microinteractions.css" />
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0066FF" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">
+      <span class="loader-r">R</span><span class="loader-g">G</span><span class="loader-ai">Ai</span>
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <p class="loader-text">Loading Portfolio...</p>
+    <div class="loader-dots">
+      <div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div>
+    </div>
+  </div>
+</div>
+
+<div id="cursorGlow" class="cursor-glow"></div>
+<div id="cursorDot"  class="cursor-dot"></div>
+
+<!-- BACKGROUND CANVAS -->
+<canvas id="auroraCanvas"></canvas>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="RGAi Technology Home">
+      <span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span>
+      <span class="logo-sub">Technology</span>
+    </a>
+    <ul class="nav-links" id="navLinks" role="navigation">
+      <li><a href="index.html"     class="nav-link">Home</a></li>
+      <li><a href="services.html"  class="nav-link">Services</a></li>
+      <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+      <li><a href="about.html"     class="nav-link">About</a></li>
+      <li><a href="labs.html"         class="nav-link ">Labs</a></li>
+      <li><a href="estimator.html" class="nav-link">Estimator</a></li>
+      <li><a href="contact.html"   class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="theme-icon moon">🌙</span>
+        <span class="theme-icon sun">☀️</span>
+      </button>
+      <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-labelledby="portfolioPageTitle">
+  <div class="page-hero-deco page-hero-deco-1" aria-hidden="true"></div>
+  <div class="page-hero-deco page-hero-deco-2" aria-hidden="true"></div>
+  <div class="container">
+    <span class="page-hero-tag">Our Work</span>
+    <h1 class="page-hero-title" id="portfolioPageTitle">
+      Featured <span class="gradient-text">Portfolio</span>
+    </h1>
+    <p class="page-hero-desc">A curated showcase of premium digital experiences we've crafted for industry-leading clients across the globe.</p>
+  </div>
+</section>
+
+<!-- ==================== PORTFOLIO ==================== -->
+<section class="portfolio section-pad" id="portfolio" aria-labelledby="portfolioGridTitle">
+  <div class="container">
+    <h2 class="visually-hidden" id="portfolioGridTitle">Portfolio Projects</h2>
+
+    <!-- Filters -->
+    <div class="portfolio-filters" data-aos="fade-up" role="group" aria-label="Filter projects by category">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="web">Web Dev</button>
+      <button class="filter-btn" data-filter="app">Mobile App</button>
+      <button class="filter-btn" data-filter="ai">AI / ML</button>
+      <button class="filter-btn" data-filter="design">UI/UX</button>
+      <button class="filter-btn" data-filter="automation">Automation</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="portfolio-grid" id="portfolioGrid">
+
+      <div class="portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="0">
+        <div class="portfolio-card">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img-placeholder p-gradient-1"><span class="p-icon">🌐</span></div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <span class="p-tag">Web Development</span>
+                <h4>FinTech Dashboard</h4>
+                <p>Real-time analytics platform with AI-powered investment insights</p>
+                <button class="btn btn-glass p-view-btn" data-modal="1">View Project</button>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="p-category">Web Dev</span>
+            <h4 class="p-title">FinTech Dashboard</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item wide" data-category="ai" data-aos="fade-up" data-aos-delay="80">
+        <div class="portfolio-card">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img-placeholder p-gradient-2"><span class="p-icon">🤖</span></div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <span class="p-tag">AI / ML</span>
+                <h4>AI Chatbot Platform</h4>
+                <p>GPT-4 powered enterprise customer support AI agent</p>
+                <button class="btn btn-glass p-view-btn" data-modal="2">View Project</button>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="p-category">AI / ML</span>
+            <h4 class="p-title">AI Chatbot Platform</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="app" data-aos="fade-up" data-aos-delay="160">
+        <div class="portfolio-card">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img-placeholder p-gradient-3"><span class="p-icon">📱</span></div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <span class="p-tag">Mobile App</span>
+                <h4>Health Tracker App</h4>
+                <p>AI-powered personal health companion, 50k+ downloads</p>
+                <button class="btn btn-glass p-view-btn" data-modal="3">View Project</button>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="p-category">Mobile App</span>
+            <h4 class="p-title">Health Tracker App</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="design" data-aos="fade-up" data-aos-delay="0">
+        <div class="portfolio-card">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img-placeholder p-gradient-4"><span class="p-icon">🎨</span></div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <span class="p-tag">UI/UX Design</span>
+                <h4>SaaS Design System</h4>
+                <p>200+ component library with full design tokens</p>
+                <button class="btn btn-glass p-view-btn" data-modal="4">View Project</button>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="p-category">UI/UX</span>
+            <h4 class="p-title">SaaS Design System</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item wide" data-category="web" data-aos="fade-up" data-aos-delay="80">
+        <div class="portfolio-card">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img-placeholder p-gradient-5"><span class="p-icon">🛍️</span></div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <span class="p-tag">Web Development</span>
+                <h4>E-Commerce Platform</h4>
+                <p>AI-driven product recommendations, 3x sales increase</p>
+                <button class="btn btn-glass p-view-btn" data-modal="5">View Project</button>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="p-category">Web Dev</span>
+            <h4 class="p-title">E-Commerce Platform</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="automation" data-aos="fade-up" data-aos-delay="160">
+        <div class="portfolio-card">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img-placeholder p-gradient-6"><span class="p-icon">⚡</span></div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <span class="p-tag">Automation</span>
+                <h4>RPA Workflow Engine</h4>
+                <p>Saved 40 hrs/week, enterprise process automation</p>
+                <button class="btn btn-glass p-view-btn" data-modal="6">View Project</button>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="p-category">Automation</span>
+            <h4 class="p-title">RPA Workflow Engine</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="app" data-aos="fade-up" data-aos-delay="0">
+        <div class="portfolio-card">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img-placeholder p-gradient-1" style="background: linear-gradient(135deg,#f6d365,#fda085)"><span class="p-icon">🚗</span></div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <span class="p-tag">Mobile App</span>
+                <h4>Fleet Management App</h4>
+                <p>Real-time GPS tracking & AI route optimisation</p>
+                <button class="btn btn-glass p-view-btn" data-modal="7">View Project</button>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="p-category">Mobile App</span>
+            <h4 class="p-title">Fleet Management App</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="ai" data-aos="fade-up" data-aos-delay="80">
+        <div class="portfolio-card">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img-placeholder p-gradient-2" style="background: linear-gradient(135deg,#30cfd0,#330867)"><span class="p-icon">📊</span></div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <span class="p-tag">AI / ML</span>
+                <h4>Predictive Analytics</h4>
+                <p>ML-powered sales forecasting with 94% accuracy</p>
+                <button class="btn btn-glass p-view-btn" data-modal="8">View Project</button>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="p-category">AI / ML</span>
+            <h4 class="p-title">Predictive Analytics</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="design" data-aos="fade-up" data-aos-delay="160">
+        <div class="portfolio-card">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img-placeholder p-gradient-3" style="background: linear-gradient(135deg,#f093fb,#f5576c)"><span class="p-icon">✨</span></div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-content">
+                <span class="p-tag">UI/UX Design</span>
+                <h4>Brand Identity Suite</h4>
+                <p>Complete rebranding for a D2C consumer brand</p>
+                <button class="btn btn-glass p-view-btn" data-modal="9">View Project</button>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="p-category">UI/UX</span>
+            <h4 class="p-title">Brand Identity Suite</h4>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal-overlay" id="portfolioModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section style="background:var(--grad-primary);padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,2.5rem);text-align:center;position:relative;overflow:hidden;" aria-labelledby="pCTATitle">
+  <div style="position:relative;z-index:1;max-width:640px;margin-inline:auto;" data-aos="zoom-in">
+    <h2 id="pCTATitle" style="font-size:clamp(1.8rem,4vw,3rem);font-weight:800;color:#fff;letter-spacing:-0.03em;margin-bottom:1rem;">Have a Project in Mind?</h2>
+    <p style="color:rgba(255,255,255,0.80);margin-bottom:2rem;font-size:1.125rem;">Let's turn your vision into a stunning digital reality.</p>
+    <a href="contact.html" class="btn-white">Start Your Project →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" fill="var(--clr-bg-2)"/>
+    </svg>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span><span class="logo-sub">Technology</span></div>
+        <p class="footer-tagline">Transforming Businesses Through AI Innovation. Your trusted partner for next-generation digital solutions.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="footer-social" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+          <a href="#" class="footer-social" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About Us</a></li>
+          <li><a href="labs.html">Labs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Website Development</a></li><li><a href="services.html">Mobile App Dev</a></li>
+          <li><a href="services.html">AI Solutions</a></li><li><a href="services.html">AI Agents</a></li>
+          <li><a href="services.html">Digital Marketing</a></li><li><a href="services.html">Business Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Stay Updated</h4>
+        <p class="footer-newsletter-desc">Get the latest AI insights delivered to your inbox.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Newsletter email" />
+          <button type="submit" class="newsletter-btn" aria-label="Subscribe">→</button>
+        </form>
+        <p class="newsletter-note" id="newsletterMsg"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 RGAi Technology Pvt. Ltd. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<!-- ==================== CHATBOT WIDGET ==================== -->
+<button class="chatbot-toggle" aria-label="Open chat assistant">
+  <span class="chatbot-badge">1</span>
+  <svg class="chatbot-toggle-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#fff;">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+  <svg class="chatbot-toggle-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#fff;">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+</button>
+
+<div class="chatbot-window">
+  <div class="chatbot-header">
+    <div class="chatbot-avatar">🤖</div>
+    <div class="chatbot-header-info">
+      <div class="chatbot-header-name">ARIA Assistant</div>
+      <div class="chatbot-header-status">Online</div>
+    </div>
+    <button class="chatbot-min-btn" aria-label="Minimize chat">—</button>
+  </div>
+  <div class="chatbot-messages">
+    <!-- Message content parsed by chatbot.js -->
+  </div>
+  <div class="chatbot-input-wrap">
+    <input type="text" class="chatbot-input" placeholder="Type a message..." aria-label="Message chatbot" />
+    <button class="chatbot-send" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/portfolio.js"></script>
+<script src="js/aurora.js"></script>
+<script src="js/spotlight.js"></script>
+<script src="js/transitions.js"></script>
+<script src="js/microinteractions.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/chatbot.js"></script>
+
+<script>
+/* Extra modal data for additional projects */
+const extraModalData = {
+  7: { gradient:'p-gradient-1', icon:'🚗', tag:'Mobile App Development', title:'Fleet Management App',
+       desc:'Real-time GPS fleet tracking system with AI-powered route optimisation. Reduced fuel costs by 28% and improved delivery times by 35% for a logistics company managing 200+ vehicles.',
+       techs:['React Native','Google Maps API','Node.js','Socket.io','MongoDB','Firebase'] },
+  8: { gradient:'p-gradient-2', icon:'📊', tag:'AI / Machine Learning', title:'Predictive Analytics Engine',
+       desc:'ML-powered sales forecasting platform achieving 94% accuracy. Integrated with existing CRM to provide daily revenue predictions, inventory recommendations, and customer churn alerts.',
+       techs:['Python','Scikit-learn','FastAPI','React','PostgreSQL','Redis','AWS'] },
+  9: { gradient:'p-gradient-3', icon:'✨', tag:'UI/UX Design & Branding', title:'Brand Identity Suite',
+       desc:'Complete brand overhaul for a fast-growing D2C consumer brand. Delivered a full design system, packaging design, digital guidelines, and a 120-page brand book.',
+       techs:['Figma','Illustrator','Photoshop','After Effects','Brand Guidelines','Design Tokens'] },
+};
+// Merge into existing modalData
+if (typeof modalData !== 'undefined') {
+  Object.assign(modalData, extraModalData);
+}
+</script>
+</body>
+</html>

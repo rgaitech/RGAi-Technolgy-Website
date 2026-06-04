@@ -1,0 +1,185 @@
+/* ============================================================
+   SERVICES.CSS — Services Grid & Cards
+   ============================================================ */
+
+/* ---- Section BG ---- */
+.services {
+  background: var(--clr-bg);
+  position: relative;
+}
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--grad-primary);
+  opacity: 0.15;
+}
+
+/* ---- Services Grid ---- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+/* ---- Service Card ---- */
+.service-card {
+  position: relative;
+  background: var(--grad-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-xl);
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.2rem, 2.5vw, 2rem);
+  cursor: pointer;
+  transition: all var(--dur-slow) var(--ease-spring);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--grad-primary);
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease);
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  border-color: rgba(0,102,255,0.20);
+}
+.service-card:hover::before { opacity: 0.03; }
+
+.service-card > * { position: relative; z-index: 1; }
+
+/* Featured badge */
+.service-featured-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--grad-primary);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3em 0.8em;
+  border-radius: var(--r-full);
+  z-index: 10;
+}
+
+/* Featured card */
+.service-card.featured {
+  background: var(--grad-primary);
+  border-color: transparent;
+  color: #fff;
+}
+.service-card.featured .service-name { color: #fff; }
+.service-card.featured .service-desc { color: rgba(255,255,255,0.80); }
+.service-card.featured .service-tag { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.90); }
+.service-card.featured .service-arrow { color: rgba(255,255,255,0.80); }
+.service-card.featured .service-featured-badge { background: rgba(255,255,255,0.20); }
+.service-card.featured .service-icon-glow {
+  background: rgba(255,255,255,0.15);
+}
+.service-card.featured:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 30px 70px rgba(0,102,255,0.45);
+}
+
+/* Icon */
+.service-icon-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+.service-icon {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1;
+  display: block;
+  transition: transform var(--dur-base) var(--ease-spring);
+  position: relative;
+  z-index: 1;
+}
+.service-icon-glow {
+  position: absolute;
+  inset: -8px;
+  background: var(--clr-accent-light);
+  border-radius: var(--r-md);
+  z-index: 0;
+  transition: all var(--dur-base) var(--ease);
+  opacity: 0;
+}
+.service-card:hover .service-icon { transform: scale(1.15) translateY(-4px); }
+.service-card:hover .service-icon-glow { opacity: 1; transform: scale(1.1); }
+
+/* Name */
+.service-name {
+  font-family: var(--font-head);
+  font-size: clamp(var(--fs-base), 1.8vw, var(--fs-lg));
+  font-weight: 700;
+  color: var(--clr-text);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+/* Description */
+.service-desc {
+  font-size: clamp(var(--fs-xs), 1.3vw, var(--fs-sm));
+  color: var(--clr-text-3);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+
+/* Tags */
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  list-style: none;
+}
+.service-tags li {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--clr-accent);
+  background: var(--clr-accent-light);
+  padding: 0.25em 0.75em;
+  border-radius: var(--r-full);
+  transition: all var(--dur-fast) var(--ease);
+}
+.service-card:hover .service-tags li {
+  background: var(--clr-accent);
+  color: #fff;
+}
+
+/* Arrow */
+.service-arrow {
+  font-size: 1.2rem;
+  color: var(--clr-text-3);
+  transition: all var(--dur-base) var(--ease);
+  display: inline-block;
+}
+.service-card:hover .service-arrow {
+  color: var(--clr-accent);
+  transform: translateX(6px);
+}
+
+/* ============================================================
+   RESPONSIVE SERVICES
+   ============================================================ */
+@media (max-width: 1199px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 991px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card  { padding: 1.5rem; }
+}

@@ -1,0 +1,729 @@
+/* ============================================================
+   CONTACT.CSS — Luxury, Modern, & Conversion-Focused Styles
+   ============================================================ */
+.contact-section {
+  background: var(--clr-bg);
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(3rem, 6vw, 6rem);
+  z-index: 1;
+}
+
+/* Floating Gradient Blobs */
+.contact-decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+.contact-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.12;
+  will-change: transform;
+}
+.contact-blob-1 {
+  width: 400px;
+  height: 400px;
+  top: 10%;
+  left: -100px;
+  background: var(--clr-accent);
+}
+.contact-blob-2 {
+  width: 500px;
+  height: 500px;
+  bottom: 10%;
+  right: -150px;
+  background: var(--clr-accent-2);
+}
+
+/* ---- Contact Grid Layout ---- */
+.contact-luxury-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+/* ============================================================
+   LEFT PANEL — INFO & TRUSTS
+   ============================================================ */
+.contact-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-headline-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-main-headline {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--clr-text);
+}
+.contact-sub-desc {
+  font-size: var(--fs-base);
+  color: var(--clr-text-2);
+  line-height: 1.75;
+}
+
+/* Symmetrical Trust Badges */
+.trust-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-block: 0.5rem;
+  border-bottom: 1px solid var(--clr-border);
+}
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.tb-stars {
+  color: #FBBF24;
+  font-size: 0.85rem;
+}
+.tb-logo {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+}
+.tb-logo.clutch { color: var(--clr-text); }
+.tb-logo.google { color: var(--clr-accent); }
+.tb-logo.trustpilot { color: var(--clr-accent-3); }
+.trust-badge span:last-child {
+  font-size: 0.75rem;
+  color: var(--clr-text-3);
+  font-weight: 500;
+}
+
+/* Contact Cards */
+.contact-methods-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-card-link {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--clr-glass);
+  border: 1px solid var(--clr-glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--dur-base) var(--ease-spring);
+  position: relative;
+  overflow: hidden;
+}
+.contact-card-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+.contact-card-link:hover::before {
+  transform: translateX(100%);
+}
+.contact-card-link:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: var(--clr-accent);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.c-card-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--r-md);
+  background: var(--clr-accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  transition: transform var(--dur-base) var(--ease-spring);
+}
+.contact-card-link:hover .c-card-icon-wrap {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.c-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.c-card-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--clr-text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.c-card-val {
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--clr-text);
+  letter-spacing: -0.01em;
+}
+
+/* Pulse Live Status Dot */
+.pulsing-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--clr-accent-3);
+  box-shadow: 0 0 0 3px rgba(16,185,129,0.25);
+  animation: pulseDot 2s infinite;
+  display: inline-block;
+}
+
+/* Staggered Badges */
+.c-card-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.25em 0.65em;
+  border-radius: var(--r-full);
+  background: var(--clr-accent-light);
+  color: var(--clr-accent);
+}
+.c-card-badge.green {
+  background: rgba(16,185,129,0.1);
+  color: var(--clr-accent-3);
+}
+
+/* Calendly Trigger Button */
+.btn-calendly-trigger {
+  width: 100%;
+  justify-content: center;
+  padding: 1.1rem;
+  border-radius: var(--r-xl);
+  font-size: var(--fs-base);
+  box-shadow: var(--shadow-sm);
+  background: var(--clr-bg);
+  border: 1.5px dashed var(--clr-accent);
+  color: var(--clr-accent);
+}
+.btn-calendly-trigger:hover {
+  background: var(--clr-accent-light);
+  border-style: solid;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Symmetrical Stats Section */
+.contact-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+.contact-stat-box {
+  background: var(--clr-bg-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-md);
+  padding: 1rem;
+}
+.c-stat-number {
+  font-family: var(--font-head);
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  color: var(--clr-accent);
+  margin-bottom: 0.2rem;
+}
+.c-stat-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--clr-text-3);
+  text-transform: uppercase;
+}
+
+/* Social links horizontal */
+.social-links-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+  padding-block: 0.5rem;
+}
+
+/* ============================================================
+   RIGHT PANEL — LUXURY CONTACT FORM
+   ============================================================ */
+.contact-form-glass-card {
+  background: var(--clr-glass);
+  border: 1px solid var(--clr-glass-border);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: var(--r-xl);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+.contact-form-header {
+  margin-bottom: 2rem;
+}
+.contact-form-header h3 {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  color: var(--clr-text);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.contact-form-header p {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-3);
+}
+
+.lux-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Inputs design override */
+.lux-input-group {
+  position: relative;
+  width: 100%;
+}
+.lux-input {
+  width: 100%;
+  padding: 1.2rem 1.1rem 0.5rem;
+  background: rgba(var(--clr-bg), 0.5);
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--r-md);
+  color: var(--clr-text);
+  font-size: var(--fs-sm);
+  transition: all var(--dur-base) var(--ease);
+  will-change: border-color, box-shadow;
+}
+.lux-input:focus {
+  background: var(--clr-bg);
+  border-color: var(--clr-accent);
+  box-shadow: 0 0 0 3px var(--clr-accent-light);
+  outline: none;
+}
+.lux-input.error {
+  border-color: #EF4444;
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.08);
+}
+.lux-input.valid {
+  border-color: var(--clr-accent-3);
+}
+
+/* Floating labels override */
+.lux-label {
+  position: absolute;
+  top: 0.9rem;
+  left: 1.1rem;
+  font-size: var(--fs-sm);
+  color: var(--clr-text-3);
+  pointer-events: none;
+  transition: all var(--dur-base) var(--ease);
+  transform-origin: left top;
+  background: transparent;
+}
+.lux-input:focus ~ .lux-label,
+.lux-input:not(:placeholder-shown) ~ .lux-label {
+  transform: translateY(-0.6rem) scale(0.76);
+  color: var(--clr-accent);
+  font-weight: 600;
+}
+.lux-input.valid ~ .lux-label {
+  color: var(--clr-accent-3);
+}
+.lux-input.error ~ .lux-label {
+  color: #EF4444;
+}
+
+/* Select element lux design */
+.lux-select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23777' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.1rem center;
+  background-size: 16px;
+}
+.lux-select:valid ~ .lux-label {
+  transform: translateY(-0.6rem) scale(0.76);
+  color: var(--clr-accent);
+  font-weight: 600;
+}
+
+/* Textarea override */
+.lux-textarea {
+  min-height: 120px;
+  resize: vertical;
+  padding-top: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Spacing rows */
+.lux-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* Input helper messages */
+.lux-error-message {
+  display: none;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #EF4444;
+  margin-top: 0.35rem;
+  padding-left: 0.5rem;
+  animation: msgPop 0.25s var(--ease);
+}
+.lux-error-message.visible {
+  display: block;
+}
+@keyframes msgPop {
+  from { transform: translateY(-4px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* Textarea limits counter */
+.textarea-counter-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.35rem;
+  padding-inline: 0.5rem;
+}
+.textarea-counter-txt {
+  font-size: 0.7rem;
+  color: var(--clr-text-3);
+  font-weight: 500;
+}
+
+/* Math Verification Block */
+.lux-captcha-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(var(--clr-bg-2), 0.5);
+  border: 1px solid var(--clr-border);
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--r-md);
+}
+.captcha-question {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--clr-text);
+  white-space: nowrap;
+}
+.captcha-input-el {
+  max-width: 100px;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--r-sm);
+}
+
+/* Submit luxury btn override */
+.btn-lux-submit {
+  width: 100%;
+  justify-content: center;
+  padding: 1.1rem 2rem;
+  font-size: var(--fs-base);
+  font-weight: 700;
+  border-radius: var(--r-md);
+  margin-top: 0.5rem;
+}
+.btn-lux-submit .btn-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spinnerSpin 0.7s linear infinite;
+  display: none;
+}
+@keyframes spinnerSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Honeypot field (hidden from users, exposed to bots) */
+.hp-field {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden; opacity: 0;
+  pointer-events: none;
+}
+
+/* ============================================================
+   MAPS SECTION
+   ============================================================ */
+.lux-map-container {
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--clr-border);
+  position: relative;
+  height: clamp(300px, 40vw, 450px);
+  margin-top: 1rem;
+}
+.lux-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  /* Premium Dark Theme Filter Override */
+  transition: filter var(--dur-base) var(--ease);
+}
+[data-theme="dark"] .lux-map-iframe {
+  filter: grayscale(1) invert(0.92) contrast(1.15) brightness(0.95);
+}
+
+/* Map overlay info badge */
+.map-address-overlay {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  max-width: 360px;
+  background: var(--clr-glass);
+  border: 1px solid var(--clr-glass-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--r-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  z-index: 10;
+}
+.map-overlay-icon {
+  font-size: 1.6rem;
+}
+.map-overlay-txt h4 {
+  font-size: var(--fs-base);
+  font-weight: 800;
+  color: var(--clr-text);
+  margin-bottom: 0.2rem;
+}
+.map-overlay-txt p {
+  font-size: var(--fs-xs);
+  color: var(--clr-text-2);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+/* ============================================================
+   FAQ ACCORDION SECTION
+   ============================================================ */
+.contact-faqs {
+  padding-block: clamp(3rem, 6vw, 6rem);
+  background: var(--clr-bg-2);
+}
+.faq-accordion-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.faq-item {
+  background: var(--clr-glass);
+  border: 1px solid var(--clr-glass-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: border-color var(--dur-base) var(--ease);
+}
+.faq-item:hover {
+  border-color: rgba(0,102,255,0.2);
+}
+.faq-header {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  gap: 1rem;
+}
+.faq-question {
+  font-size: var(--fs-base);
+  font-weight: 700;
+  color: var(--clr-text);
+  letter-spacing: -0.01em;
+}
+.faq-arrow {
+  font-size: 0.85rem;
+  color: var(--clr-text-3);
+  transition: transform var(--dur-base) var(--ease);
+  flex-shrink: 0;
+}
+.faq-item.open .faq-arrow {
+  transform: rotate(180deg);
+  color: var(--clr-accent);
+}
+.faq-item.open {
+  border-color: var(--clr-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.faq-content {
+  padding: 0 1.5rem 1.5rem;
+  font-size: var(--fs-sm);
+  color: var(--clr-text-2);
+  line-height: 1.75;
+}
+
+/* ============================================================
+   CALENDLY MODAL POPUP
+   ============================================================ */
+.calendly-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease;
+  padding: 1rem;
+}
+.calendly-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+.c-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.c-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: min(720px, calc(100vh - 4rem));
+  background: var(--clr-glass);
+  border: 1px solid var(--clr-glass-border);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  transform: scale(0.9);
+  transition: transform 0.35s var(--ease-spring);
+}
+.calendly-modal.open .c-modal-card {
+  transform: scale(1);
+}
+.c-modal-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--clr-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  background: linear-gradient(135deg,rgba(0,102,255,0.05),rgba(124,58,237,0.05));
+}
+.c-modal-header h3 {
+  font-family: var(--font-head);
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  color: var(--clr-text);
+}
+.c-modal-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--clr-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: var(--clr-text-2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+.c-modal-close-btn:hover {
+  background: #EF4444;
+  color: #fff;
+}
+.c-modal-body {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  background: #fff; /* Calendly elements are naturally light */
+  overflow: hidden;
+}
+
+/* ============================================================
+   RESPONSIVE OVERRIDES
+   ============================================================ */
+@media (max-width: 1023px) {
+  .contact-luxury-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .map-address-overlay {
+    position: relative;
+    inset: auto;
+    margin: 1rem auto 0;
+    max-width: 100%;
+  }
+  .lux-map-container {
+    height: 350px;
+  }
+}
+
+@media (max-width: 767px) {
+  .lux-form-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .contact-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-glass-card {
+    padding: 1.25rem;
+  }
+  .lux-captcha-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .captcha-input-el {
+    max-width: 100%;
+  }
+}

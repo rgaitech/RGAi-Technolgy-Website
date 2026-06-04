@@ -1,0 +1,139 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey", "howdy", "good morning", "good afternoon", "good evening", "namaste", "hii", "helo"],
+      "responses": [
+        "👋 Hello! Welcome to RGAi Technology. How can I help you today?",
+        "Hi there! 🤖 I'm ARIA, RGAi's AI assistant. What can I help you with?",
+        "Hey! Welcome to RGAi Technology 🚀 Ask me anything about our services!"
+      ],
+      "suggestions": ["Our Services", "Get a Quote", "Contact Us", "About RGAi"]
+    },
+    {
+      "tag": "about",
+      "patterns": ["who are you", "what is rgai", "about rgai", "tell me about", "company info", "what do you do", "rgai technology"],
+      "responses": [
+        "🏢 RGAi Technology Pvt. Ltd. is a premium AI & digital solutions company based in Mumbai, India.\n\nWe specialise in:\n• 🌐 Website Development\n• 📱 Mobile App Development\n• 🤖 AI Solutions & AI Agents\n• ⚙️ Business Automation\n• 📈 Digital Marketing & SEO\n• 🎨 UI/UX Design\n\nWith 200+ happy clients and 500+ projects delivered!"
+      ],
+      "suggestions": ["Our Services", "View Portfolio", "Meet the Team", "Get a Quote"]
+    },
+    {
+      "tag": "services",
+      "patterns": ["services", "what do you offer", "what can you build", "offerings", "solutions", "help me with"],
+      "responses": [
+        "🛠️ Here are our core services:\n\n🌐 **Website Development** — React, Next.js, Custom CMS\n📱 **Mobile Apps** — React Native, Flutter (iOS & Android)\n🤖 **AI Solutions** — ML models, NLP, Computer Vision\n⚡ **AI Agents** — Autonomous bots & workflow automation\n📈 **Digital Marketing** — Social media, PPC, Email\n🔍 **SEO Services** — On-page, Technical, Link Building\n⚙️ **Business Automation** — RPA, API integration\n🎨 **UI/UX Design** — Figma, Design Systems\n\nWhich service interests you?"
+      ],
+      "suggestions": ["Web Development", "Mobile Apps", "AI Solutions", "SEO Services", "Get Pricing"]
+    },
+    {
+      "tag": "web_development",
+      "patterns": ["website", "web development", "web design", "landing page", "ecommerce", "online store", "wordpress", "next.js", "react"],
+      "responses": [
+        "🌐 Our **Website Development** service includes:\n\n✅ Custom React / Next.js websites\n✅ E-Commerce platforms (Shopify, Custom)\n✅ WordPress & CMS development\n✅ Landing pages that convert\n✅ SEO-optimised from day one\n✅ Mobile-first, blazing fast\n\n💰 Starting from ₹15,000\n⏱️ Delivery in 1–4 weeks\n\nWant a free quote for your website?"
+      ],
+      "suggestions": ["Get Website Quote", "See Portfolio", "WhatsApp Us", "Book Free Call"]
+    },
+    {
+      "tag": "mobile_app",
+      "patterns": ["mobile app", "android app", "ios app", "flutter", "react native", "app development", "iphone app"],
+      "responses": [
+        "📱 Our **Mobile App Development** service:\n\n✅ Cross-platform (iOS + Android)\n✅ React Native & Flutter\n✅ Native performance & feel\n✅ App Store & Play Store submission\n✅ AI-powered features available\n✅ Ongoing maintenance & updates\n\n💰 Starting from ₹50,000\n⏱️ Delivery in 4–12 weeks\n\nTell me about your app idea!"
+      ],
+      "suggestions": ["App Quote", "See App Projects", "WhatsApp Us", "Discuss My Idea"]
+    },
+    {
+      "tag": "ai_solutions",
+      "patterns": ["ai", "artificial intelligence", "machine learning", "chatbot", "nlp", "automation", "ai agent", "gpt", "llm"],
+      "responses": [
+        "🤖 Our **AI Solutions** are our flagship service!\n\n✅ Custom AI chatbots (like me! 😊)\n✅ Machine learning models\n✅ Natural Language Processing (NLP)\n✅ Computer Vision systems\n✅ AI Agents that work 24/7\n✅ LLM integration (GPT-4, Llama, etc.)\n✅ Predictive analytics\n\n💰 Starting from ₹30,000\n\nWant to see what AI can do for your business?"
+      ],
+      "suggestions": ["AI Project Quote", "AI Agent Demo", "WhatsApp for AI", "Book Consultation"]
+    },
+    {
+      "tag": "seo",
+      "patterns": ["seo", "search engine", "google ranking", "rank on google", "keyword", "organic traffic", "digital marketing"],
+      "responses": [
+        "🔍 Our **SEO Services** deliver real results:\n\n✅ Full technical SEO audit\n✅ On-page & off-page optimisation\n✅ Keyword research & strategy\n✅ Content creation & optimisation\n✅ Link building campaigns\n✅ Monthly ranking reports\n\n📊 Average results: Page 1 in 60–90 days!\n\n💰 Starting from ₹8,000/month\n\nWant a free SEO audit of your website?"
+      ],
+      "suggestions": ["Free SEO Audit", "SEO Pricing", "WhatsApp for SEO", "Digital Marketing"]
+    },
+    {
+      "tag": "pricing",
+      "patterns": ["price", "cost", "how much", "pricing", "rates", "charges", "budget", "affordable", "cheap", "quote", "estimate"],
+      "responses": [
+        "💰 Our pricing is transparent and competitive:\n\n🌐 Website Development: ₹15,000 – ₹2,00,000+\n📱 Mobile App: ₹50,000 – ₹5,00,000+\n🤖 AI Solutions: ₹30,000 – ₹3,00,000+\n📈 Digital Marketing: ₹8,000 – ₹50,000/month\n🔍 SEO Services: ₹8,000 – ₹30,000/month\n🎨 UI/UX Design: ₹10,000 – ₹1,00,000+\n⚙️ Automation: ₹20,000 – ₹2,00,000+\n\n*All prices vary based on scope & complexity.\n\nWant a precise quote? Use our **Cost Estimator** or WhatsApp us!"
+      ],
+      "suggestions": ["Use Cost Estimator", "WhatsApp for Quote", "Contact Us", "Free Consultation"]
+    },
+    {
+      "tag": "contact",
+      "patterns": ["contact", "reach you", "phone number", "email", "address", "location", "office", "call", "whatsapp number"],
+      "responses": [
+        "📞 Here's how to reach us:\n\n📧 Email: rgai.tech@gmail.com\n📱 WhatsApp: +91 9579098477\n📍 Mumbai, Maharashtra, India\n⏰ Mon–Sat: 9 AM – 7 PM IST\n\n💬 Response time: Within 24 hours\n🟢 Currently accepting new projects!\n\nThe fastest way to reach us is WhatsApp — we reply instantly!"
+      ],
+      "suggestions": ["WhatsApp Now", "Send Email", "Contact Page", "Book Free Call"]
+    },
+    {
+      "tag": "portfolio",
+      "patterns": ["portfolio", "past work", "projects", "examples", "case study", "clients", "previous work", "show me your work"],
+      "responses": [
+        "🎨 We've delivered 500+ projects! Here are some highlights:\n\n🏦 FinTech Dashboard (Real-time AI analytics)\n🤖 Enterprise AI Chatbot (60% cost reduction)\n📱 Health Tracker App (50,000+ downloads)\n🛍️ E-Commerce Platform (3x sales increase)\n⚡ RPA Workflow Engine (40 hrs/week saved)\n🎨 SaaS Design System (200+ components)\n\nCheck our full portfolio at rgai.tech/portfolio"
+      ],
+      "suggestions": ["View Full Portfolio", "Similar Project?", "WhatsApp Us", "Get Started"]
+    },
+    {
+      "tag": "timeline",
+      "patterns": ["how long", "timeline", "delivery", "when", "duration", "time", "deadline", "fast", "urgent"],
+      "responses": [
+        "⏱️ Typical project timelines:\n\n🌐 Landing Page: 1–2 weeks\n🌐 Full Website: 2–6 weeks\n📱 Mobile App: 4–12 weeks\n🤖 AI Solutions: 3–8 weeks\n⚙️ Automation: 2–6 weeks\n🎨 UI/UX Design: 1–4 weeks\n\n⚡ We also offer **Express Delivery** for urgent projects!\n\nTimeline depends on scope — contact us for your specific project."
+      ],
+      "suggestions": ["Get Timeline Estimate", "Urgent Project?", "WhatsApp Us", "Book Free Call"]
+    },
+    {
+      "tag": "support",
+      "patterns": ["support", "maintenance", "after launch", "bug fix", "update", "post delivery", "warranty"],
+      "responses": [
+        "🛡️ Our Support Policy:\n\n✅ **30 days** free bug-fix support after every launch\n✅ Monthly maintenance packages available\n✅ 24-hour response time for critical issues\n✅ Dedicated project manager for your account\n✅ Source code delivered to you\n✅ Hosting & domain guidance\n\nWe're with you long after launch! 🚀"
+      ],
+      "suggestions": ["Maintenance Plans", "WhatsApp Support", "Contact Us", "Get Quote"]
+    },
+    {
+      "tag": "technologies",
+      "patterns": ["technology", "tech stack", "tools", "framework", "language", "react", "node", "python", "firebase"],
+      "responses": [
+        "⚙️ Our Tech Stack:\n\n🖥️ **Frontend**: React, Next.js, Vue, HTML/CSS\n📱 **Mobile**: React Native, Flutter\n🔧 **Backend**: Node.js, Python, FastAPI, PHP\n☁️ **Cloud**: AWS, Azure, Firebase, Vercel\n🤖 **AI/ML**: TensorFlow, PyTorch, OpenAI, LangChain\n🗄️ **Database**: PostgreSQL, MongoDB, MySQL, Redis\n🎨 **Design**: Figma, Adobe XD, Framer\n\nWe always choose the best stack for your specific project!"
+      ],
+      "suggestions": ["What Stack for My Project?", "AI Tech Stack", "WhatsApp Us", "Start Project"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thank", "thanks", "thank you", "great", "awesome", "perfect", "nice", "good", "helpful"],
+      "responses": [
+        "You're welcome! 😊 Is there anything else I can help you with?",
+        "Happy to help! 🎉 Feel free to ask if you have more questions.",
+        "Anytime! 🚀 Remember, we're just a WhatsApp message away for detailed discussions!"
+      ],
+      "suggestions": ["More Questions", "WhatsApp Us", "Get Started", "View Portfolio"]
+    },
+    {
+      "tag": "bye",
+      "patterns": ["bye", "goodbye", "see you", "later", "exit", "close", "quit"],
+      "responses": [
+        "Goodbye! 👋 Feel free to chat anytime. We're always here to help!",
+        "Take care! 🌟 Reach us at +91 9579098477 on WhatsApp anytime!"
+      ],
+      "suggestions": ["WhatsApp Us", "Contact Page"]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [],
+      "responses": [
+        "🤔 I'm not sure about that specific query. Let me connect you with our team!\n\n📱 WhatsApp: +91 9579098477\n📧 Email: rgai.tech@gmail.com\n\nOr you can ask me about our services, pricing, or portfolio!",
+        "I didn't quite catch that! 😊 Could you rephrase? Or choose from the options below:",
+        "That's a great question for our team! Reach us on WhatsApp at +91 9579098477 for a detailed answer."
+      ],
+      "suggestions": ["Our Services", "Pricing", "Portfolio", "WhatsApp Us"]
+    }
+  ]
+}

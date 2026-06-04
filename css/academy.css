@@ -1,0 +1,223 @@
+/* ============================================================
+   ACADEMY.CSS — Academy Landing & Coming Soon Styles
+   ============================================================ */
+
+/* ---- Academy Hero ---- */
+.academy-hero {
+  padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 5vw, 4rem);
+}
+
+.academy-title {
+  font-family: var(--font-head);
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  max-width: 900px;
+  margin: 1.5rem auto;
+}
+
+/* ---- Countdown Container ---- */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  background: var(--clr-glass, rgba(22, 22, 30, 0.7));
+  border: 1px solid var(--clr-glass-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--r-xl, 24px);
+  padding: 1.5rem 2rem;
+  min-width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.countdown-num {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  background: var(--grad-primary, linear-gradient(135deg, #0066FF, #7C3AED));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.countdown-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--clr-text-3, rgba(255, 255, 255, 0.5));
+  margin-top: 0.5rem;
+}
+
+/* ---- Waitlist Card ---- */
+.waitlist-card {
+  background: var(--clr-glass, rgba(22, 22, 30, 0.6));
+  border: 1px solid var(--clr-glass-border, rgba(255, 255, 255, 0.1));
+  border-radius: var(--r-xl, 24px);
+  padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  text-align: center;
+}
+
+.waitlist-card h3 {
+  font-family: var(--font-head);
+  font-size: var(--fs-lg, 1.5rem);
+  font-weight: 700;
+  color: var(--clr-text, #fff);
+  margin-bottom: 0.5rem;
+}
+
+.waitlist-card p {
+  font-size: var(--fs-sm, 0.875rem);
+  color: var(--clr-text-2, #ccc);
+  margin-bottom: 1.75rem;
+}
+
+/* Waitlist Form */
+.waitlist-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
+}
+
+.waitlist-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: var(--r-md, 12px);
+  border: 1px solid var(--clr-border, rgba(255, 255, 255, 0.1));
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--clr-text, #fff);
+  font-size: var(--fs-sm, 0.875rem);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.waitlist-input:focus {
+  border-color: var(--clr-accent, #0066FF);
+  background: rgba(0, 102, 255, 0.03);
+}
+
+.waitlist-count {
+  font-size: 0.78rem;
+  color: var(--clr-text-3, rgba(255, 255, 255, 0.45));
+  margin-top: 1.25rem;
+}
+
+.waitlist-count strong {
+  color: var(--clr-accent, #0066FF);
+}
+
+/* ---- Curriculum Grid ---- */
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2rem);
+  margin-top: 3rem;
+}
+
+.curriculum-card {
+  background: var(--clr-surface, rgba(22, 22, 30, 0.45));
+  border: 1px solid var(--clr-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--r-xl, 24px);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all var(--dur-base, 0.3s) ease;
+}
+
+.curriculum-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 102, 255, 0.25);
+  box-shadow: var(--shadow-md);
+}
+
+.curriculum-icon {
+  font-size: 2.25rem;
+  width: 60px;
+  height: 60px;
+  background: var(--clr-accent-light, rgba(0, 102, 255, 0.08));
+  border-radius: var(--r-lg, 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.curriculum-card h3 {
+  font-family: var(--font-head);
+  font-size: var(--fs-md, 1.125rem);
+  font-weight: 700;
+  color: var(--clr-text, #fff);
+  margin-bottom: 0.75rem;
+}
+
+.curriculum-card p {
+  font-size: var(--fs-sm, 0.875rem);
+  color: var(--clr-text-2, #aaa);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.curriculum-lessons {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-top: 1px solid var(--clr-border, rgba(255, 255, 255, 0.06));
+  padding-top: 1.25rem;
+}
+
+.curriculum-lessons li {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--clr-text-2, #ccc);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Light Mode Overrides */
+[data-theme="light"] .countdown-item,
+[data-theme="light"] .waitlist-card,
+[data-theme="light"] .curriculum-card {
+  background: var(--clr-surface, #ffffff);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .waitlist-input {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+/* ---- Responsive ---- */
+@media (min-width: 576px) {
+  .waitlist-form {
+    flex-direction: row;
+  }
+  .waitlist-input {
+    flex: 1;
+  }
+  .waitlist-form button {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .curriculum-grid {
+    grid-template-columns: 1fr;
+  }
+}

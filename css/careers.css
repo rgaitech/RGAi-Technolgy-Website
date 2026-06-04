@@ -1,0 +1,295 @@
+/* ============================================================
+   CAREERS.CSS — Open Opportunities & Job Applications Styles
+   ============================================================ */
+
+/* ---- Hero & Filters ---- */
+.careers-hero {
+  padding: clamp(3rem, 6vw, 5rem) 0 2rem;
+}
+
+.careers-main-title {
+  font-family: var(--font-head);
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  margin: 1.5rem 0;
+}
+
+.careers-filters {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* ---- Careers Grid ---- */
+.careers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.careers-card {
+  background: var(--clr-surface, rgba(22, 22, 30, 0.45));
+  border: 1px solid var(--clr-border, rgba(255, 255, 255, 0.08));
+  border-radius: var(--r-xl, 24px);
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all var(--dur-base, 0.3s) ease;
+}
+
+.careers-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 102, 255, 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+.careers-card.hidden {
+  display: none;
+}
+
+/* Meta & tags */
+.job-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--clr-accent-light, rgba(0, 102, 255, 0.1));
+  color: var(--clr-accent, #0066FF);
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 102, 255, 0.15);
+}
+
+.job-loc {
+  font-size: 0.75rem;
+  color: var(--clr-text-3, rgba(255, 255, 255, 0.5));
+}
+
+.careers-card h3 {
+  font-family: var(--font-head);
+  font-size: var(--fs-md, 1.25rem);
+  font-weight: 700;
+  color: var(--clr-text, #fff);
+}
+
+.careers-card p {
+  font-size: var(--fs-sm, 0.875rem);
+  color: var(--clr-text-2, #aaa);
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+.job-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--clr-border, rgba(255, 255, 255, 0.06));
+  padding-top: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.job-type {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--clr-text-3, rgba(255, 255, 255, 0.5));
+}
+
+/* ---- Job Details Modal ---- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.modal-window {
+  background: var(--clr-glass, rgba(22, 22, 30, 0.95));
+  border: 1px solid var(--clr-glass-border, rgba(255, 255, 255, 0.1));
+  border-radius: var(--r-xl, 24px);
+  width: min(680px, 100%);
+  max-height: min(780px, calc(100vh - 2rem));
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.9) translateY(20px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.open .modal-window {
+  transform: scale(1) translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--clr-text-3, rgba(255, 255, 255, 0.6));
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.modal-content-scroll {
+  overflow-y: auto;
+  padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.modal-content-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--clr-border, rgba(255, 255, 255, 0.08));
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--clr-accent-light, rgba(0, 102, 255, 0.1));
+  color: var(--clr-accent, #0066FF);
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.modal-header h2 {
+  font-family: var(--font-head);
+  font-size: var(--fs-lg, 1.75rem);
+  font-weight: 800;
+  color: var(--clr-text, #fff);
+  line-height: 1.25;
+}
+
+.modal-loc {
+  font-size: 0.82rem;
+  color: var(--clr-text-3, rgba(255, 255, 255, 0.5));
+  margin-top: 0.5rem;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-body h4 {
+  font-family: var(--font-head);
+  font-size: var(--fs-sm, 1rem);
+  font-weight: 700;
+  color: var(--clr-text, #fff);
+}
+
+.modal-body p,
+.modal-body li {
+  font-size: var(--fs-sm, 0.875rem);
+  color: var(--clr-text-2, #ccc);
+  line-height: 1.6;
+}
+
+.modal-body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.modal-body li::before {
+  content: '⚡';
+  margin-right: 0.5rem;
+  color: var(--clr-accent, #0066FF);
+}
+
+/* Quick Apply Form */
+.careers-apply-form {
+  border-top: 1px dashed var(--clr-border, rgba(255, 255, 255, 0.12));
+  padding-top: 2rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.careers-apply-form h3 {
+  font-family: var(--font-head);
+  font-size: var(--fs-md, 1.25rem);
+  font-weight: 700;
+  color: var(--clr-text, #fff);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] .careers-card,
+[data-theme="light"] .modal-window {
+  background: var(--clr-surface, #ffffff);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .modal-close-btn {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .modal-close-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+}

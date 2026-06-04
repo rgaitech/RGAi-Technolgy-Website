@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RGAi Academy – Master Next-Generation AI, Machine Learning, Web Engineering, and AI Agents. Launching soon." />
+  <meta name="keywords" content="RGAi Academy, Learn AI, Machine Learning Course, Web Masterclass, Learn AI Agents, Tech Education" />
+  <meta name="author" content="RGAi Technology Pvt. Ltd." />
+  <meta property="og:title" content="RGAi Academy – Master Next-Gen Tech (Coming Soon)" />
+  <meta property="og:description" content="Join the waitlist to get early bird access to our premium tech courses." />
+  <meta property="og:type" content="website" />
+  <title>RGAi Academy – Master Next-Gen Technology</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/effects.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/aurora.css" />
+  <link rel="stylesheet" href="css/transitions.css" />
+  <link rel="stylesheet" href="css/microinteractions.css" />
+  <link rel="stylesheet" href="css/academy.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">
+      <span class="loader-r">R</span><span class="loader-g">G</span><span class="loader-ai">Ai</span>
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <p class="loader-text">Loading Academy Hub...</p>
+  </div>
+</div>
+
+<!-- CURSOR -->
+<div id="cursorGlow" class="cursor-glow"></div>
+<div id="cursorDot"  class="cursor-dot"></div>
+
+<!-- BACKGROUND CANVAS -->
+<canvas id="auroraCanvas"></canvas>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="RGAi Technology Home">
+      <span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span>
+      <span class="logo-sub">Technology</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+      <li><a href="index.html"        class="nav-link">Home</a></li>
+      <li><a href="services.html"     class="nav-link">Services</a></li>
+      <li><a href="portfolio.html"    class="nav-link">Portfolio</a></li>
+      <li><a href="about.html"        class="nav-link">About</a></li>
+      <li><a href="labs.html"         class="nav-link ">Labs</a></li>
+      <li><a href="academy.html"      class="nav-link active">Academy</a></li>
+      <li><a href="contact.html"      class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="theme-icon moon">🌙</span>
+        <span class="theme-icon sun">☀️</span>
+      </button>
+      <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== ACADEMY HERO ==================== -->
+<main class="academy-page" style="padding-top: var(--nav-h); min-height: 100vh;">
+  <section class="section academy-hero">
+    <div class="container text-center">
+      <div class="hero-badge" data-aos="fade-up">
+        <span class="badge-dot"></span>
+        LAUNCHING Q4 2026
+      </div>
+      
+      <h1 class="academy-title" data-aos="fade-up" data-aos-delay="100">
+        Master the Next Wave of <span class="gradient-text">AI Innovation</span>
+      </h1>
+      <p class="section-subtitle mx-auto" data-aos="fade-up" data-aos-delay="200" style="max-width: 680px;">
+        Empower your tech career with premium, hands-on masterclasses led by industry practitioners. Learn autonomous AI agents, LLM engineering, high-performance web development, and digital automation.
+      </p>
+
+      <!-- COUNTDOWN TIMER -->
+      <div class="countdown-container" data-aos="fade-up" data-aos-delay="300">
+        <div class="countdown-item card-spotlight">
+          <span class="countdown-num" id="days">00</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-item card-spotlight">
+          <span class="countdown-num" id="hours">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-item card-spotlight">
+          <span class="countdown-num" id="minutes">00</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <div class="countdown-item card-spotlight">
+          <span class="countdown-num" id="seconds">00</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
+
+      <!-- WAITING LIST SIGNUP -->
+      <div class="waitlist-card card-spotlight mx-auto" data-aos="fade-up" data-aos-delay="400" style="max-width: 550px;">
+        <h3>Join the Waiting List</h3>
+        <p>Get exclusive early-bird discounts, course syllabus previews, and launch notifications.</p>
+        
+        <form class="waitlist-form" id="waitlistForm">
+          <input type="email" class="waitlist-input" placeholder="Enter your email address" required aria-label="Waitlist email" />
+          <button type="submit" class="btn btn-primary btn-magnetic">
+            <span>Get Early Access</span>
+          </button>
+        </form>
+        <p class="waitlist-count">🤝 Join <strong>1,420+</strong> developers & designers currently on the waitlist.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACADEMY CURRICULUM PREVIEW -->
+  <section class="section academy-preview border-top">
+    <div class="container">
+      <div class="section-title text-center" data-aos="fade-up">
+        <span class="title-tag">Syllabus Highlights</span>
+        <h2>What You'll <span class="gradient-text">Master</span></h2>
+        <p class="section-subtitle">A sneak peek at our highly practical, production-oriented curriculum paths.</p>
+      </div>
+
+      <div class="curriculum-grid">
+        <!-- Path 1 -->
+        <div class="curriculum-card card-spotlight" data-aos="fade-up" data-aos-delay="100">
+          <div class="curriculum-icon">🧠</div>
+          <h3>AI Agents & LLM Architectures</h3>
+          <p>Learn to design, deploy, and scale autonomous AI agents. Master frameworks like LangChain, AutoGen, and CrewAI for commercial multi-agent setups.</p>
+          <ul class="curriculum-lessons">
+            <li>✓ LLM prompt engineering & security</li>
+            <li>✓ Vector databases (Pinecone, Chroma)</li>
+            <li>✓ Multi-agent autonomous workflows</li>
+          </ul>
+        </div>
+
+        <!-- Path 2 -->
+        <div class="curriculum-card card-spotlight" data-aos="fade-up" data-aos-delay="200">
+          <div class="curriculum-icon">🌐</div>
+          <h3>Next-Gen Web Engineering</h3>
+          <p>Develop high-performance websites mimicking industry standards. Dive deep into Next.js React frameworks, styling systems, and custom GSAP/Three.js interactive web visuals.</p>
+          <ul class="curriculum-lessons">
+            <li>✓ Core React & Next.js Server Components</li>
+            <li>✓ Luxury GSAP animations & interactions</li>
+            <li>✓ Deploying and monitoring globally</li>
+          </ul>
+        </div>
+
+        <!-- Path 3 -->
+        <div class="curriculum-card card-spotlight" data-aos="fade-up" data-aos-delay="300">
+          <div class="curriculum-icon">⚡</div>
+          <h3>Business Automation & API Dev</h3>
+          <p>Build enterprise grade robotic process automation (RPA). Scale backends using Python FastAPI and Node.js with complex system logic integrations.</p>
+          <ul class="curriculum-lessons">
+            <li>✓ Custom webhooks and API orchestration</li>
+            <li>✓ RPA flows and serverless databases</li>
+            <li>✓ AI analytics dashboard design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
+      <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z" fill="currentColor"></path>
+    </svg>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span>
+        </div>
+        <p class="footer-tagline">Transforming businesses through next-generation AI and premium digital engineering solutions.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="labs.html">Labs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Web Development</a></li>
+          <li><a href="services.html">Mobile App Dev</a></li>
+          <li><a href="services.html">AI Solutions</a></li>
+          <li><a href="services.html">AI Agents</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Stay Connected</h4>
+        <p class="footer-newsletter-desc">Join our newsletter to receive the latest updates.</p>
+        <form class="newsletter-form" id="newsletterForm2">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Newsletter email" />
+          <button type="submit" class="newsletter-btn" aria-label="Subscribe">→</button>
+        </form>
+        <p class="newsletter-note" id="newsletterMsg2"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 RGAi Technology Pvt. Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/aurora.js"></script>
+<script src="js/spotlight.js"></script>
+<script src="js/transitions.js"></script>
+<script src="js/microinteractions.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/chatbot.js"></script>
+<script>
+  // Countdown Timer Script (target: 120 days from now)
+  (function initCountdown() {
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    if (!daysEl) return;
+
+    // Target date: 120 days in the future
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 120);
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const diff = targetDate.getTime() - now;
+
+      if (diff <= 0) {
+        clearInterval(timerInterval);
+        return;
+      }
+
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+      daysEl.textContent = d < 10 ? '0' + d : d;
+      hoursEl.textContent = h < 10 ? '0' + h : h;
+      minutesEl.textContent = m < 10 ? '0' + m : m;
+      secondsEl.textContent = s < 10 ? '0' + s : s;
+    }
+
+    updateTimer();
+    const timerInterval = setInterval(updateTimer, 1000);
+  })();
+
+  // Waitlist form submit
+  const waitlistForm = document.getElementById('waitlistForm');
+  if (waitlistForm) {
+    waitlistForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = waitlistForm.querySelector('input').value;
+      
+      // Save waitlist email to localStorage
+      let subs = JSON.parse(localStorage.getItem('rgai-waitlist') || '[]');
+      subs.push({ email: input, date: new Date().toISOString() });
+      localStorage.setItem('rgai-waitlist', JSON.stringify(subs));
+
+      // Display feedback message
+      if (window.showToast) {
+        window.showToast('🎉 You are on the waitlist! We will contact you soon.', 'success');
+      } else {
+        alert('🎉 Success! You have been added to the waiting list.');
+      }
+      waitlistForm.reset();
+    });
+  }
+</script>
+</body>
+</html>

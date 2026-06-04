@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Careers at RGAi Technology – Join our team of AI researchers, software engineers, and digital innovators. Build the future with us." />
+  <meta name="keywords" content="RGAi Careers, Tech Jobs Mumbai, AI Engineer Jobs, Developer Vacancies, Software Engineering Jobs" />
+  <meta name="author" content="RGAi Technology Pvt. Ltd." />
+  <meta property="og:title" content="Careers at RGAi Technology – Build the AI Future" />
+  <meta property="og:description" content="Explore open positions and join a team that values creativity, code quality, and AI innovation." />
+  <meta property="og:type" content="website" />
+  <title>Careers – RGAi Technology</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/effects.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/aurora.css" />
+  <link rel="stylesheet" href="css/transitions.css" />
+  <link rel="stylesheet" href="css/microinteractions.css" />
+  <link rel="stylesheet" href="css/careers.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">
+      <span class="loader-r">R</span><span class="loader-g">G</span><span class="loader-ai">Ai</span>
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <p class="loader-text">Loading Open Opportunities...</p>
+  </div>
+</div>
+
+<!-- CURSOR -->
+<div id="cursorGlow" class="cursor-glow"></div>
+<div id="cursorDot"  class="cursor-dot"></div>
+
+<!-- BACKGROUND CANVAS -->
+<canvas id="auroraCanvas"></canvas>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="RGAi Technology Home">
+      <span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span>
+      <span class="logo-sub">Technology</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
+      <li><a href="index.html"        class="nav-link">Home</a></li>
+      <li><a href="services.html"     class="nav-link">Services</a></li>
+      <li><a href="portfolio.html"    class="nav-link">Portfolio</a></li>
+      <li><a href="about.html"        class="nav-link">About</a></li>
+      <li><a href="labs.html"         class="nav-link ">Labs</a></li>
+      <li><a href="careers.html"      class="nav-link active">Careers</a></li>
+      <li><a href="contact.html"      class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="theme-icon moon">🌙</span>
+        <span class="theme-icon sun">☀️</span>
+      </button>
+      <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== CAREERS HERO ==================== -->
+<main class="careers-page" style="padding-top: var(--nav-h); min-height: 100vh;">
+  <section class="section careers-hero">
+    <div class="container text-center">
+      <div class="hero-badge" data-aos="fade-up">
+        <span class="badge-dot"></span>
+        WE'RE HIRING
+      </div>
+      <h1 class="careers-main-title" data-aos="fade-up" data-aos-delay="100">
+        Build the Autonomous <span class="gradient-text">AI Future</span>
+      </h1>
+      <p class="section-subtitle mx-auto" data-aos="fade-up" data-aos-delay="200" style="max-width: 650px;">
+        Join RGAi Technology. Work on complex AI models, high-performance applications, and robotic workflows alongside top-tier creators.
+      </p>
+
+      <!-- Department Filters -->
+      <div class="careers-filters" data-aos="fade-up" data-aos-delay="300">
+        <button class="filter-btn active" data-dept="all">All Departments</button>
+        <button class="filter-btn" data-dept="eng">Engineering</button>
+        <button class="filter-btn" data-dept="ai">AI Research</button>
+        <button class="filter-btn" data-dept="design">UI/UX Design</button>
+        <button class="filter-btn" data-dept="biz">Business Development</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Positions List -->
+  <section class="section careers-listings-sec">
+    <div class="container">
+      <div class="careers-grid">
+        
+        <!-- Job Card 1 -->
+        <div class="careers-card card-spotlight" data-dept="ai" data-aos="fade-up" data-aos-delay="100">
+          <div class="job-meta">
+            <span class="job-tag">AI Research</span>
+            <span class="job-loc">📍 Mumbai / Remote</span>
+          </div>
+          <h3>Senior NLP Engineer</h3>
+          <p>Lead the architectural deployment of custom LLM prompting, indexing pipelines, and agentic workflows.</p>
+          <div class="job-bottom">
+            <span class="job-type">🕒 Full-Time</span>
+            <button class="btn btn-secondary btn-magnetic view-job-btn" data-job="nlp-eng">View details & Apply</button>
+          </div>
+        </div>
+
+        <!-- Job Card 2 -->
+        <div class="careers-card card-spotlight" data-dept="eng" data-aos="fade-up" data-aos-delay="200">
+          <div class="job-meta">
+            <span class="job-tag">Engineering</span>
+            <span class="job-loc">📍 Mumbai</span>
+          </div>
+          <h3>Fullstack Next.js Developer</h3>
+          <p>Develop luxury, interactive corporate platforms, custom CMS portals, and web dashboards with high performance.</p>
+          <div class="job-bottom">
+            <span class="job-type">🕒 Full-Time</span>
+            <button class="btn btn-secondary btn-magnetic view-job-btn" data-job="next-dev">View details & Apply</button>
+          </div>
+        </div>
+
+        <!-- Job Card 3 -->
+        <div class="careers-card card-spotlight" data-dept="design" data-aos="fade-up" data-aos-delay="300">
+          <div class="job-meta">
+            <span class="job-tag">UI/UX Design</span>
+            <span class="job-loc">📍 Remote</span>
+          </div>
+          <h3>Lead Product Designer</h3>
+          <p>Create visual interfaces and design systems matching the luxury aesthetic of modern tech brands.</p>
+          <div class="job-bottom">
+            <span class="job-type">🕒 Full-Time</span>
+            <button class="btn btn-secondary btn-magnetic view-job-btn" data-job="uiux-lead">View details & Apply</button>
+          </div>
+        </div>
+
+        <!-- Job Card 4 -->
+        <div class="careers-card card-spotlight" data-dept="eng" data-aos="fade-up" data-aos-delay="100">
+          <div class="job-meta">
+            <span class="job-tag">Engineering</span>
+            <span class="job-loc">📍 Mumbai / Hybrid</span>
+          </div>
+          <h3>Mobile App Developer (Flutter)</h3>
+          <p>Build native-performing cross-platform iOS and Android apps, integrating client-side device ML tools.</p>
+          <div class="job-bottom">
+            <span class="job-type">🕒 Full-Time</span>
+            <button class="btn btn-secondary btn-magnetic view-job-btn" data-job="flutter-dev">View details & Apply</button>
+          </div>
+        </div>
+
+        <!-- Job Card 5 -->
+        <div class="careers-card card-spotlight" data-dept="biz" data-aos="fade-up" data-aos-delay="200">
+          <div class="job-meta">
+            <span class="job-tag">Business Dev</span>
+            <span class="job-loc">📍 Mumbai</span>
+          </div>
+          <h3>Technical Sales Executive</h3>
+          <p>Accelerate customer acquisition. Formulate sales strategies pitching software, automation, and AI integrations.</p>
+          <div class="job-bottom">
+            <span class="job-type">🕒 Full-Time</span>
+            <button class="btn btn-secondary btn-magnetic view-job-btn" data-job="tech-sales">View details & Apply</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ==================== JOB DETAILS MODAL ==================== -->
+<div class="modal-overlay" id="jobModal">
+  <div class="modal-window card-spotlight">
+    <button class="modal-close-btn" aria-label="Close modal">×</button>
+    <div class="modal-content-scroll">
+      
+      <div class="modal-header">
+        <span class="modal-tag" id="modalTag">AI Research</span>
+        <h2 id="modalTitle">Senior NLP Engineer</h2>
+        <p class="modal-loc" id="modalLoc">📍 Mumbai / Remote • Full-Time</p>
+      </div>
+
+      <div class="modal-body">
+        <h4>Role Overview</h4>
+        <p id="modalOverview">We are seeking a senior AI expert to lead our natural language processing efforts, fine-tuning large language models, and developing autonomous workflow systems for corporate applications.</p>
+        
+        <h4>Requirements</h4>
+        <ul id="modalRequirements">
+          <li>3+ years building commercial NLP applications</li>
+          <li>Experience with vector databases and search structures</li>
+          <li>Strong python scripting proficiency</li>
+        </ul>
+
+        <h4>What We Offer</h4>
+        <ul id="modalBenefits">
+          <li>Competitive compensation & performance bonuses</li>
+          <li>Remote work options and flexible scheduling</li>
+          <li>Health benefits and learning credits</li>
+        </ul>
+
+        <!-- QUICK APPLY FORM -->
+        <form class="careers-apply-form" id="careersApplyForm">
+          <h3>Apply for this position</h3>
+          <div class="form-row-2">
+            <div class="form-group">
+              <input type="text" id="appName" class="form-input" placeholder=" " required />
+              <label for="appName" class="form-label">Full Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="appEmail" class="form-input" placeholder=" " required />
+              <label for="appEmail" class="form-label">Email Address</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="url" id="appPortfolio" class="form-input" placeholder=" " required />
+            <label for="appPortfolio" class="form-label">GitHub / Portfolio Link</label>
+          </div>
+          <div class="form-group">
+            <textarea id="appCover" class="form-input" placeholder=" " rows="4" required style="resize:none;"></textarea>
+            <label for="appCover" class="form-label">Why you'd love to join RGAi</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-magnetic w-full">
+            <span>Submit Application</span>
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
+      <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z" fill="currentColor"></path>
+    </svg>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span>
+        </div>
+        <p class="footer-tagline">Transforming businesses through next-generation AI and premium digital engineering solutions.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="labs.html">Labs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Web Development</a></li>
+          <li><a href="services.html">Mobile App Dev</a></li>
+          <li><a href="services.html">AI Solutions</a></li>
+          <li><a href="services.html">AI Agents</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Stay Connected</h4>
+        <p class="footer-newsletter-desc">Join our newsletter to receive the latest updates.</p>
+        <form class="newsletter-form" id="newsletterForm3">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Newsletter email" />
+          <button type="submit" class="newsletter-btn" aria-label="Subscribe">→</button>
+        </form>
+        <p class="newsletter-note" id="newsletterMsg3"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 RGAi Technology Pvt. Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/aurora.js"></script>
+<script src="js/spotlight.js"></script>
+<script src="js/transitions.js"></script>
+<script src="js/microinteractions.js"></script>
+<script src="js/careers.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

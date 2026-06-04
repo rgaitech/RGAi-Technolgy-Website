@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RGAi Technology Services – Website Development, Mobile Apps, AI Solutions, AI Agents, Digital Marketing, SEO, Business Automation & UI/UX Design." />
+  <meta name="keywords" content="RGAi Services, Web Development, Mobile App, AI Solutions, AI Agents, SEO, Business Automation, UI/UX Design" />
+  <meta name="author" content="RGAi Technology Pvt. Ltd." />
+  <meta property="og:title" content="Services – RGAi Technology" />
+  <meta property="og:description" content="Premium AI & digital services for modern businesses." />
+  <meta property="og:type" content="website" />
+  <title>Services – RGAi Technology Pvt. Ltd.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/effects.css" />
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/whatsapp.css" />
+  <link rel="stylesheet" href="css/chatbot.css" />
+  <link rel="stylesheet" href="css/aurora.css" />
+  <link rel="stylesheet" href="css/transitions.css" />
+  <link rel="stylesheet" href="css/microinteractions.css" />
+
+  <!-- PWA Support -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0066FF" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+  <style>
+    /* ── Services Page Extra Styles ── */
+    .services-page { background: var(--clr-bg); }
+
+    /* Process Section */
+    .process { background: var(--clr-bg-2); }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 2.5vw, 1.5rem);
+      position: relative;
+    }
+    .process-grid::before {
+      content: '';
+      position: absolute;
+      top: 52px;
+      left: calc(12.5% + 1rem);
+      right: calc(12.5% + 1rem);
+      height: 2px;
+      background: var(--grad-primary);
+      opacity: 0.20;
+      z-index: 0;
+    }
+    .process-step {
+      text-align: center;
+      padding: clamp(1.5rem, 3vw, 2.5rem) 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    .process-num {
+      width: clamp(52px, 7vw, 68px);
+      height: clamp(52px, 7vw, 68px);
+      border-radius: 50%;
+      background: var(--grad-primary);
+      color: #fff;
+      font-family: var(--font-head);
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      box-shadow: 0 8px 24px rgba(0,102,255,0.30);
+      transition: transform var(--dur-base) var(--ease-spring);
+    }
+    .process-step:hover .process-num { transform: scale(1.12); }
+    .process-step h3 {
+      font-size: clamp(var(--fs-sm), 1.5vw, var(--fs-lg));
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+    .process-step p { font-size: var(--fs-sm); color: var(--clr-text-3); }
+
+    /* Tech Stack Section */
+    .tech-stack { background: var(--clr-bg); }
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(0.75rem, 2vw, 1.25rem);
+      justify-content: center;
+    }
+    .tech-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.7rem 1.4rem;
+      background: var(--grad-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-full);
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      color: var(--clr-text);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--dur-base) var(--ease);
+      cursor: default;
+    }
+    .tech-badge:hover {
+      border-color: var(--clr-accent);
+      color: var(--clr-accent);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .tech-badge-icon { font-size: 1.2rem; }
+
+    /* FAQ */
+    .faq { background: var(--clr-bg-2); }
+    .faq-grid { display: flex; flex-direction: column; gap: 1rem; max-width: 800px; margin-inline: auto; }
+    .faq-item {
+      background: var(--grad-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      transition: box-shadow var(--dur-base) var(--ease);
+    }
+    .faq-item:hover { box-shadow: var(--shadow-md); }
+    .faq-question {
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: var(--fs-base);
+      color: var(--clr-text);
+      text-align: left;
+      background: none;
+      border: none;
+      transition: color var(--dur-fast) var(--ease);
+    }
+    .faq-question:hover { color: var(--clr-accent); }
+    .faq-chevron {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--clr-accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all var(--dur-base) var(--ease);
+      font-size: 0.8rem;
+      color: var(--clr-accent);
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); background: var(--clr-accent); color: #fff; }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 1.5rem;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding: 0 1.5rem 1.25rem; }
+    .faq-answer p { font-size: var(--fs-sm); color: var(--clr-text-2); line-height: 1.75; }
+
+    /* CTA Strip */
+    .services-cta { background: var(--grad-primary); padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 5vw, 2.5rem); text-align: center; position: relative; overflow: hidden; }
+    .services-cta::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='1' fill='white' opacity='0.07'/%3E%3C/svg%3E"); }
+    .services-cta-inner { position: relative; z-index: 1; max-width: 640px; margin-inline: auto; }
+    .services-cta h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #fff; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .services-cta p { color: rgba(255,255,255,0.80); margin-bottom: 2rem; font-size: var(--fs-md); }
+
+    /* Responsive */
+    @media (max-width: 899px) { .process-grid { grid-template-columns: repeat(2, 1fr); } .process-grid::before { display: none; } }
+    @media (max-width: 480px) { .process-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="services-page">
+
+<!-- LOADER -->
+<div id="loader" class="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">
+      <span class="loader-r">R</span><span class="loader-g">G</span><span class="loader-ai">Ai</span>
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar" id="loaderBar"></div></div>
+    <p class="loader-text">Loading Services...</p>
+    <div class="loader-dots">
+      <div class="loader-dot"></div><div class="loader-dot"></div><div class="loader-dot"></div>
+    </div>
+  </div>
+</div>
+
+<div id="cursorGlow" class="cursor-glow"></div>
+<div id="cursorDot"  class="cursor-dot"></div>
+
+<!-- BACKGROUND CANVAS -->
+<canvas id="auroraCanvas"></canvas>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo" aria-label="RGAi Technology Home">
+      <span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span>
+      <span class="logo-sub">Technology</span>
+    </a>
+    <ul class="nav-links" id="navLinks" role="navigation">
+      <li><a href="index.html"     class="nav-link">Home</a></li>
+      <li><a href="services.html"  class="nav-link active">Services</a></li>
+      <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+      <li><a href="about.html"     class="nav-link">About</a></li>
+      <li><a href="labs.html"         class="nav-link ">Labs</a></li>
+      <li><a href="estimator.html" class="nav-link">Estimator</a></li>
+      <li><a href="contact.html"   class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="theme-icon moon">🌙</span>
+        <span class="theme-icon sun">☀️</span>
+      </button>
+      <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-labelledby="servicesPageTitle">
+  <div class="page-hero-deco page-hero-deco-1" aria-hidden="true"></div>
+  <div class="page-hero-deco page-hero-deco-2" aria-hidden="true"></div>
+  <div class="container">
+    <span class="page-hero-tag">What We Offer</span>
+    <h1 class="page-hero-title" id="servicesPageTitle">
+      Premium <span class="gradient-text">Services</span><br>Built for Growth
+    </h1>
+    <p class="page-hero-desc">From AI-powered platforms to pixel-perfect designs — we deliver end-to-end digital solutions that move your business forward.</p>
+  </div>
+</section>
+
+<!-- ==================== ALL 8 SERVICES ==================== -->
+<section class="services section-pad" id="services" aria-labelledby="allServicesTitle">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Our Expertise</span>
+      <h2 class="section-title" id="allServicesTitle">Everything Your Business <span class="gradient-text">Needs</span></h2>
+      <p class="section-desc">Eight core service pillars designed to help modern businesses thrive in the digital age.</p>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+
+      <!-- 1. Website Development -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0" data-tilt>
+        <div class="service-icon-wrap">
+          <div class="service-icon">🌐</div>
+          <div class="service-icon-glow"></div>
+        </div>
+        <h3 class="service-name">Website Development</h3>
+        <p class="service-desc">Ultra-modern, SEO-optimized websites with blazing-fast performance. From landing pages to full-scale enterprise platforms built with cutting-edge technology.</p>
+        <ul class="service-tags">
+          <li>React / Next.js</li><li>Custom CMS</li><li>E-Commerce</li>
+        </ul>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <!-- 2. Mobile App -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80" data-tilt>
+        <div class="service-icon-wrap">
+          <div class="service-icon">📱</div>
+          <div class="service-icon-glow"></div>
+        </div>
+        <h3 class="service-name">Mobile App Development</h3>
+        <p class="service-desc">Cross-platform mobile applications with native-like performance. iOS and Android apps built with React Native & Flutter that users love.</p>
+        <ul class="service-tags">
+          <li>React Native</li><li>Flutter</li><li>iOS & Android</li>
+        </ul>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <!-- 3. AI Solutions (Featured) -->
+      <div class="service-card featured" data-aos="fade-up" data-aos-delay="160" data-tilt>
+        <div class="service-featured-badge">Most Popular</div>
+        <div class="service-icon-wrap">
+          <div class="service-icon">🤖</div>
+          <div class="service-icon-glow"></div>
+        </div>
+        <h3 class="service-name">AI Solutions</h3>
+        <p class="service-desc">Custom AI models, machine learning pipelines, and intelligent systems that learn and adapt to transform your business operations.</p>
+        <ul class="service-tags">
+          <li>Machine Learning</li><li>NLP</li><li>Computer Vision</li>
+        </ul>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <!-- 4. AI Agents -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="240" data-tilt>
+        <div class="service-icon-wrap">
+          <div class="service-icon">⚡</div>
+          <div class="service-icon-glow"></div>
+        </div>
+        <h3 class="service-name">AI Agents</h3>
+        <p class="service-desc">Autonomous AI agents that work 24/7 handling complex tasks, customer queries, and business workflows with zero human intervention needed.</p>
+        <ul class="service-tags">
+          <li>LLM Agents</li><li>Chatbots</li><li>Task Automation</li>
+        </ul>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <!-- 5. Digital Marketing -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="320" data-tilt>
+        <div class="service-icon-wrap">
+          <div class="service-icon">📈</div>
+          <div class="service-icon-glow"></div>
+        </div>
+        <h3 class="service-name">Digital Marketing</h3>
+        <p class="service-desc">Data-driven campaigns across all digital channels. Social media, PPC, email & content strategies that attract, convert, and retain customers.</p>
+        <ul class="service-tags">
+          <li>Social Media</li><li>PPC Ads</li><li>Email Marketing</li>
+        </ul>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <!-- 6. SEO -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400" data-tilt>
+        <div class="service-icon-wrap">
+          <div class="service-icon">🔍</div>
+          <div class="service-icon-glow"></div>
+        </div>
+        <h3 class="service-name">SEO Services</h3>
+        <p class="service-desc">Dominate search rankings with comprehensive technical SEO, authoritative content strategy, and powerful link-building campaigns that deliver real ROI.</p>
+        <ul class="service-tags">
+          <li>On-Page SEO</li><li>Technical SEO</li><li>Link Building</li>
+        </ul>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <!-- 7. Business Automation -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="480" data-tilt>
+        <div class="service-icon-wrap">
+          <div class="service-icon">⚙️</div>
+          <div class="service-icon-glow"></div>
+        </div>
+        <h3 class="service-name">Business Automation</h3>
+        <p class="service-desc">Streamline operations with intelligent workflow automation, RPA bots, and API integrations that eliminate repetitive tasks and human error.</p>
+        <ul class="service-tags">
+          <li>RPA Workflows</li><li>API Integration</li><li>Process Mining</li>
+        </ul>
+        <div class="service-arrow">→</div>
+      </div>
+
+      <!-- 8. UI/UX Design -->
+      <div class="service-card" data-aos="fade-up" data-aos-delay="560" data-tilt>
+        <div class="service-icon-wrap">
+          <div class="service-icon">🎨</div>
+          <div class="service-icon-glow"></div>
+        </div>
+        <h3 class="service-name">UI/UX Design</h3>
+        <p class="service-desc">Human-centred designs that captivate and convert. From user research and wireframes to pixel-perfect, accessible design systems.</p>
+        <ul class="service-tags">
+          <li>Figma Design</li><li>Prototyping</li><li>Design Systems</li>
+        </ul>
+        <div class="service-arrow">→</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== OUR PROCESS ==================== -->
+<section class="process section-pad" aria-labelledby="processTitle">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">How We Work</span>
+      <h2 class="section-title" id="processTitle">Our <span class="gradient-text">Process</span></h2>
+      <p class="section-desc">A transparent, proven workflow that delivers exceptional results every single time.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step" data-aos="fade-up" data-aos-delay="0">
+        <div class="process-num">01</div>
+        <h3>Discovery</h3>
+        <p>We deeply understand your goals, audience, and competitive landscape before writing a single line of code.</p>
+      </div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+        <div class="process-num">02</div>
+        <h3>Strategy</h3>
+        <p>We craft a data-driven roadmap with clear milestones, technology choices, and success metrics.</p>
+      </div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+        <div class="process-num">03</div>
+        <h3>Build</h3>
+        <p>Our engineers and designers build your solution with daily updates and iterative client feedback loops.</p>
+      </div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+        <div class="process-num">04</div>
+        <h3>Launch & Grow</h3>
+        <p>We deploy, monitor, optimise, and provide ongoing support to ensure continued growth and performance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TECH STACK ==================== -->
+<section class="tech-stack section-pad" aria-labelledby="techTitle">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Technologies</span>
+      <h2 class="section-title" id="techTitle">Our Tech <span class="gradient-text">Stack</span></h2>
+      <p class="section-desc">We use the best-in-class tools and frameworks to build future-proof solutions.</p>
+    </div>
+    <div class="tech-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="tech-badge"><span class="tech-badge-icon">⚛️</span> React</div>
+      <div class="tech-badge"><span class="tech-badge-icon">▲</span> Next.js</div>
+      <div class="tech-badge"><span class="tech-badge-icon">📱</span> React Native</div>
+      <div class="tech-badge"><span class="tech-badge-icon">💙</span> Flutter</div>
+      <div class="tech-badge"><span class="tech-badge-icon">🐍</span> Python</div>
+      <div class="tech-badge"><span class="tech-badge-icon">🟢</span> Node.js</div>
+      <div class="tech-badge"><span class="tech-badge-icon">🤖</span> OpenAI GPT-4</div>
+      <div class="tech-badge"><span class="tech-badge-icon">🧠</span> TensorFlow</div>
+      <div class="tech-badge"><span class="tech-badge-icon">☁️</span> AWS</div>
+      <div class="tech-badge"><span class="tech-badge-icon">🔷</span> Azure</div>
+      <div class="tech-badge"><span class="tech-badge-icon">🔥</span> Firebase</div>
+      <div class="tech-badge"><span class="tech-badge-icon">🐘</span> PostgreSQL</div>
+      <div class="tech-badge"><span class="tech-badge-icon">🍃</span> MongoDB</div>
+      <div class="tech-badge"><span class="tech-badge-icon">🎨</span> Figma</div>
+      <div class="tech-badge"><span class="tech-badge-icon">⚡</span> Vite</div>
+      <div class="tech-badge"><span class="tech-badge-icon">🐋</span> Docker</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section class="faq section-pad" aria-labelledby="faqTitle">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Common Questions</span>
+      <h2 class="section-title" id="faqTitle">Frequently <span class="gradient-text">Asked</span></h2>
+    </div>
+    <div class="faq-grid" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How long does a typical project take?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          <p>Project timelines vary based on scope. A landing page typically takes 1–2 weeks, a full web app 4–12 weeks, and complex AI solutions 8–20 weeks. We provide a detailed timeline during the discovery phase.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What is your pricing model?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          <p>We offer fixed-price projects for well-defined scope, and time-and-materials engagements for ongoing development. Contact us for a free, no-obligation quote tailored to your exact requirements.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you provide post-launch support?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          <p>Absolutely. We provide 30 days of free bug-fix support after every launch, and offer flexible monthly maintenance packages for ongoing updates, monitoring, and optimisation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can you work with our existing team?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes! We regularly work as an extension of in-house teams. Whether you need us to lead the project or collaborate with your developers, designers, or product managers, we adapt to your workflow.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Are your solutions mobile responsive?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-answer">
+          <p>Always. Every website and application we build follows a mobile-first design philosophy, tested across all major devices from 320px smartphones to 4K desktops. Responsive design is non-negotiable for us.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="services-cta" aria-labelledby="servicesCTATitle">
+  <div class="services-cta-inner" data-aos="zoom-in">
+    <h2 id="servicesCTATitle">Let's Build Something<br>Extraordinary Together</h2>
+    <p>Tell us about your project and we'll respond within 24 hours with a tailored plan.</p>
+    <a href="contact.html" class="btn-white">Start Your Project →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" fill="var(--clr-bg-2)"/>
+    </svg>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-r">R</span><span class="logo-g">G</span><span class="logo-ai">Ai</span>
+          <span class="logo-sub">Technology</span>
+        </div>
+        <p class="footer-tagline">Transforming Businesses Through AI Innovation. Your trusted partner for next-generation digital solutions.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="footer-social" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+          <a href="#" class="footer-social" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="labs.html">Labs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Website Development</a></li>
+          <li><a href="services.html">Mobile App Dev</a></li>
+          <li><a href="services.html">AI Solutions</a></li>
+          <li><a href="services.html">AI Agents</a></li>
+          <li><a href="services.html">Digital Marketing</a></li>
+          <li><a href="services.html">Business Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Stay Updated</h4>
+        <p class="footer-newsletter-desc">Get the latest AI insights delivered to your inbox.</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" class="newsletter-input" placeholder="Your email address" required aria-label="Newsletter email" />
+          <button type="submit" class="newsletter-btn" aria-label="Subscribe">→</button>
+        </form>
+        <p class="newsletter-note" id="newsletterMsg"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 RGAi Technology Pvt. Ltd. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<!-- ==================== CHATBOT WIDGET ==================== -->
+<button class="chatbot-toggle" aria-label="Open chat assistant">
+  <span class="chatbot-badge">1</span>
+  <svg class="chatbot-toggle-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#fff;">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+  <svg class="chatbot-toggle-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#fff;">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+</button>
+
+<div class="chatbot-window">
+  <div class="chatbot-header">
+    <div class="chatbot-avatar">🤖</div>
+    <div class="chatbot-header-info">
+      <div class="chatbot-header-name">ARIA Assistant</div>
+      <div class="chatbot-header-status">Online</div>
+    </div>
+    <button class="chatbot-min-btn" aria-label="Minimize chat">—</button>
+  </div>
+  <div class="chatbot-messages">
+    <!-- Message content parsed by chatbot.js -->
+  </div>
+  <div class="chatbot-input-wrap">
+    <input type="text" class="chatbot-input" placeholder="Type a message..." aria-label="Message chatbot" />
+    <button class="chatbot-send" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/services.js"></script>
+<script src="js/aurora.js"></script>
+<script src="js/spotlight.js"></script>
+<script src="js/transitions.js"></script>
+<script src="js/microinteractions.js"></script>
+<script src="js/whatsapp.js"></script>
+<script src="js/chatbot.js"></script>
+
+<script>
+/* FAQ Accordion */
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item   = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    document.querySelectorAll('.faq-question').forEach(b => b.setAttribute('aria-expanded','false'));
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+    }
+  });
+});
+</script>
+</body>
+</html>

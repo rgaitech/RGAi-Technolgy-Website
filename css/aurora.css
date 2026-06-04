@@ -1,0 +1,116 @@
+/* ============================================================
+   AURORA.CSS — Animated Aurora Background Effect
+   ============================================================ */
+
+/* Aurora container — placed as section background */
+.aurora-bg {
+  position: relative;
+  overflow: hidden;
+}
+.aurora-bg::before,
+.aurora-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Canvas-based aurora (set by aurora.js) */
+#auroraCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.45;
+  will-change: transform;
+}
+
+/* Pure CSS aurora blobs (fallback / overlay) */
+.aurora-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: auroraFloat ease-in-out infinite alternate;
+}
+.aurora-blob-1 {
+  width: 60vw; height: 60vw;
+  background: radial-gradient(circle, rgba(0,102,255,0.18) 0%, transparent 70%);
+  top: -20%; left: -10%;
+  animation-duration: 12s;
+  animation-delay: 0s;
+  opacity: 0.7;
+}
+.aurora-blob-2 {
+  width: 50vw; height: 50vw;
+  background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 70%);
+  top: 10%; right: -15%;
+  animation-duration: 15s;
+  animation-delay: 3s;
+  opacity: 0.6;
+}
+.aurora-blob-3 {
+  width: 45vw; height: 45vw;
+  background: radial-gradient(circle, rgba(16,185,129,0.10) 0%, transparent 70%);
+  bottom: -10%; left: 20%;
+  animation-duration: 18s;
+  animation-delay: 6s;
+  opacity: 0.5;
+}
+.aurora-blob-4 {
+  width: 40vw; height: 40vw;
+  background: radial-gradient(circle, rgba(245,158,11,0.08) 0%, transparent 70%);
+  bottom: 5%; right: 5%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+  opacity: 0.4;
+}
+
+@keyframes auroraFloat {
+  0%   { transform: translate(0, 0) scale(1) rotate(0deg); }
+  33%  { transform: translate(3%, 4%) scale(1.05) rotate(3deg); }
+  66%  { transform: translate(-2%, 2%) scale(0.97) rotate(-2deg); }
+  100% { transform: translate(4%, -3%) scale(1.08) rotate(5deg); }
+}
+
+/* Shimmer overlay */
+.aurora-shimmer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255,255,255,0.015) 50%,
+    transparent 60%
+  );
+  background-size: 200% 200%;
+  animation: shimmerMove 8s ease-in-out infinite;
+}
+@keyframes shimmerMove {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .aurora-blob-1 { background: radial-gradient(circle, rgba(0,102,255,0.08) 0%, transparent 70%); }
+[data-theme="light"] .aurora-blob-2 { background: radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 70%); }
+[data-theme="light"] .aurora-blob-3 { background: radial-gradient(circle, rgba(16,185,129,0.05) 0%, transparent 70%); }
+[data-theme="light"] #auroraCanvas  { opacity: 0.20; }
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob { animation: none; }
+  .aurora-shimmer { animation: none; }
+  #auroraCanvas { display: none; }
+}
